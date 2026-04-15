@@ -338,74 +338,115 @@ class ModelKVzip():
         t_forward = time.perf_counter() - t0
         print(f"[Blend] Fresh forward: {t_forward*1000:.0f}ms")
 
-        # ── 2. IW-HKVD: check layer에서 head별 flatten K와 fresh K 비교 ──
+        # ── 2. IW-HKVD ──
+        is_pruned = getattr(kv, 'pruned', False)
         imp_per_head = {}
-        for cl in check_layers:
-            info = kv.info
-            cu_len_k = info["cu_len_k"][cl]
-            valid_pad = torch.ones(1, n_heads_kv, kv.start_idx, dtype=torch.bool)
-            full_valid = torch.cat([valid_pad, kv.valid[cl].cpu()], dim=-1)
 
-            total_selected = 0
-            for h in range(n_heads_kv):
-                kept_pos = full_valid[0, h].nonzero(as_tuple=True)[0].to(device)
-                k_old_h = kv.key_cache[cl][cu_len_k[h]:cu_len_k[h+1]]
-                k_new_h = fresh_cache.key_cache[cl][0, h, kept_pos, :]
+        if is_pruned:
+            # Flatten 모드: head별로 flatten K와 fresh K 비교
+            for cl in check_layers:
+                info = kv.info
+                cu_len_k = info["cu_len_k"][cl]
+                valid_pad = torch.ones(1, n_heads_kv, kv.start_idx, dtype=torch.bool)
+                full_valid = torch.cat([valid_pad, kv.valid[cl].cpu()], dim=-1)
 
-                diff_h = ((k_new_h - k_old_h) ** 2).sum(-1)
+                total_selected = 0
+                for h in range(n_heads_kv):
+                    kept_pos = full_valid[0, h].nonzero(as_tuple=True)[0].to(device)
+                    k_old_h = kv.key_cache[cl][cu_len_k[h]:cu_len_k[h+1]]
+                    k_new_h = fresh_cache.key_cache[cl][0, h, kept_pos, :]
 
-                # importance 가중
-                if kv.score is not None and cl < len(kv.score):
-                    imp_score_h = kv.score[cl][0, h, :].to(device)
-                    if imp_score_h.shape[0] < diff_h.shape[0]:
-                        pad = torch.ones(diff_h.shape[0] - imp_score_h.shape[0], device=device)
-                        imp_score_h = torch.cat([pad, imp_score_h])
-                    elif imp_score_h.shape[0] > diff_h.shape[0]:
-                        imp_score_h = imp_score_h[:diff_h.shape[0]]
-                    diff_h = diff_h * imp_score_h
+                    diff_h = ((k_new_h - k_old_h) ** 2).sum(-1)
 
-                topk_h = max(int(len(diff_h) * recomp_ratio), 1)
-                imp_per_head[h] = torch.topk(diff_h, topk_h).indices
-                total_selected += len(imp_per_head[h])
+                    if kv.score is not None and cl < len(kv.score):
+                        imp_score_h = kv.score[cl][0, h, :].to(device)
+                        if imp_score_h.shape[0] < diff_h.shape[0]:
+                            pad = torch.ones(diff_h.shape[0] - imp_score_h.shape[0], device=device)
+                            imp_score_h = torch.cat([pad, imp_score_h])
+                        elif imp_score_h.shape[0] > diff_h.shape[0]:
+                            imp_score_h = imp_score_h[:diff_h.shape[0]]
+                        diff_h = diff_h * imp_score_h
 
-            print(f"  [IW-HKVD] Layer {cl}: {total_selected} positions "
-                  f"across {n_heads_kv} heads (r={recomp_ratio})")
+                    topk_h = max(int(len(diff_h) * recomp_ratio), 1)
+                    imp_per_head[h] = torch.topk(diff_h, topk_h).indices
+                    total_selected += len(imp_per_head[h])
 
-        # ── 3. imp를 절대 위치로 변환 + 모든 layer에서 flatten에 overwrite ──
-        imp_abs_per_head = {}
-        for cl in check_layers:
-            valid_pad_cl = torch.ones(1, n_heads_kv, kv.start_idx, dtype=torch.bool)
-            full_valid_cl = torch.cat([valid_pad_cl, kv.valid[cl].cpu()], dim=-1)
-            for h in range(n_heads_kv):
-                kept_pos_cl = full_valid_cl[0, h].nonzero(as_tuple=True)[0]
-                imp_abs_per_head[h] = set(kept_pos_cl[imp_per_head[h].cpu()].tolist())
+                print(f"  [IW-HKVD] Layer {cl}: {total_selected} positions "
+                      f"across {n_heads_kv} heads (r={recomp_ratio})")
+        else:
+            # Dense 모드: 무압축 KV, Phase 1 방식
+            from attention.blend import iw_hkvd
+            for cl in check_layers:
+                k_old = kv.key_cache[cl]  # [1, H, T, D]
+                k_new = fresh_cache.key_cache[cl]
+                importance = kv.score[cl] if kv.score is not None and cl < len(kv.score) else None
 
-        t0 = time.perf_counter()
-        for l in range(n_layers):
-            cu_len_k = kv.info["cu_len_k"][l]
-            valid_pad = torch.ones(1, n_heads_kv, kv.start_idx, dtype=torch.bool)
-            full_valid = torch.cat([valid_pad, kv.valid[l].cpu()], dim=-1)
+                diff_k = ((k_new[:, :, :context_len].float() - k_old.float()) ** 2).sum(dim=[1, 3])
+                if importance is not None:
+                    imp_score = importance.float().mean(dim=1).to(device)
+                    if imp_score.shape[-1] != diff_k.shape[-1]:
+                        pad_len = diff_k.shape[-1] - imp_score.shape[-1]
+                        if pad_len > 0:
+                            imp_score = torch.cat([torch.ones(1, pad_len, device=device), imp_score], dim=-1)
+                        else:
+                            imp_score = imp_score[:, :diff_k.shape[-1]]
+                    diff_k = diff_k * imp_score
 
-            for h in range(n_heads_kv):
-                if h not in imp_abs_per_head:
+                topk_num = max(int(context_len * recomp_ratio), 1)
+                imp_indices = torch.topk(diff_k[0], topk_num).indices
+                imp_indices, _ = torch.sort(imp_indices)
+
+                # Dense overwrite
+                kv.key_cache[cl][:, :, imp_indices] = k_new[:, :, imp_indices]
+                kv.value_cache[cl][:, :, imp_indices] = k_new[:, :, imp_indices]
+
+                print(f"  [IW-HKVD] Layer {cl}: {len(imp_indices)} tokens selected (dense, r={recomp_ratio})")
+
+            # Non-check layers dense overwrite
+            for l in range(n_layers):
+                if l in check_layers:
                     continue
-                kept_pos = full_valid[0, h].nonzero(as_tuple=True)[0].to(device)
-                abs_targets = imp_abs_per_head[h]
+                kv.key_cache[l][:, :, imp_indices] = fresh_cache.key_cache[l][:, :, imp_indices]
+                kv.value_cache[l][:, :, imp_indices] = fresh_cache.value_cache[l][:, :, imp_indices]
 
-                local_imp = [i for i, p in enumerate(kept_pos.tolist()) if p in abs_targets]
-                if not local_imp:
-                    continue
+        # ── 3. Flatten overwrite (pruned only) ──
+        if is_pruned:
+            imp_abs_per_head = {}
+            for cl in check_layers:
+                valid_pad_cl = torch.ones(1, n_heads_kv, kv.start_idx, dtype=torch.bool)
+                full_valid_cl = torch.cat([valid_pad_cl, kv.valid[cl].cpu()], dim=-1)
+                for h in range(n_heads_kv):
+                    kept_pos_cl = full_valid_cl[0, h].nonzero(as_tuple=True)[0]
+                    imp_abs_per_head[h] = set(kept_pos_cl[imp_per_head[h].cpu()].tolist())
 
-                local_imp_t = torch.tensor(local_imp, device=device, dtype=torch.long)
-                abs_positions = kept_pos[local_imp_t]
+            t0 = time.perf_counter()
+            for l in range(n_layers):
+                cu_len_k = kv.info["cu_len_k"][l]
+                valid_pad = torch.ones(1, n_heads_kv, kv.start_idx, dtype=torch.bool)
+                full_valid = torch.cat([valid_pad, kv.valid[l].cpu()], dim=-1)
 
-                kv.key_cache[l][cu_len_k[h] + local_imp_t] = \
-                    fresh_cache.key_cache[l][0, h, abs_positions, :]
-                kv.value_cache[l][cu_len_k[h] + local_imp_t] = \
-                    fresh_cache.value_cache[l][0, h, abs_positions, :]
+                for h in range(n_heads_kv):
+                    if h not in imp_abs_per_head:
+                        continue
+                    kept_pos = full_valid[0, h].nonzero(as_tuple=True)[0].to(device)
+                    abs_targets = imp_abs_per_head[h]
 
-        t_blend = time.perf_counter() - t0
-        print(f"[Blend] Overwrite: {t_blend*1000:.0f}ms")
+                    local_imp = [i for i, p in enumerate(kept_pos.tolist()) if p in abs_targets]
+                    if not local_imp:
+                        continue
+
+                    local_imp_t = torch.tensor(local_imp, device=device, dtype=torch.long)
+                    abs_positions = kept_pos[local_imp_t]
+
+                    kv.key_cache[l][cu_len_k[h] + local_imp_t] = \
+                        fresh_cache.key_cache[l][0, h, abs_positions, :]
+                    kv.value_cache[l][cu_len_k[h] + local_imp_t] = \
+                        fresh_cache.value_cache[l][0, h, abs_positions, :]
+
+            t_blend = time.perf_counter() - t0
+            print(f"[Blend] Overwrite: {t_blend*1000:.0f}ms")
+        else:
+            print(f"[Blend] Dense overwrite done (in step 2)")
 
         # ── 4. Generate (원본 EvictCache 객체 그대로 사용!) ──
         t0 = time.perf_counter()

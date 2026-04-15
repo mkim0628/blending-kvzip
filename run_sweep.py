@@ -55,7 +55,7 @@ def main():
     ]
 
     # Sweep 파라미터
-    compression_ratios = [0.2, 0.3, 0.5, 0.7, 1.0]  # 1.0 = 무압축
+    compression_ratios = [0.2, 0.3, 0.5, 0.7]  # pruned only (comp=1.0 dense는 별도 처리)
     recomp_ratios = [0.0, 0.05, 0.10, 0.15, 0.30, 0.50]
 
     results = []
@@ -132,29 +132,29 @@ def main():
                 # 매번 fresh load (이전 blend가 kv를 수정하므로)
                 kv_loaded = store.load_chunk(chunk_id, device=model.device)
 
-    # ── 결과 요약 ──
-    print("\n" + "=" * 70)
-    print("결과 요약 — Match Rate (답변이 핵심 키워드를 포함하는 비율)")
-    print("=" * 70)
-
-    # Group by (comp_ratio, recomp_ratio)
-    from collections import defaultdict
-    grouped = defaultdict(list)
-    for r in results:
-        key = (r["comp_ratio"], r["recomp_ratio"])
-        grouped[key].append(r)
-
-    print(f"\n{'Comp':>6} {'Recomp':>10} {'Match':>6} {'Avg ms':>8}")
-    print("-" * 35)
-    for (comp, recomp), items in sorted(grouped.items()):
-        match_rate = sum(1 for i in items if i["match"]) / len(items)
-        avg_time = sum(i["time_ms"] for i in items) / len(items)
-        print(f"{comp:>6.2f} {str(recomp):>10} {match_rate:>6.0%} {avg_time:>8.0f}")
-
-    # 저장
+    # ── 결과 저장 (먼저!) ──
     with open("sweep_results.json", "w") as f:
         json.dump(results, f, indent=2, ensure_ascii=False)
     print(f"\n결과 저장: sweep_results.json ({len(results)} entries)")
+
+    # ── 결과 요약 ──
+    print("\n" + "=" * 70)
+    print("결과 요약 — Match Rate")
+    print("=" * 70)
+
+    from collections import defaultdict
+    grouped = defaultdict(list)
+    for r in results:
+        key = (str(r["comp_ratio"]), str(r["recomp_ratio"]))
+        grouped[key].append(r)
+
+    print(f"\n  Comp     Recomp  Match   Avg ms")
+    print("  " + "-" * 34)
+    for key in sorted(grouped.keys()):
+        items = grouped[key]
+        match_rate = sum(1 for i in items if i["match"]) / len(items)
+        avg_time = sum(i["time_ms"] for i in items) / len(items)
+        print(f"  {key[0]:>5} {key[1]:>10} {match_rate:>5.0%} {avg_time:>8.0f}")
 
 
 if __name__ == "__main__":
