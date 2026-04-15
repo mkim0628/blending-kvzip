@@ -62,10 +62,8 @@ def main():
         kv = model.prefill(doc_text, do_score=True)
         stamp(f"After prefill+scoring '{doc_id}' ({kv._seen_tokens} tokens)")
 
-        # Phase 1: prune 없이 fp16 dense로 저장 (CacheBlend 동작 검증 우선)
-        # Phase 2에서 prune 후 compressed blend 지원 추가 예정
-        # kv.prune(ratio=args.ratio)
-        # stamp(f"After prune '{doc_id}' (ratio={args.ratio})")
+        kv.prune(ratio=args.ratio)
+        stamp(f"After prune '{doc_id}' (ratio={args.ratio})")
 
         store.save_chunk(doc_id, kv)
         stamp(f"After save '{doc_id}'")
@@ -91,7 +89,7 @@ def main():
 
         output = model.blend_generate(
             query_text,
-            chunk_kvs=[chunk_ai, chunk_climate],
+            chunk_kvs=[chunk_ai],  # 단일 chunk로 먼저 검증
             recomp_ratio=args.recomp,
             check_layers=[args.check_layer],
         )

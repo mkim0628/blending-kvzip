@@ -1,0 +1,56 @@
+[
+  {
+    "experiment": "kvzip_only",
+    "query": "What industries has AI transformed?",
+    "output": "Artificial intelligence has transformed healthcare, finance, and transportation.",
+    "time_ms": 893
+  },
+  {
+    "experiment": "kvzip_only",
+    "query": "How is AI used in healthcare?",
+    "output": "AI is used in healthcare for tasks such as diagnosing diseases from medical images with accuracy surpassing human experts.",
+    "time_ms": 1289
+  },
+  {
+    "experiment": "kvzip_only",
+    "query": "What role does AI play in finance?",
+    "output": "AI plays a role in finance by powering trading algorithms that analyze market patterns at speeds impossible for human traders.",
+    "time_ms": 1216
+  },
+  {
+    "experiment": "kvzip_cacheblend",
+    "query": "What industries has AI transformed?",
+    "output": " AI has transformed healthcare, finance, and transportation.",
+    "time_ms": 1324
+  },
+  {
+    "experiment": "kvzip_cacheblend",
+    "query": "How is AI used in healthcare?",
+    "output": " AI is used in healthcare for tasks such as diagnosing diseases from medical images with accuracy surpassing human experts.",
+    "time_ms": 1934
+  },
+  {
+    "experiment": "kvzip_cacheblend",
+    "query": "What role does AI play in finance?",
+    "output": " AI plays a role in finance by powering trading algorithms that analyze market patterns at speeds impossible for human traders.",
+    "time_ms": 1904
+  },
+  {
+    "experiment": "full_prefill",
+    "query": "What industries has AI transformed?",
+    "output": "Artificial intelligence has transformed healthcare, finance, and transportation.",
+    "time_ms": 703
+  },
+  {
+    "experiment": "full_prefill",
+    "query": "How is AI used in healthcare?",
+    "output": "AI is used in healthcare for tasks such as diagnosing diseases from medical images with accuracy surpassing human experts.",
+    "time_ms": 1172
+  },
+  {
+    "experiment": "full_prefill",
+    "query": "What role does AI play in finance?",
+    "output": "AI plays a role in finance by powering trading algorithms that analyze market patterns at speeds surpassing human traders.",
+    "time_ms": 1105
+  }
+]

@@ -28,37 +28,22 @@ class ChunkStore:
         os.makedirs(store_dir, exist_ok=True)
 
     def save_chunk(self, chunk_id: str, kv: EvictCache):
-        """EvictCache를 chunk으로 저장. importance score도 함께.
+        """EvictCache 객체를 통째로 저장.
 
         Args:
             chunk_id: 청크 식별자 (e.g., "doc_1")
             kv: KVzip prefill + scoring + prune이 완료된 EvictCache
         """
-        data = {
-            "key_cache": [k.cpu() for k in kv.key_cache],
-            "value_cache": [v.cpu() for v in kv.value_cache],
-            "score": [s.cpu() for s in kv.score] if kv.score is not None else None,
-            "prefill_ids": kv.prefill_ids.cpu() if kv.prefill_ids is not None else None,
-            "ctx_ids": kv.ctx_ids.cpu() if kv.ctx_ids is not None else None,
-            "_seen_tokens": kv._seen_tokens,
-            "n_layers": kv.n_layers,
-            "n_heads_kv": kv.n_heads_kv,
-            "start_idx": kv.start_idx,
-            "end_idx": kv.end_idx,
-            "pruned": kv.pruned,
-            "info": kv.info if kv.pruned else None,
-            "valid": kv.valid.cpu() if hasattr(kv, 'valid') and kv.valid is not None else None,
-        }
         path = os.path.join(self.store_dir, f"{chunk_id}.pt")
-        torch.save(data, path)
+        torch.save(kv, path)
         print(f"[ChunkStore] Saved '{chunk_id}' ({kv._seen_tokens} tokens, pruned={kv.pruned})")
 
-    def load_chunk(self, chunk_id: str, device: str = "cuda") -> Dict:
-        """저장된 chunk를 로드 (텐서는 CPU에 유지, 필요 시 .to(device))."""
+    def load_chunk(self, chunk_id: str, device: str = "cuda") -> EvictCache:
+        """저장된 EvictCache 객체를 로드."""
         path = os.path.join(self.store_dir, f"{chunk_id}.pt")
-        data = torch.load(path, map_location="cpu", weights_only=False)
-        print(f"[ChunkStore] Loaded '{chunk_id}' ({data['_seen_tokens']} tokens)")
-        return data
+        kv = torch.load(path, map_location=device, weights_only=False)
+        print(f"[ChunkStore] Loaded '{chunk_id}' ({kv._seen_tokens} tokens, pruned={kv.pruned})")
+        return kv
 
     def list_chunks(self) -> List[str]:
         return sorted([f[:-3] for f in os.listdir(self.store_dir) if f.endswith(".pt")])

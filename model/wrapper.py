@@ -284,7 +284,7 @@ class ModelKVzip():
         return a
 
     # ──────────────────────────────────────────────────────────
-    # CacheBlend Integration
+    # CacheBlend Integration (Compressed-State Blending)
     # ──────────────────────────────────────────────────────────
 
     @torch.inference_mode()
@@ -296,146 +296,124 @@ class ModelKVzip():
         check_layers: list = None,
         update_cache: bool = False,
     ) -> str:
-        """압축된 KV chunk들을 blending하여 query에 응답.
+        """압축된 KV chunk를 blending하여 query에 응답.
 
-        Usage:
-            # 오프라인: prefill + scoring + prune + 저장
-            kv1 = model.prefill(doc1, do_score=True)
-            kv1.prune(ratio=0.3)
-            store.save_chunk("doc1", kv1)
-
-            # 온라인: blend + generate
-            chunk1 = store.load_chunk("doc1")
-            output = model.blend_generate("질문?", [chunk1])
+        Compressed-state blending:
+          1. Full forward로 fresh K/V 획득
+          2. Check layer에서 head별로 flatten K와 fresh K 비교 (IW-HKVD)
+          3. imp_indices를 flatten에 직접 overwrite
+          4. 원본 EvictCache 객체로 generate → 압축 유지!
 
         Args:
             query: 사용자 쿼리 (str or tensor)
-            chunk_kvs: ChunkStore.load_chunk()로 로드된 chunk dict 리스트
+            chunk_kvs: ChunkStore.load_chunk()로 로드된 EvictCache 객체 리스트
             recomp_ratio: HKVD 재계산 비율
             check_layers: HKVD check layer (default: [1])
-            update_cache: True면 multi-turn 유지
         """
+        import time
+
         check_layers = check_layers or [1]
-
-        # 1. chunk들의 KV를 합쳐서 하나의 cache 구성
         device = self.device
-        n_layers = chunk_kvs[0]["n_layers"]
 
-        # key/value cache 합치기
-        combined_key = []
-        combined_val = []
-        for l in range(n_layers):
-            all_k = [chunk["key_cache"][l].to(device) for chunk in chunk_kvs]
-            all_v = [chunk["value_cache"][l].to(device) for chunk in chunk_kvs]
-            combined_key.append(torch.cat(all_k, dim=-2))  # seq dim
-            combined_val.append(torch.cat(all_v, dim=-2))
+        # 현재는 단일 chunk 지원 (multi-chunk는 추후 확장)
+        kv = chunk_kvs[0]  # EvictCache 객체 그대로!
+        n_layers = kv.n_layers
+        n_heads_kv = kv.n_heads_kv
 
-        cached_len = combined_key[0].shape[-2]
-
-        # importance score 합치기 (check layer만)
-        blend_importance = {}
-        for cl in check_layers:
-            scores = []
-            for chunk in chunk_kvs:
-                if chunk["score"] is not None and cl < len(chunk["score"]):
-                    scores.append(chunk["score"][cl].to(device))
-            if scores:
-                blend_importance[cl] = torch.cat(scores, dim=-1)
-
-        # 2. BlendDynamicCache에 로드 (blend 중 update를 건너뛰기 위해)
-        from transformers import DynamicCache
-
-        class BlendDynamicCache(DynamicCache):
-            """Blend 중 update()를 무시하는 DynamicCache."""
-            def update(self, key_states, value_states, layer_idx, cache_kwargs=None):
-                if getattr(self, "blending", False):
-                    if layer_idx == 0:
-                        self._seen_tokens += key_states.shape[-2]
-                    return self.key_cache[layer_idx], self.value_cache[layer_idx]
-                return super().update(key_states, value_states, layer_idx, cache_kwargs)
-
-            def get_seq_length(self, layer_idx=0):
-                if getattr(self, "blending", False):
-                    return 0  # blend 중: 전체 토큰 forward 유도
-                if len(self.key_cache) <= layer_idx or not self.key_cache[layer_idx].numel():
-                    return 0
-                return self._seen_tokens
-
-        kv = BlendDynamicCache()
-        for l in range(n_layers):
-            kv.key_cache.append(combined_key[l])
-            kv.value_cache.append(combined_val[l])
-        kv._seen_tokens = cached_len
-
-        # blend 속성 추가
-        kv.blending = True
-        kv.blend_cached_len = cached_len
-        kv.blend_recomp_ratio = recomp_ratio
-        kv.blend_check_layers = check_layers
-        kv.blend_importance = blend_importance
-        kv.blend_imp_indices = None
-        kv.blend_mandatory = list(range(min(4, cached_len)))  # sink tokens
-
-        # prefill_ids 구성 (blend용)
-        all_prefill_ids = []
-        for chunk in chunk_kvs:
-            if chunk["prefill_ids"] is not None:
-                all_prefill_ids.append(chunk["prefill_ids"].to(device))
-        if all_prefill_ids:
-            prefill_ids = torch.cat(all_prefill_ids, dim=1)
-        else:
-            prefill_ids = None
-
-        # 3. query 토큰 준비
+        # ── 1. Full forward로 fresh K/V 획득 ──
         query_ids = query
         if type(query) == str:
             query_ids = self.encode(query)
 
-        if prefill_ids is not None:
-            all_ids = torch.cat([prefill_ids, query_ids], dim=1)
-        else:
-            all_ids = query_ids
+        prefill_ids = kv.prefill_ids
+        all_ids = torch.cat([prefill_ids, query_ids], dim=1)
+        context_len = prefill_ids.shape[1]
 
         print(f"[Blend] Total: {all_ids.shape[1]} tokens "
-              f"(cached: {cached_len}, query: {query_ids.shape[1]})")
+              f"(context: {context_len}, query: {query_ids.shape[1]})")
 
-        # 4. Blend prefill — blending=True 상태로 forward
-        #    get_seq_length()가 _seen_tokens를 반환하므로
-        #    HF가 cache 이후의 새 토큰만 forward함
-        #    → 하지만 blend에서는 전체를 forward해야 함!
-        #    → 임시로 _seen_tokens를 0으로 설정
-        saved_seen = kv._seen_tokens
-        kv._seen_tokens = 0
-
-        import time
+        fresh_cache = DynamicCache()
         t0 = time.perf_counter()
-        self.model(all_ids, past_key_values=kv, use_cache=True)
+        self.model(all_ids, past_key_values=fresh_cache, use_cache=True)
+        t_forward = time.perf_counter() - t0
+        print(f"[Blend] Fresh forward: {t_forward*1000:.0f}ms")
+
+        # ── 2. IW-HKVD: check layer에서 head별 flatten K와 fresh K 비교 ──
+        imp_per_head = {}
+        for cl in check_layers:
+            info = kv.info
+            cu_len_k = info["cu_len_k"][cl]
+            valid_pad = torch.ones(1, n_heads_kv, kv.start_idx, dtype=torch.bool)
+            full_valid = torch.cat([valid_pad, kv.valid[cl].cpu()], dim=-1)
+
+            total_selected = 0
+            for h in range(n_heads_kv):
+                kept_pos = full_valid[0, h].nonzero(as_tuple=True)[0].to(device)
+                k_old_h = kv.key_cache[cl][cu_len_k[h]:cu_len_k[h+1]]
+                k_new_h = fresh_cache.key_cache[cl][0, h, kept_pos, :]
+
+                diff_h = ((k_new_h - k_old_h) ** 2).sum(-1)
+
+                # importance 가중
+                if kv.score is not None and cl < len(kv.score):
+                    imp_score_h = kv.score[cl][0, h, :].to(device)
+                    if imp_score_h.shape[0] < diff_h.shape[0]:
+                        pad = torch.ones(diff_h.shape[0] - imp_score_h.shape[0], device=device)
+                        imp_score_h = torch.cat([pad, imp_score_h])
+                    elif imp_score_h.shape[0] > diff_h.shape[0]:
+                        imp_score_h = imp_score_h[:diff_h.shape[0]]
+                    diff_h = diff_h * imp_score_h
+
+                topk_h = max(int(len(diff_h) * recomp_ratio), 1)
+                imp_per_head[h] = torch.topk(diff_h, topk_h).indices
+                total_selected += len(imp_per_head[h])
+
+            print(f"  [IW-HKVD] Layer {cl}: {total_selected} positions "
+                  f"across {n_heads_kv} heads (r={recomp_ratio})")
+
+        # ── 3. imp를 절대 위치로 변환 + 모든 layer에서 flatten에 overwrite ──
+        imp_abs_per_head = {}
+        for cl in check_layers:
+            valid_pad_cl = torch.ones(1, n_heads_kv, kv.start_idx, dtype=torch.bool)
+            full_valid_cl = torch.cat([valid_pad_cl, kv.valid[cl].cpu()], dim=-1)
+            for h in range(n_heads_kv):
+                kept_pos_cl = full_valid_cl[0, h].nonzero(as_tuple=True)[0]
+                imp_abs_per_head[h] = set(kept_pos_cl[imp_per_head[h].cpu()].tolist())
+
+        t0 = time.perf_counter()
+        for l in range(n_layers):
+            cu_len_k = kv.info["cu_len_k"][l]
+            valid_pad = torch.ones(1, n_heads_kv, kv.start_idx, dtype=torch.bool)
+            full_valid = torch.cat([valid_pad, kv.valid[l].cpu()], dim=-1)
+
+            for h in range(n_heads_kv):
+                if h not in imp_abs_per_head:
+                    continue
+                kept_pos = full_valid[0, h].nonzero(as_tuple=True)[0].to(device)
+                abs_targets = imp_abs_per_head[h]
+
+                local_imp = [i for i, p in enumerate(kept_pos.tolist()) if p in abs_targets]
+                if not local_imp:
+                    continue
+
+                local_imp_t = torch.tensor(local_imp, device=device, dtype=torch.long)
+                abs_positions = kept_pos[local_imp_t]
+
+                kv.key_cache[l][cu_len_k[h] + local_imp_t] = \
+                    fresh_cache.key_cache[l][0, h, abs_positions, :]
+                kv.value_cache[l][cu_len_k[h] + local_imp_t] = \
+                    fresh_cache.value_cache[l][0, h, abs_positions, :]
+
         t_blend = time.perf_counter() - t0
+        print(f"[Blend] Overwrite: {t_blend*1000:.0f}ms")
 
-        # 5. blend 완료 → decode 모드 전환
-        kv.blending = False
-        # _seen_tokens를 실제 cache 크기로 맞춤
-        kv._seen_tokens = kv.key_cache[0].shape[-2]
-
-        print(f"[Blend] Blend prefill: {t_blend*1000:.0f}ms")
-        print(f"[Blend] Cache size after blend: {kv._seen_tokens}")
-
-        # 6. Generate — attention_mask 명시 전달
+        # ── 4. Generate (원본 EvictCache 객체 그대로 사용!) ──
         t0 = time.perf_counter()
-        attention_mask = torch.ones(1, all_ids.shape[1], device=all_ids.device, dtype=torch.long)
-        output = self.model.generate(
-            all_ids,
-            past_key_values=kv,
-            attention_mask=attention_mask,
-            **self.gen_kwargs,
-        )
+        output = self.generate(query_ids, kv=kv, update_cache=False)
         t_gen = time.perf_counter() - t0
+        print(f"[Blend] Generate: {t_gen*1000:.0f}ms, output: {output[:100]}...")
 
-        a_ids = output[:, len(all_ids[0]):-1]
-        a = self.decode(a_ids)
-        print(f"[Blend] Generate: {t_gen*1000:.0f}ms, output: {a[:100]}...")
-
-        return a
+        return output
 
     @torch.inference_mode()
     def _prob(self, input_ids, kv=None, device="cuda") -> torch.Tensor:
