@@ -53,6 +53,11 @@ def llama_qwen_attn_forward(
     if getattr(past_key_value, "get_score", None):  # calculate KV importance
         past_key_value._get_score(query_states, key_states, self.layer_idx)
 
+    if getattr(past_key_value, "blending", None):  # CacheBlend IW-HKVD
+        from attention.blend import blend_hook
+        query_states, key_states, value_states = blend_hook(
+            past_key_value, query_states, key_states, value_states, self.layer_idx)
+
     if getattr(past_key_value, "pruned", None):  # attention with pruned cache
         query_states, key_states, value_states, info = past_key_value.prepare(
             query_states, key_states, value_states, self.layer_idx)

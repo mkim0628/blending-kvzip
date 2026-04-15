@@ -283,6 +283,160 @@ class ModelKVzip():
             kv.prefill_ids = torch.cat([input_ids, a_ids], dim=1)
         return a
 
+    # ──────────────────────────────────────────────────────────
+    # CacheBlend Integration
+    # ──────────────────────────────────────────────────────────
+
+    @torch.inference_mode()
+    def blend_generate(
+        self,
+        query: Union[str, torch.Tensor],
+        chunk_kvs: list,
+        recomp_ratio: float = 0.15,
+        check_layers: list = None,
+        update_cache: bool = False,
+    ) -> str:
+        """압축된 KV chunk들을 blending하여 query에 응답.
+
+        Usage:
+            # 오프라인: prefill + scoring + prune + 저장
+            kv1 = model.prefill(doc1, do_score=True)
+            kv1.prune(ratio=0.3)
+            store.save_chunk("doc1", kv1)
+
+            # 온라인: blend + generate
+            chunk1 = store.load_chunk("doc1")
+            output = model.blend_generate("질문?", [chunk1])
+
+        Args:
+            query: 사용자 쿼리 (str or tensor)
+            chunk_kvs: ChunkStore.load_chunk()로 로드된 chunk dict 리스트
+            recomp_ratio: HKVD 재계산 비율
+            check_layers: HKVD check layer (default: [1])
+            update_cache: True면 multi-turn 유지
+        """
+        check_layers = check_layers or [1]
+
+        # 1. chunk들의 KV를 합쳐서 하나의 cache 구성
+        device = self.device
+        n_layers = chunk_kvs[0]["n_layers"]
+
+        # key/value cache 합치기
+        combined_key = []
+        combined_val = []
+        for l in range(n_layers):
+            all_k = [chunk["key_cache"][l].to(device) for chunk in chunk_kvs]
+            all_v = [chunk["value_cache"][l].to(device) for chunk in chunk_kvs]
+            combined_key.append(torch.cat(all_k, dim=-2))  # seq dim
+            combined_val.append(torch.cat(all_v, dim=-2))
+
+        cached_len = combined_key[0].shape[-2]
+
+        # importance score 합치기 (check layer만)
+        blend_importance = {}
+        for cl in check_layers:
+            scores = []
+            for chunk in chunk_kvs:
+                if chunk["score"] is not None and cl < len(chunk["score"]):
+                    scores.append(chunk["score"][cl].to(device))
+            if scores:
+                blend_importance[cl] = torch.cat(scores, dim=-1)
+
+        # 2. BlendDynamicCache에 로드 (blend 중 update를 건너뛰기 위해)
+        from transformers import DynamicCache
+
+        class BlendDynamicCache(DynamicCache):
+            """Blend 중 update()를 무시하는 DynamicCache."""
+            def update(self, key_states, value_states, layer_idx, cache_kwargs=None):
+                if getattr(self, "blending", False):
+                    if layer_idx == 0:
+                        self._seen_tokens += key_states.shape[-2]
+                    return self.key_cache[layer_idx], self.value_cache[layer_idx]
+                return super().update(key_states, value_states, layer_idx, cache_kwargs)
+
+            def get_seq_length(self, layer_idx=0):
+                if getattr(self, "blending", False):
+                    return 0  # blend 중: 전체 토큰 forward 유도
+                if len(self.key_cache) <= layer_idx or not self.key_cache[layer_idx].numel():
+                    return 0
+                return self._seen_tokens
+
+        kv = BlendDynamicCache()
+        for l in range(n_layers):
+            kv.key_cache.append(combined_key[l])
+            kv.value_cache.append(combined_val[l])
+        kv._seen_tokens = cached_len
+
+        # blend 속성 추가
+        kv.blending = True
+        kv.blend_cached_len = cached_len
+        kv.blend_recomp_ratio = recomp_ratio
+        kv.blend_check_layers = check_layers
+        kv.blend_importance = blend_importance
+        kv.blend_imp_indices = None
+        kv.blend_mandatory = list(range(min(4, cached_len)))  # sink tokens
+
+        # prefill_ids 구성 (blend용)
+        all_prefill_ids = []
+        for chunk in chunk_kvs:
+            if chunk["prefill_ids"] is not None:
+                all_prefill_ids.append(chunk["prefill_ids"].to(device))
+        if all_prefill_ids:
+            prefill_ids = torch.cat(all_prefill_ids, dim=1)
+        else:
+            prefill_ids = None
+
+        # 3. query 토큰 준비
+        query_ids = query
+        if type(query) == str:
+            query_ids = self.encode(query)
+
+        if prefill_ids is not None:
+            all_ids = torch.cat([prefill_ids, query_ids], dim=1)
+        else:
+            all_ids = query_ids
+
+        print(f"[Blend] Total: {all_ids.shape[1]} tokens "
+              f"(cached: {cached_len}, query: {query_ids.shape[1]})")
+
+        # 4. Blend prefill — blending=True 상태로 forward
+        #    get_seq_length()가 _seen_tokens를 반환하므로
+        #    HF가 cache 이후의 새 토큰만 forward함
+        #    → 하지만 blend에서는 전체를 forward해야 함!
+        #    → 임시로 _seen_tokens를 0으로 설정
+        saved_seen = kv._seen_tokens
+        kv._seen_tokens = 0
+
+        import time
+        t0 = time.perf_counter()
+        self.model(all_ids, past_key_values=kv, use_cache=True)
+        t_blend = time.perf_counter() - t0
+
+        # 5. blend 완료 → decode 모드 전환
+        kv.blending = False
+        # _seen_tokens를 실제 cache 크기로 맞춤
+        kv._seen_tokens = kv.key_cache[0].shape[-2]
+
+        print(f"[Blend] Blend prefill: {t_blend*1000:.0f}ms")
+        print(f"[Blend] Cache size after blend: {kv._seen_tokens}")
+
+        # 6. Generate — attention_mask 명시 전달
+        t0 = time.perf_counter()
+        attention_mask = torch.ones(1, all_ids.shape[1], device=all_ids.device, dtype=torch.long)
+        output = self.model.generate(
+            all_ids,
+            past_key_values=kv,
+            attention_mask=attention_mask,
+            **self.gen_kwargs,
+        )
+        t_gen = time.perf_counter() - t0
+
+        a_ids = output[:, len(all_ids[0]):-1]
+        a = self.decode(a_ids)
+        print(f"[Blend] Generate: {t_gen*1000:.0f}ms, output: {a[:100]}...")
+
+        return a
+
     @torch.inference_mode()
     def _prob(self, input_ids, kv=None, device="cuda") -> torch.Tensor:
         """ Obtain next token prediction probabilities
