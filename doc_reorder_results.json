@@ -1,0 +1,4162 @@
+[
+  {
+    "method": "full_AB",
+    "order": "A+B",
+    "query": "In what city was Einstein born?",
+    "keyword": "Ulm",
+    "output": "Ulm",
+    "match": true
+  },
+  {
+    "method": "full_AB",
+    "order": "A+B",
+    "query": "What year did Einstein get the Nobel Prize?",
+    "keyword": "1921",
+    "output": "1921",
+    "match": true
+  },
+  {
+    "method": "full_AB",
+    "order": "A+B",
+    "query": "When did Einstein become a US citizen?",
+    "keyword": "1940",
+    "output": "Einstein became a US citizen in 1940.",
+    "match": true
+  },
+  {
+    "method": "full_AB",
+    "order": "A+B",
+    "query": "How many scientific papers did Einstein publish?",
+    "keyword": "300",
+    "output": "Einstein published over 300 scientific papers during his career.",
+    "match": true
+  },
+  {
+    "method": "full_AB",
+    "order": "A+B",
+    "query": "In what city was Marie Curie born?",
+    "keyword": "Warsaw",
+    "output": "Warsaw",
+    "match": true
+  },
+  {
+    "method": "full_AB",
+    "order": "A+B",
+    "query": "What elements did Curie discover?",
+    "keyword": "polonium",
+    "output": "Curie discovered the elements polonium and radium through her research on radioactivity.",
+    "match": true
+  },
+  {
+    "method": "full_AB",
+    "order": "A+B",
+    "query": "What year did Curie win the Chemistry Nobel?",
+    "keyword": "1911",
+    "output": "1911",
+    "match": true
+  },
+  {
+    "method": "full_AB",
+    "order": "A+B",
+    "query": "What are petites Curies?",
+    "keyword": "X-ray",
+    "output": "petites Curies were mobile X-ray units developed by Marie Curie used in World War One.",
+    "match": true
+  },
+  {
+    "method": "full_AB",
+    "order": "A+B",
+    "query": "Compare the birth years of Einstein and Curie.",
+    "keyword": "1879",
+    "output": "Marie Curie was born in 1867, while Albert Einstein was born in 1879.",
+    "match": true
+  },
+  {
+    "method": "full_AB",
+    "order": "A+B",
+    "query": "Who won more Nobel Prizes, Einstein or Curie?",
+    "keyword": "Curie",
+    "output": "Marie Curie won more Nobel Prizes than Albert Einstein.",
+    "match": true
+  },
+  {
+    "method": "full_BA",
+    "order": "B+A",
+    "query": "In what city was Einstein born?",
+    "keyword": "Ulm",
+    "output": "Einstein was born in Ulm Germany.",
+    "match": true
+  },
+  {
+    "method": "full_BA",
+    "order": "B+A",
+    "query": "What year did Einstein get the Nobel Prize?",
+    "keyword": "1921",
+    "output": "1921",
+    "match": true
+  },
+  {
+    "method": "full_BA",
+    "order": "B+A",
+    "query": "When did Einstein become a US citizen?",
+    "keyword": "1940",
+    "output": "Einstein became a US citizen in 1940.",
+    "match": true
+  },
+  {
+    "method": "full_BA",
+    "order": "B+A",
+    "query": "How many scientific papers did Einstein publish?",
+    "keyword": "300",
+    "output": "Einstein published over 300 scientific papers during his career.",
+    "match": true
+  },
+  {
+    "method": "full_BA",
+    "order": "B+A",
+    "query": "In what city was Marie Curie born?",
+    "keyword": "Warsaw",
+    "output": "Warsaw",
+    "match": true
+  },
+  {
+    "method": "full_BA",
+    "order": "B+A",
+    "query": "What elements did Curie discover?",
+    "keyword": "polonium",
+    "output": "Curie discovered the elements polonium and radium.",
+    "match": true
+  },
+  {
+    "method": "full_BA",
+    "order": "B+A",
+    "query": "What year did Curie win the Chemistry Nobel?",
+    "keyword": "1911",
+    "output": "1911",
+    "match": true
+  },
+  {
+    "method": "full_BA",
+    "order": "B+A",
+    "query": "What are petites Curies?",
+    "keyword": "X-ray",
+    "output": "petites Curies were mobile X-ray units developed by Marie Curie used in World War One.",
+    "match": true
+  },
+  {
+    "method": "full_BA",
+    "order": "B+A",
+    "query": "Compare the birth years of Einstein and Curie.",
+    "keyword": "1879",
+    "output": "Marie Curie was born in 1867, while Albert Einstein was born in 1879.",
+    "match": true
+  },
+  {
+    "method": "full_BA",
+    "order": "B+A",
+    "query": "Who won more Nobel Prizes, Einstein or Curie?",
+    "keyword": "Curie",
+    "output": "Curie won more Nobel Prizes than Einstein. Marie Curie won two Nobel Prizes, while Albert Einstein won one.",
+    "match": true
+  },
+  {
+    "method": "iw_hkvd",
+    "recomp": 0.03,
+    "order": "A+B",
+    "query": "In what city was Einstein born?",
+    "keyword": "Ulm",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "iw_hkvd",
+    "recomp": 0.03,
+    "order": "A+B",
+    "query": "What year did Einstein get the Nobel Prize?",
+    "keyword": "1921",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "iw_hkvd",
+    "recomp": 0.03,
+    "order": "A+B",
+    "query": "When did Einstein become a US citizen?",
+    "keyword": "1940",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "iw_hkvd",
+    "recomp": 0.03,
+    "order": "A+B",
+    "query": "How many scientific papers did Einstein publish?",
+    "keyword": "300",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "iw_hkvd",
+    "recomp": 0.03,
+    "order": "A+B",
+    "query": "In what city was Marie Curie born?",
+    "keyword": "Warsaw",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "iw_hkvd",
+    "recomp": 0.03,
+    "order": "A+B",
+    "query": "What elements did Curie discover?",
+    "keyword": "polonium",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "iw_hkvd",
+    "recomp": 0.03,
+    "order": "A+B",
+    "query": "What year did Curie win the Chemistry Nobel?",
+    "keyword": "1911",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "iw_hkvd",
+    "recomp": 0.03,
+    "order": "A+B",
+    "query": "What are petites Curies?",
+    "keyword": "X-ray",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "iw_hkvd",
+    "recomp": 0.03,
+    "order": "A+B",
+    "query": "Compare the birth years of Einstein and Curie.",
+    "keyword": "1879",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "iw_hkvd",
+    "recomp": 0.03,
+    "order": "A+B",
+    "query": "Who won more Nobel Prizes, Einstein or Curie?",
+    "keyword": "Curie",
+    "output": " Marie Curie won more Nobel Prizes than Albert Einstein.",
+    "match": true,
+    "rouge_l": 1.0
+  },
+  {
+    "method": "iw_hkvd",
+    "recomp": 0.03,
+    "order": "B+A",
+    "query": "In what city was Einstein born?",
+    "keyword": "Ulm",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "iw_hkvd",
+    "recomp": 0.03,
+    "order": "B+A",
+    "query": "What year did Einstein get the Nobel Prize?",
+    "keyword": "1921",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "iw_hkvd",
+    "recomp": 0.03,
+    "order": "B+A",
+    "query": "When did Einstein become a US citizen?",
+    "keyword": "1940",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "iw_hkvd",
+    "recomp": 0.03,
+    "order": "B+A",
+    "query": "How many scientific papers did Einstein publish?",
+    "keyword": "300",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "iw_hkvd",
+    "recomp": 0.03,
+    "order": "B+A",
+    "query": "In what city was Marie Curie born?",
+    "keyword": "Warsaw",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "iw_hkvd",
+    "recomp": 0.03,
+    "order": "B+A",
+    "query": "What elements did Curie discover?",
+    "keyword": "polonium",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "iw_hkvd",
+    "recomp": 0.03,
+    "order": "B+A",
+    "query": "What year did Curie win the Chemistry Nobel?",
+    "keyword": "1911",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "iw_hkvd",
+    "recomp": 0.03,
+    "order": "B+A",
+    "query": "What are petites Curies?",
+    "keyword": "X-ray",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "iw_hkvd",
+    "recomp": 0.03,
+    "order": "B+A",
+    "query": "Compare the birth years of Einstein and Curie.",
+    "keyword": "1879",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "iw_hkvd",
+    "recomp": 0.03,
+    "order": "B+A",
+    "query": "Who won more Nobel Prizes, Einstein or Curie?",
+    "keyword": "Curie",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "iw_hkvd",
+    "recomp": 0.05,
+    "order": "A+B",
+    "query": "In what city was Einstein born?",
+    "keyword": "Ulm",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "iw_hkvd",
+    "recomp": 0.05,
+    "order": "A+B",
+    "query": "What year did Einstein get the Nobel Prize?",
+    "keyword": "1921",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "iw_hkvd",
+    "recomp": 0.05,
+    "order": "A+B",
+    "query": "When did Einstein become a US citizen?",
+    "keyword": "1940",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "iw_hkvd",
+    "recomp": 0.05,
+    "order": "A+B",
+    "query": "How many scientific papers did Einstein publish?",
+    "keyword": "300",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "iw_hkvd",
+    "recomp": 0.05,
+    "order": "A+B",
+    "query": "In what city was Marie Curie born?",
+    "keyword": "Warsaw",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "iw_hkvd",
+    "recomp": 0.05,
+    "order": "A+B",
+    "query": "What elements did Curie discover?",
+    "keyword": "polonium",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "iw_hkvd",
+    "recomp": 0.05,
+    "order": "A+B",
+    "query": "What year did Curie win the Chemistry Nobel?",
+    "keyword": "1911",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "iw_hkvd",
+    "recomp": 0.05,
+    "order": "A+B",
+    "query": "What are petites Curies?",
+    "keyword": "X-ray",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "iw_hkvd",
+    "recomp": 0.05,
+    "order": "A+B",
+    "query": "Compare the birth years of Einstein and Curie.",
+    "keyword": "1879",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "iw_hkvd",
+    "recomp": 0.05,
+    "order": "A+B",
+    "query": "Who won more Nobel Prizes, Einstein or Curie?",
+    "keyword": "Curie",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "iw_hkvd",
+    "recomp": 0.05,
+    "order": "B+A",
+    "query": "In what city was Einstein born?",
+    "keyword": "Ulm",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "iw_hkvd",
+    "recomp": 0.05,
+    "order": "B+A",
+    "query": "What year did Einstein get the Nobel Prize?",
+    "keyword": "1921",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "iw_hkvd",
+    "recomp": 0.05,
+    "order": "B+A",
+    "query": "When did Einstein become a US citizen?",
+    "keyword": "1940",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "iw_hkvd",
+    "recomp": 0.05,
+    "order": "B+A",
+    "query": "How many scientific papers did Einstein publish?",
+    "keyword": "300",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "iw_hkvd",
+    "recomp": 0.05,
+    "order": "B+A",
+    "query": "In what city was Marie Curie born?",
+    "keyword": "Warsaw",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "iw_hkvd",
+    "recomp": 0.05,
+    "order": "B+A",
+    "query": "What elements did Curie discover?",
+    "keyword": "polonium",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "iw_hkvd",
+    "recomp": 0.05,
+    "order": "B+A",
+    "query": "What year did Curie win the Chemistry Nobel?",
+    "keyword": "1911",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "iw_hkvd",
+    "recomp": 0.05,
+    "order": "B+A",
+    "query": "What are petites Curies?",
+    "keyword": "X-ray",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "iw_hkvd",
+    "recomp": 0.05,
+    "order": "B+A",
+    "query": "Compare the birth years of Einstein and Curie.",
+    "keyword": "1879",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "iw_hkvd",
+    "recomp": 0.05,
+    "order": "B+A",
+    "query": "Who won more Nobel Prizes, Einstein or Curie?",
+    "keyword": "Curie",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "iw_hkvd",
+    "recomp": 0.1,
+    "order": "A+B",
+    "query": "In what city was Einstein born?",
+    "keyword": "Ulm",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "iw_hkvd",
+    "recomp": 0.1,
+    "order": "A+B",
+    "query": "What year did Einstein get the Nobel Prize?",
+    "keyword": "1921",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "iw_hkvd",
+    "recomp": 0.1,
+    "order": "A+B",
+    "query": "When did Einstein become a US citizen?",
+    "keyword": "1940",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "iw_hkvd",
+    "recomp": 0.1,
+    "order": "A+B",
+    "query": "How many scientific papers did Einstein publish?",
+    "keyword": "300",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "iw_hkvd",
+    "recomp": 0.1,
+    "order": "A+B",
+    "query": "In what city was Marie Curie born?",
+    "keyword": "Warsaw",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "iw_hkvd",
+    "recomp": 0.1,
+    "order": "A+B",
+    "query": "What elements did Curie discover?",
+    "keyword": "polonium",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "iw_hkvd",
+    "recomp": 0.1,
+    "order": "A+B",
+    "query": "What year did Curie win the Chemistry Nobel?",
+    "keyword": "1911",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "iw_hkvd",
+    "recomp": 0.1,
+    "order": "A+B",
+    "query": "What are petites Curies?",
+    "keyword": "X-ray",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "iw_hkvd",
+    "recomp": 0.1,
+    "order": "A+B",
+    "query": "Compare the birth years of Einstein and Curie.",
+    "keyword": "1879",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "iw_hkvd",
+    "recomp": 0.1,
+    "order": "A+B",
+    "query": "Who won more Nobel Prizes, Einstein or Curie?",
+    "keyword": "Curie",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "iw_hkvd",
+    "recomp": 0.1,
+    "order": "B+A",
+    "query": "In what city was Einstein born?",
+    "keyword": "Ulm",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "iw_hkvd",
+    "recomp": 0.1,
+    "order": "B+A",
+    "query": "What year did Einstein get the Nobel Prize?",
+    "keyword": "1921",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "iw_hkvd",
+    "recomp": 0.1,
+    "order": "B+A",
+    "query": "When did Einstein become a US citizen?",
+    "keyword": "1940",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "iw_hkvd",
+    "recomp": 0.1,
+    "order": "B+A",
+    "query": "How many scientific papers did Einstein publish?",
+    "keyword": "300",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "iw_hkvd",
+    "recomp": 0.1,
+    "order": "B+A",
+    "query": "In what city was Marie Curie born?",
+    "keyword": "Warsaw",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "iw_hkvd",
+    "recomp": 0.1,
+    "order": "B+A",
+    "query": "What elements did Curie discover?",
+    "keyword": "polonium",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "iw_hkvd",
+    "recomp": 0.1,
+    "order": "B+A",
+    "query": "What year did Curie win the Chemistry Nobel?",
+    "keyword": "1911",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "iw_hkvd",
+    "recomp": 0.1,
+    "order": "B+A",
+    "query": "What are petites Curies?",
+    "keyword": "X-ray",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "iw_hkvd",
+    "recomp": 0.1,
+    "order": "B+A",
+    "query": "Compare the birth years of Einstein and Curie.",
+    "keyword": "1879",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "iw_hkvd",
+    "recomp": 0.1,
+    "order": "B+A",
+    "query": "Who won more Nobel Prizes, Einstein or Curie?",
+    "keyword": "Curie",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "iw_hkvd",
+    "recomp": 0.15,
+    "order": "A+B",
+    "query": "In what city was Einstein born?",
+    "keyword": "Ulm",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "iw_hkvd",
+    "recomp": 0.15,
+    "order": "A+B",
+    "query": "What year did Einstein get the Nobel Prize?",
+    "keyword": "1921",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "iw_hkvd",
+    "recomp": 0.15,
+    "order": "A+B",
+    "query": "When did Einstein become a US citizen?",
+    "keyword": "1940",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "iw_hkvd",
+    "recomp": 0.15,
+    "order": "A+B",
+    "query": "How many scientific papers did Einstein publish?",
+    "keyword": "300",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "iw_hkvd",
+    "recomp": 0.15,
+    "order": "A+B",
+    "query": "In what city was Marie Curie born?",
+    "keyword": "Warsaw",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "iw_hkvd",
+    "recomp": 0.15,
+    "order": "A+B",
+    "query": "What elements did Curie discover?",
+    "keyword": "polonium",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "iw_hkvd",
+    "recomp": 0.15,
+    "order": "A+B",
+    "query": "What year did Curie win the Chemistry Nobel?",
+    "keyword": "1911",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "iw_hkvd",
+    "recomp": 0.15,
+    "order": "A+B",
+    "query": "What are petites Curies?",
+    "keyword": "X-ray",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "iw_hkvd",
+    "recomp": 0.15,
+    "order": "A+B",
+    "query": "Compare the birth years of Einstein and Curie.",
+    "keyword": "1879",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "iw_hkvd",
+    "recomp": 0.15,
+    "order": "A+B",
+    "query": "Who won more Nobel Prizes, Einstein or Curie?",
+    "keyword": "Curie",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "iw_hkvd",
+    "recomp": 0.15,
+    "order": "B+A",
+    "query": "In what city was Einstein born?",
+    "keyword": "Ulm",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "iw_hkvd",
+    "recomp": 0.15,
+    "order": "B+A",
+    "query": "What year did Einstein get the Nobel Prize?",
+    "keyword": "1921",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "iw_hkvd",
+    "recomp": 0.15,
+    "order": "B+A",
+    "query": "When did Einstein become a US citizen?",
+    "keyword": "1940",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "iw_hkvd",
+    "recomp": 0.15,
+    "order": "B+A",
+    "query": "How many scientific papers did Einstein publish?",
+    "keyword": "300",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "iw_hkvd",
+    "recomp": 0.15,
+    "order": "B+A",
+    "query": "In what city was Marie Curie born?",
+    "keyword": "Warsaw",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "iw_hkvd",
+    "recomp": 0.15,
+    "order": "B+A",
+    "query": "What elements did Curie discover?",
+    "keyword": "polonium",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "iw_hkvd",
+    "recomp": 0.15,
+    "order": "B+A",
+    "query": "What year did Curie win the Chemistry Nobel?",
+    "keyword": "1911",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "iw_hkvd",
+    "recomp": 0.15,
+    "order": "B+A",
+    "query": "What are petites Curies?",
+    "keyword": "X-ray",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "iw_hkvd",
+    "recomp": 0.15,
+    "order": "B+A",
+    "query": "Compare the birth years of Einstein and Curie.",
+    "keyword": "1879",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "iw_hkvd",
+    "recomp": 0.15,
+    "order": "B+A",
+    "query": "Who won more Nobel Prizes, Einstein or Curie?",
+    "keyword": "Curie",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "iw_hkvd",
+    "recomp": 0.3,
+    "order": "A+B",
+    "query": "In what city was Einstein born?",
+    "keyword": "Ulm",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "iw_hkvd",
+    "recomp": 0.3,
+    "order": "A+B",
+    "query": "What year did Einstein get the Nobel Prize?",
+    "keyword": "1921",
+    "output": " 1921",
+    "match": true,
+    "rouge_l": 1.0
+  },
+  {
+    "method": "iw_hkvd",
+    "recomp": 0.3,
+    "order": "A+B",
+    "query": "When did Einstein become a US citizen?",
+    "keyword": "1940",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "iw_hkvd",
+    "recomp": 0.3,
+    "order": "A+B",
+    "query": "How many scientific papers did Einstein publish?",
+    "keyword": "300",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "iw_hkvd",
+    "recomp": 0.3,
+    "order": "A+B",
+    "query": "In what city was Marie Curie born?",
+    "keyword": "Warsaw",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "iw_hkvd",
+    "recomp": 0.3,
+    "order": "A+B",
+    "query": "What elements did Curie discover?",
+    "keyword": "polonium",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "iw_hkvd",
+    "recomp": 0.3,
+    "order": "A+B",
+    "query": "What year did Curie win the Chemistry Nobel?",
+    "keyword": "1911",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "iw_hkvd",
+    "recomp": 0.3,
+    "order": "A+B",
+    "query": "What are petites Curies?",
+    "keyword": "X-ray",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "iw_hkvd",
+    "recomp": 0.3,
+    "order": "A+B",
+    "query": "Compare the birth years of Einstein and Curie.",
+    "keyword": "1879",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "iw_hkvd",
+    "recomp": 0.3,
+    "order": "A+B",
+    "query": "Who won more Nobel Prizes, Einstein or Curie?",
+    "keyword": "Curie",
+    "output": " Marie Curie won more Nobel Prizes than Albert Einstein.",
+    "match": true,
+    "rouge_l": 1.0
+  },
+  {
+    "method": "iw_hkvd",
+    "recomp": 0.3,
+    "order": "B+A",
+    "query": "In what city was Einstein born?",
+    "keyword": "Ulm",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "iw_hkvd",
+    "recomp": 0.3,
+    "order": "B+A",
+    "query": "What year did Einstein get the Nobel Prize?",
+    "keyword": "1921",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "iw_hkvd",
+    "recomp": 0.3,
+    "order": "B+A",
+    "query": "When did Einstein become a US citizen?",
+    "keyword": "1940",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "iw_hkvd",
+    "recomp": 0.3,
+    "order": "B+A",
+    "query": "How many scientific papers did Einstein publish?",
+    "keyword": "300",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "iw_hkvd",
+    "recomp": 0.3,
+    "order": "B+A",
+    "query": "In what city was Marie Curie born?",
+    "keyword": "Warsaw",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "iw_hkvd",
+    "recomp": 0.3,
+    "order": "B+A",
+    "query": "What elements did Curie discover?",
+    "keyword": "polonium",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "iw_hkvd",
+    "recomp": 0.3,
+    "order": "B+A",
+    "query": "What year did Curie win the Chemistry Nobel?",
+    "keyword": "1911",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "iw_hkvd",
+    "recomp": 0.3,
+    "order": "B+A",
+    "query": "What are petites Curies?",
+    "keyword": "X-ray",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "iw_hkvd",
+    "recomp": 0.3,
+    "order": "B+A",
+    "query": "Compare the birth years of Einstein and Curie.",
+    "keyword": "1879",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "iw_hkvd",
+    "recomp": 0.3,
+    "order": "B+A",
+    "query": "Who won more Nobel Prizes, Einstein or Curie?",
+    "keyword": "Curie",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "diff_only",
+    "recomp": 0.03,
+    "order": "A+B",
+    "query": "In what city was Einstein born?",
+    "keyword": "Ulm",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "diff_only",
+    "recomp": 0.03,
+    "order": "A+B",
+    "query": "What year did Einstein get the Nobel Prize?",
+    "keyword": "1921",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "diff_only",
+    "recomp": 0.03,
+    "order": "A+B",
+    "query": "When did Einstein become a US citizen?",
+    "keyword": "1940",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "diff_only",
+    "recomp": 0.03,
+    "order": "A+B",
+    "query": "How many scientific papers did Einstein publish?",
+    "keyword": "300",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "diff_only",
+    "recomp": 0.03,
+    "order": "A+B",
+    "query": "In what city was Marie Curie born?",
+    "keyword": "Warsaw",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "diff_only",
+    "recomp": 0.03,
+    "order": "A+B",
+    "query": "What elements did Curie discover?",
+    "keyword": "polonium",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "diff_only",
+    "recomp": 0.03,
+    "order": "A+B",
+    "query": "What year did Curie win the Chemistry Nobel?",
+    "keyword": "1911",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "diff_only",
+    "recomp": 0.03,
+    "order": "A+B",
+    "query": "What are petites Curies?",
+    "keyword": "X-ray",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "diff_only",
+    "recomp": 0.03,
+    "order": "A+B",
+    "query": "Compare the birth years of Einstein and Curie.",
+    "keyword": "1879",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "diff_only",
+    "recomp": 0.03,
+    "order": "A+B",
+    "query": "Who won more Nobel Prizes, Einstein or Curie?",
+    "keyword": "Curie",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "diff_only",
+    "recomp": 0.03,
+    "order": "B+A",
+    "query": "In what city was Einstein born?",
+    "keyword": "Ulm",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "diff_only",
+    "recomp": 0.03,
+    "order": "B+A",
+    "query": "What year did Einstein get the Nobel Prize?",
+    "keyword": "1921",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "diff_only",
+    "recomp": 0.03,
+    "order": "B+A",
+    "query": "When did Einstein become a US citizen?",
+    "keyword": "1940",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "diff_only",
+    "recomp": 0.03,
+    "order": "B+A",
+    "query": "How many scientific papers did Einstein publish?",
+    "keyword": "300",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "diff_only",
+    "recomp": 0.03,
+    "order": "B+A",
+    "query": "In what city was Marie Curie born?",
+    "keyword": "Warsaw",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "diff_only",
+    "recomp": 0.03,
+    "order": "B+A",
+    "query": "What elements did Curie discover?",
+    "keyword": "polonium",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "diff_only",
+    "recomp": 0.03,
+    "order": "B+A",
+    "query": "What year did Curie win the Chemistry Nobel?",
+    "keyword": "1911",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "diff_only",
+    "recomp": 0.03,
+    "order": "B+A",
+    "query": "What are petites Curies?",
+    "keyword": "X-ray",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "diff_only",
+    "recomp": 0.03,
+    "order": "B+A",
+    "query": "Compare the birth years of Einstein and Curie.",
+    "keyword": "1879",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "diff_only",
+    "recomp": 0.03,
+    "order": "B+A",
+    "query": "Who won more Nobel Prizes, Einstein or Curie?",
+    "keyword": "Curie",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "diff_only",
+    "recomp": 0.05,
+    "order": "A+B",
+    "query": "In what city was Einstein born?",
+    "keyword": "Ulm",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "diff_only",
+    "recomp": 0.05,
+    "order": "A+B",
+    "query": "What year did Einstein get the Nobel Prize?",
+    "keyword": "1921",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "diff_only",
+    "recomp": 0.05,
+    "order": "A+B",
+    "query": "When did Einstein become a US citizen?",
+    "keyword": "1940",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "diff_only",
+    "recomp": 0.05,
+    "order": "A+B",
+    "query": "How many scientific papers did Einstein publish?",
+    "keyword": "300",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "diff_only",
+    "recomp": 0.05,
+    "order": "A+B",
+    "query": "In what city was Marie Curie born?",
+    "keyword": "Warsaw",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "diff_only",
+    "recomp": 0.05,
+    "order": "A+B",
+    "query": "What elements did Curie discover?",
+    "keyword": "polonium",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "diff_only",
+    "recomp": 0.05,
+    "order": "A+B",
+    "query": "What year did Curie win the Chemistry Nobel?",
+    "keyword": "1911",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "diff_only",
+    "recomp": 0.05,
+    "order": "A+B",
+    "query": "What are petites Curies?",
+    "keyword": "X-ray",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "diff_only",
+    "recomp": 0.05,
+    "order": "A+B",
+    "query": "Compare the birth years of Einstein and Curie.",
+    "keyword": "1879",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "diff_only",
+    "recomp": 0.05,
+    "order": "A+B",
+    "query": "Who won more Nobel Prizes, Einstein or Curie?",
+    "keyword": "Curie",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "diff_only",
+    "recomp": 0.05,
+    "order": "B+A",
+    "query": "In what city was Einstein born?",
+    "keyword": "Ulm",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "diff_only",
+    "recomp": 0.05,
+    "order": "B+A",
+    "query": "What year did Einstein get the Nobel Prize?",
+    "keyword": "1921",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "diff_only",
+    "recomp": 0.05,
+    "order": "B+A",
+    "query": "When did Einstein become a US citizen?",
+    "keyword": "1940",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "diff_only",
+    "recomp": 0.05,
+    "order": "B+A",
+    "query": "How many scientific papers did Einstein publish?",
+    "keyword": "300",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "diff_only",
+    "recomp": 0.05,
+    "order": "B+A",
+    "query": "In what city was Marie Curie born?",
+    "keyword": "Warsaw",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "diff_only",
+    "recomp": 0.05,
+    "order": "B+A",
+    "query": "What elements did Curie discover?",
+    "keyword": "polonium",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "diff_only",
+    "recomp": 0.05,
+    "order": "B+A",
+    "query": "What year did Curie win the Chemistry Nobel?",
+    "keyword": "1911",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "diff_only",
+    "recomp": 0.05,
+    "order": "B+A",
+    "query": "What are petites Curies?",
+    "keyword": "X-ray",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "diff_only",
+    "recomp": 0.05,
+    "order": "B+A",
+    "query": "Compare the birth years of Einstein and Curie.",
+    "keyword": "1879",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "diff_only",
+    "recomp": 0.05,
+    "order": "B+A",
+    "query": "Who won more Nobel Prizes, Einstein or Curie?",
+    "keyword": "Curie",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "diff_only",
+    "recomp": 0.1,
+    "order": "A+B",
+    "query": "In what city was Einstein born?",
+    "keyword": "Ulm",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "diff_only",
+    "recomp": 0.1,
+    "order": "A+B",
+    "query": "What year did Einstein get the Nobel Prize?",
+    "keyword": "1921",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "diff_only",
+    "recomp": 0.1,
+    "order": "A+B",
+    "query": "When did Einstein become a US citizen?",
+    "keyword": "1940",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "diff_only",
+    "recomp": 0.1,
+    "order": "A+B",
+    "query": "How many scientific papers did Einstein publish?",
+    "keyword": "300",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "diff_only",
+    "recomp": 0.1,
+    "order": "A+B",
+    "query": "In what city was Marie Curie born?",
+    "keyword": "Warsaw",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "diff_only",
+    "recomp": 0.1,
+    "order": "A+B",
+    "query": "What elements did Curie discover?",
+    "keyword": "polonium",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "diff_only",
+    "recomp": 0.1,
+    "order": "A+B",
+    "query": "What year did Curie win the Chemistry Nobel?",
+    "keyword": "1911",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "diff_only",
+    "recomp": 0.1,
+    "order": "A+B",
+    "query": "What are petites Curies?",
+    "keyword": "X-ray",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "diff_only",
+    "recomp": 0.1,
+    "order": "A+B",
+    "query": "Compare the birth years of Einstein and Curie.",
+    "keyword": "1879",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "diff_only",
+    "recomp": 0.1,
+    "order": "A+B",
+    "query": "Who won more Nobel Prizes, Einstein or Curie?",
+    "keyword": "Curie",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "diff_only",
+    "recomp": 0.1,
+    "order": "B+A",
+    "query": "In what city was Einstein born?",
+    "keyword": "Ulm",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "diff_only",
+    "recomp": 0.1,
+    "order": "B+A",
+    "query": "What year did Einstein get the Nobel Prize?",
+    "keyword": "1921",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "diff_only",
+    "recomp": 0.1,
+    "order": "B+A",
+    "query": "When did Einstein become a US citizen?",
+    "keyword": "1940",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "diff_only",
+    "recomp": 0.1,
+    "order": "B+A",
+    "query": "How many scientific papers did Einstein publish?",
+    "keyword": "300",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "diff_only",
+    "recomp": 0.1,
+    "order": "B+A",
+    "query": "In what city was Marie Curie born?",
+    "keyword": "Warsaw",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "diff_only",
+    "recomp": 0.1,
+    "order": "B+A",
+    "query": "What elements did Curie discover?",
+    "keyword": "polonium",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "diff_only",
+    "recomp": 0.1,
+    "order": "B+A",
+    "query": "What year did Curie win the Chemistry Nobel?",
+    "keyword": "1911",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "diff_only",
+    "recomp": 0.1,
+    "order": "B+A",
+    "query": "What are petites Curies?",
+    "keyword": "X-ray",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "diff_only",
+    "recomp": 0.1,
+    "order": "B+A",
+    "query": "Compare the birth years of Einstein and Curie.",
+    "keyword": "1879",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "diff_only",
+    "recomp": 0.1,
+    "order": "B+A",
+    "query": "Who won more Nobel Prizes, Einstein or Curie?",
+    "keyword": "Curie",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "diff_only",
+    "recomp": 0.15,
+    "order": "A+B",
+    "query": "In what city was Einstein born?",
+    "keyword": "Ulm",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "diff_only",
+    "recomp": 0.15,
+    "order": "A+B",
+    "query": "What year did Einstein get the Nobel Prize?",
+    "keyword": "1921",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "diff_only",
+    "recomp": 0.15,
+    "order": "A+B",
+    "query": "When did Einstein become a US citizen?",
+    "keyword": "1940",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "diff_only",
+    "recomp": 0.15,
+    "order": "A+B",
+    "query": "How many scientific papers did Einstein publish?",
+    "keyword": "300",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "diff_only",
+    "recomp": 0.15,
+    "order": "A+B",
+    "query": "In what city was Marie Curie born?",
+    "keyword": "Warsaw",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "diff_only",
+    "recomp": 0.15,
+    "order": "A+B",
+    "query": "What elements did Curie discover?",
+    "keyword": "polonium",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "diff_only",
+    "recomp": 0.15,
+    "order": "A+B",
+    "query": "What year did Curie win the Chemistry Nobel?",
+    "keyword": "1911",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "diff_only",
+    "recomp": 0.15,
+    "order": "A+B",
+    "query": "What are petites Curies?",
+    "keyword": "X-ray",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "diff_only",
+    "recomp": 0.15,
+    "order": "A+B",
+    "query": "Compare the birth years of Einstein and Curie.",
+    "keyword": "1879",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "diff_only",
+    "recomp": 0.15,
+    "order": "A+B",
+    "query": "Who won more Nobel Prizes, Einstein or Curie?",
+    "keyword": "Curie",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "diff_only",
+    "recomp": 0.15,
+    "order": "B+A",
+    "query": "In what city was Einstein born?",
+    "keyword": "Ulm",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "diff_only",
+    "recomp": 0.15,
+    "order": "B+A",
+    "query": "What year did Einstein get the Nobel Prize?",
+    "keyword": "1921",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "diff_only",
+    "recomp": 0.15,
+    "order": "B+A",
+    "query": "When did Einstein become a US citizen?",
+    "keyword": "1940",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "diff_only",
+    "recomp": 0.15,
+    "order": "B+A",
+    "query": "How many scientific papers did Einstein publish?",
+    "keyword": "300",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "diff_only",
+    "recomp": 0.15,
+    "order": "B+A",
+    "query": "In what city was Marie Curie born?",
+    "keyword": "Warsaw",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "diff_only",
+    "recomp": 0.15,
+    "order": "B+A",
+    "query": "What elements did Curie discover?",
+    "keyword": "polonium",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "diff_only",
+    "recomp": 0.15,
+    "order": "B+A",
+    "query": "What year did Curie win the Chemistry Nobel?",
+    "keyword": "1911",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "diff_only",
+    "recomp": 0.15,
+    "order": "B+A",
+    "query": "What are petites Curies?",
+    "keyword": "X-ray",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "diff_only",
+    "recomp": 0.15,
+    "order": "B+A",
+    "query": "Compare the birth years of Einstein and Curie.",
+    "keyword": "1879",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "diff_only",
+    "recomp": 0.15,
+    "order": "B+A",
+    "query": "Who won more Nobel Prizes, Einstein or Curie?",
+    "keyword": "Curie",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "diff_only",
+    "recomp": 0.3,
+    "order": "A+B",
+    "query": "In what city was Einstein born?",
+    "keyword": "Ulm",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "diff_only",
+    "recomp": 0.3,
+    "order": "A+B",
+    "query": "What year did Einstein get the Nobel Prize?",
+    "keyword": "1921",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "diff_only",
+    "recomp": 0.3,
+    "order": "A+B",
+    "query": "When did Einstein become a US citizen?",
+    "keyword": "1940",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "diff_only",
+    "recomp": 0.3,
+    "order": "A+B",
+    "query": "How many scientific papers did Einstein publish?",
+    "keyword": "300",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "diff_only",
+    "recomp": 0.3,
+    "order": "A+B",
+    "query": "In what city was Marie Curie born?",
+    "keyword": "Warsaw",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "diff_only",
+    "recomp": 0.3,
+    "order": "A+B",
+    "query": "What elements did Curie discover?",
+    "keyword": "polonium",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "diff_only",
+    "recomp": 0.3,
+    "order": "A+B",
+    "query": "What year did Curie win the Chemistry Nobel?",
+    "keyword": "1911",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "diff_only",
+    "recomp": 0.3,
+    "order": "A+B",
+    "query": "What are petites Curies?",
+    "keyword": "X-ray",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "diff_only",
+    "recomp": 0.3,
+    "order": "A+B",
+    "query": "Compare the birth years of Einstein and Curie.",
+    "keyword": "1879",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "diff_only",
+    "recomp": 0.3,
+    "order": "A+B",
+    "query": "Who won more Nobel Prizes, Einstein or Curie?",
+    "keyword": "Curie",
+    "output": " Marie Curie won more Nobel Prizes than Albert Einstein.",
+    "match": true,
+    "rouge_l": 1.0
+  },
+  {
+    "method": "diff_only",
+    "recomp": 0.3,
+    "order": "B+A",
+    "query": "In what city was Einstein born?",
+    "keyword": "Ulm",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "diff_only",
+    "recomp": 0.3,
+    "order": "B+A",
+    "query": "What year did Einstein get the Nobel Prize?",
+    "keyword": "1921",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "diff_only",
+    "recomp": 0.3,
+    "order": "B+A",
+    "query": "When did Einstein become a US citizen?",
+    "keyword": "1940",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "diff_only",
+    "recomp": 0.3,
+    "order": "B+A",
+    "query": "How many scientific papers did Einstein publish?",
+    "keyword": "300",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "diff_only",
+    "recomp": 0.3,
+    "order": "B+A",
+    "query": "In what city was Marie Curie born?",
+    "keyword": "Warsaw",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "diff_only",
+    "recomp": 0.3,
+    "order": "B+A",
+    "query": "What elements did Curie discover?",
+    "keyword": "polonium",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "diff_only",
+    "recomp": 0.3,
+    "order": "B+A",
+    "query": "What year did Curie win the Chemistry Nobel?",
+    "keyword": "1911",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "diff_only",
+    "recomp": 0.3,
+    "order": "B+A",
+    "query": "What are petites Curies?",
+    "keyword": "X-ray",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "diff_only",
+    "recomp": 0.3,
+    "order": "B+A",
+    "query": "Compare the birth years of Einstein and Curie.",
+    "keyword": "1879",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "diff_only",
+    "recomp": 0.3,
+    "order": "B+A",
+    "query": "Who won more Nobel Prizes, Einstein or Curie?",
+    "keyword": "Curie",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "importance_only",
+    "recomp": 0.03,
+    "order": "A+B",
+    "query": "In what city was Einstein born?",
+    "keyword": "Ulm",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "importance_only",
+    "recomp": 0.03,
+    "order": "A+B",
+    "query": "What year did Einstein get the Nobel Prize?",
+    "keyword": "1921",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "importance_only",
+    "recomp": 0.03,
+    "order": "A+B",
+    "query": "When did Einstein become a US citizen?",
+    "keyword": "1940",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "importance_only",
+    "recomp": 0.03,
+    "order": "A+B",
+    "query": "How many scientific papers did Einstein publish?",
+    "keyword": "300",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "importance_only",
+    "recomp": 0.03,
+    "order": "A+B",
+    "query": "In what city was Marie Curie born?",
+    "keyword": "Warsaw",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "importance_only",
+    "recomp": 0.03,
+    "order": "A+B",
+    "query": "What elements did Curie discover?",
+    "keyword": "polonium",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "importance_only",
+    "recomp": 0.03,
+    "order": "A+B",
+    "query": "What year did Curie win the Chemistry Nobel?",
+    "keyword": "1911",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "importance_only",
+    "recomp": 0.03,
+    "order": "A+B",
+    "query": "What are petites Curies?",
+    "keyword": "X-ray",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "importance_only",
+    "recomp": 0.03,
+    "order": "A+B",
+    "query": "Compare the birth years of Einstein and Curie.",
+    "keyword": "1879",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "importance_only",
+    "recomp": 0.03,
+    "order": "A+B",
+    "query": "Who won more Nobel Prizes, Einstein or Curie?",
+    "keyword": "Curie",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "importance_only",
+    "recomp": 0.03,
+    "order": "B+A",
+    "query": "In what city was Einstein born?",
+    "keyword": "Ulm",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "importance_only",
+    "recomp": 0.03,
+    "order": "B+A",
+    "query": "What year did Einstein get the Nobel Prize?",
+    "keyword": "1921",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "importance_only",
+    "recomp": 0.03,
+    "order": "B+A",
+    "query": "When did Einstein become a US citizen?",
+    "keyword": "1940",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "importance_only",
+    "recomp": 0.03,
+    "order": "B+A",
+    "query": "How many scientific papers did Einstein publish?",
+    "keyword": "300",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "importance_only",
+    "recomp": 0.03,
+    "order": "B+A",
+    "query": "In what city was Marie Curie born?",
+    "keyword": "Warsaw",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "importance_only",
+    "recomp": 0.03,
+    "order": "B+A",
+    "query": "What elements did Curie discover?",
+    "keyword": "polonium",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "importance_only",
+    "recomp": 0.03,
+    "order": "B+A",
+    "query": "What year did Curie win the Chemistry Nobel?",
+    "keyword": "1911",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "importance_only",
+    "recomp": 0.03,
+    "order": "B+A",
+    "query": "What are petites Curies?",
+    "keyword": "X-ray",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "importance_only",
+    "recomp": 0.03,
+    "order": "B+A",
+    "query": "Compare the birth years of Einstein and Curie.",
+    "keyword": "1879",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "importance_only",
+    "recomp": 0.03,
+    "order": "B+A",
+    "query": "Who won more Nobel Prizes, Einstein or Curie?",
+    "keyword": "Curie",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "importance_only",
+    "recomp": 0.05,
+    "order": "A+B",
+    "query": "In what city was Einstein born?",
+    "keyword": "Ulm",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "importance_only",
+    "recomp": 0.05,
+    "order": "A+B",
+    "query": "What year did Einstein get the Nobel Prize?",
+    "keyword": "1921",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "importance_only",
+    "recomp": 0.05,
+    "order": "A+B",
+    "query": "When did Einstein become a US citizen?",
+    "keyword": "1940",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "importance_only",
+    "recomp": 0.05,
+    "order": "A+B",
+    "query": "How many scientific papers did Einstein publish?",
+    "keyword": "300",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "importance_only",
+    "recomp": 0.05,
+    "order": "A+B",
+    "query": "In what city was Marie Curie born?",
+    "keyword": "Warsaw",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "importance_only",
+    "recomp": 0.05,
+    "order": "A+B",
+    "query": "What elements did Curie discover?",
+    "keyword": "polonium",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "importance_only",
+    "recomp": 0.05,
+    "order": "A+B",
+    "query": "What year did Curie win the Chemistry Nobel?",
+    "keyword": "1911",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "importance_only",
+    "recomp": 0.05,
+    "order": "A+B",
+    "query": "What are petites Curies?",
+    "keyword": "X-ray",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "importance_only",
+    "recomp": 0.05,
+    "order": "A+B",
+    "query": "Compare the birth years of Einstein and Curie.",
+    "keyword": "1879",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "importance_only",
+    "recomp": 0.05,
+    "order": "A+B",
+    "query": "Who won more Nobel Prizes, Einstein or Curie?",
+    "keyword": "Curie",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "importance_only",
+    "recomp": 0.05,
+    "order": "B+A",
+    "query": "In what city was Einstein born?",
+    "keyword": "Ulm",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "importance_only",
+    "recomp": 0.05,
+    "order": "B+A",
+    "query": "What year did Einstein get the Nobel Prize?",
+    "keyword": "1921",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "importance_only",
+    "recomp": 0.05,
+    "order": "B+A",
+    "query": "When did Einstein become a US citizen?",
+    "keyword": "1940",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "importance_only",
+    "recomp": 0.05,
+    "order": "B+A",
+    "query": "How many scientific papers did Einstein publish?",
+    "keyword": "300",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "importance_only",
+    "recomp": 0.05,
+    "order": "B+A",
+    "query": "In what city was Marie Curie born?",
+    "keyword": "Warsaw",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "importance_only",
+    "recomp": 0.05,
+    "order": "B+A",
+    "query": "What elements did Curie discover?",
+    "keyword": "polonium",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "importance_only",
+    "recomp": 0.05,
+    "order": "B+A",
+    "query": "What year did Curie win the Chemistry Nobel?",
+    "keyword": "1911",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "importance_only",
+    "recomp": 0.05,
+    "order": "B+A",
+    "query": "What are petites Curies?",
+    "keyword": "X-ray",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "importance_only",
+    "recomp": 0.05,
+    "order": "B+A",
+    "query": "Compare the birth years of Einstein and Curie.",
+    "keyword": "1879",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "importance_only",
+    "recomp": 0.05,
+    "order": "B+A",
+    "query": "Who won more Nobel Prizes, Einstein or Curie?",
+    "keyword": "Curie",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "importance_only",
+    "recomp": 0.1,
+    "order": "A+B",
+    "query": "In what city was Einstein born?",
+    "keyword": "Ulm",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "importance_only",
+    "recomp": 0.1,
+    "order": "A+B",
+    "query": "What year did Einstein get the Nobel Prize?",
+    "keyword": "1921",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "importance_only",
+    "recomp": 0.1,
+    "order": "A+B",
+    "query": "When did Einstein become a US citizen?",
+    "keyword": "1940",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "importance_only",
+    "recomp": 0.1,
+    "order": "A+B",
+    "query": "How many scientific papers did Einstein publish?",
+    "keyword": "300",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "importance_only",
+    "recomp": 0.1,
+    "order": "A+B",
+    "query": "In what city was Marie Curie born?",
+    "keyword": "Warsaw",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "importance_only",
+    "recomp": 0.1,
+    "order": "A+B",
+    "query": "What elements did Curie discover?",
+    "keyword": "polonium",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "importance_only",
+    "recomp": 0.1,
+    "order": "A+B",
+    "query": "What year did Curie win the Chemistry Nobel?",
+    "keyword": "1911",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "importance_only",
+    "recomp": 0.1,
+    "order": "A+B",
+    "query": "What are petites Curies?",
+    "keyword": "X-ray",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "importance_only",
+    "recomp": 0.1,
+    "order": "A+B",
+    "query": "Compare the birth years of Einstein and Curie.",
+    "keyword": "1879",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "importance_only",
+    "recomp": 0.1,
+    "order": "A+B",
+    "query": "Who won more Nobel Prizes, Einstein or Curie?",
+    "keyword": "Curie",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "importance_only",
+    "recomp": 0.1,
+    "order": "B+A",
+    "query": "In what city was Einstein born?",
+    "keyword": "Ulm",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "importance_only",
+    "recomp": 0.1,
+    "order": "B+A",
+    "query": "What year did Einstein get the Nobel Prize?",
+    "keyword": "1921",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "importance_only",
+    "recomp": 0.1,
+    "order": "B+A",
+    "query": "When did Einstein become a US citizen?",
+    "keyword": "1940",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "importance_only",
+    "recomp": 0.1,
+    "order": "B+A",
+    "query": "How many scientific papers did Einstein publish?",
+    "keyword": "300",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "importance_only",
+    "recomp": 0.1,
+    "order": "B+A",
+    "query": "In what city was Marie Curie born?",
+    "keyword": "Warsaw",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "importance_only",
+    "recomp": 0.1,
+    "order": "B+A",
+    "query": "What elements did Curie discover?",
+    "keyword": "polonium",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "importance_only",
+    "recomp": 0.1,
+    "order": "B+A",
+    "query": "What year did Curie win the Chemistry Nobel?",
+    "keyword": "1911",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "importance_only",
+    "recomp": 0.1,
+    "order": "B+A",
+    "query": "What are petites Curies?",
+    "keyword": "X-ray",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "importance_only",
+    "recomp": 0.1,
+    "order": "B+A",
+    "query": "Compare the birth years of Einstein and Curie.",
+    "keyword": "1879",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "importance_only",
+    "recomp": 0.1,
+    "order": "B+A",
+    "query": "Who won more Nobel Prizes, Einstein or Curie?",
+    "keyword": "Curie",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "importance_only",
+    "recomp": 0.15,
+    "order": "A+B",
+    "query": "In what city was Einstein born?",
+    "keyword": "Ulm",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "importance_only",
+    "recomp": 0.15,
+    "order": "A+B",
+    "query": "What year did Einstein get the Nobel Prize?",
+    "keyword": "1921",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "importance_only",
+    "recomp": 0.15,
+    "order": "A+B",
+    "query": "When did Einstein become a US citizen?",
+    "keyword": "1940",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "importance_only",
+    "recomp": 0.15,
+    "order": "A+B",
+    "query": "How many scientific papers did Einstein publish?",
+    "keyword": "300",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "importance_only",
+    "recomp": 0.15,
+    "order": "A+B",
+    "query": "In what city was Marie Curie born?",
+    "keyword": "Warsaw",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "importance_only",
+    "recomp": 0.15,
+    "order": "A+B",
+    "query": "What elements did Curie discover?",
+    "keyword": "polonium",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "importance_only",
+    "recomp": 0.15,
+    "order": "A+B",
+    "query": "What year did Curie win the Chemistry Nobel?",
+    "keyword": "1911",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "importance_only",
+    "recomp": 0.15,
+    "order": "A+B",
+    "query": "What are petites Curies?",
+    "keyword": "X-ray",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "importance_only",
+    "recomp": 0.15,
+    "order": "A+B",
+    "query": "Compare the birth years of Einstein and Curie.",
+    "keyword": "1879",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "importance_only",
+    "recomp": 0.15,
+    "order": "A+B",
+    "query": "Who won more Nobel Prizes, Einstein or Curie?",
+    "keyword": "Curie",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "importance_only",
+    "recomp": 0.15,
+    "order": "B+A",
+    "query": "In what city was Einstein born?",
+    "keyword": "Ulm",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "importance_only",
+    "recomp": 0.15,
+    "order": "B+A",
+    "query": "What year did Einstein get the Nobel Prize?",
+    "keyword": "1921",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "importance_only",
+    "recomp": 0.15,
+    "order": "B+A",
+    "query": "When did Einstein become a US citizen?",
+    "keyword": "1940",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "importance_only",
+    "recomp": 0.15,
+    "order": "B+A",
+    "query": "How many scientific papers did Einstein publish?",
+    "keyword": "300",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "importance_only",
+    "recomp": 0.15,
+    "order": "B+A",
+    "query": "In what city was Marie Curie born?",
+    "keyword": "Warsaw",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "importance_only",
+    "recomp": 0.15,
+    "order": "B+A",
+    "query": "What elements did Curie discover?",
+    "keyword": "polonium",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "importance_only",
+    "recomp": 0.15,
+    "order": "B+A",
+    "query": "What year did Curie win the Chemistry Nobel?",
+    "keyword": "1911",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "importance_only",
+    "recomp": 0.15,
+    "order": "B+A",
+    "query": "What are petites Curies?",
+    "keyword": "X-ray",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "importance_only",
+    "recomp": 0.15,
+    "order": "B+A",
+    "query": "Compare the birth years of Einstein and Curie.",
+    "keyword": "1879",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "importance_only",
+    "recomp": 0.15,
+    "order": "B+A",
+    "query": "Who won more Nobel Prizes, Einstein or Curie?",
+    "keyword": "Curie",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "importance_only",
+    "recomp": 0.3,
+    "order": "A+B",
+    "query": "In what city was Einstein born?",
+    "keyword": "Ulm",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "importance_only",
+    "recomp": 0.3,
+    "order": "A+B",
+    "query": "What year did Einstein get the Nobel Prize?",
+    "keyword": "1921",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "importance_only",
+    "recomp": 0.3,
+    "order": "A+B",
+    "query": "When did Einstein become a US citizen?",
+    "keyword": "1940",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "importance_only",
+    "recomp": 0.3,
+    "order": "A+B",
+    "query": "How many scientific papers did Einstein publish?",
+    "keyword": "300",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "importance_only",
+    "recomp": 0.3,
+    "order": "A+B",
+    "query": "In what city was Marie Curie born?",
+    "keyword": "Warsaw",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "importance_only",
+    "recomp": 0.3,
+    "order": "A+B",
+    "query": "What elements did Curie discover?",
+    "keyword": "polonium",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "importance_only",
+    "recomp": 0.3,
+    "order": "A+B",
+    "query": "What year did Curie win the Chemistry Nobel?",
+    "keyword": "1911",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "importance_only",
+    "recomp": 0.3,
+    "order": "A+B",
+    "query": "What are petites Curies?",
+    "keyword": "X-ray",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "importance_only",
+    "recomp": 0.3,
+    "order": "A+B",
+    "query": "Compare the birth years of Einstein and Curie.",
+    "keyword": "1879",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "importance_only",
+    "recomp": 0.3,
+    "order": "A+B",
+    "query": "Who won more Nobel Prizes, Einstein or Curie?",
+    "keyword": "Curie",
+    "output": " Marie Curie won more Nobel Prizes than Albert Einstein.",
+    "match": true,
+    "rouge_l": 1.0
+  },
+  {
+    "method": "importance_only",
+    "recomp": 0.3,
+    "order": "B+A",
+    "query": "In what city was Einstein born?",
+    "keyword": "Ulm",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "importance_only",
+    "recomp": 0.3,
+    "order": "B+A",
+    "query": "What year did Einstein get the Nobel Prize?",
+    "keyword": "1921",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "importance_only",
+    "recomp": 0.3,
+    "order": "B+A",
+    "query": "When did Einstein become a US citizen?",
+    "keyword": "1940",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "importance_only",
+    "recomp": 0.3,
+    "order": "B+A",
+    "query": "How many scientific papers did Einstein publish?",
+    "keyword": "300",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "importance_only",
+    "recomp": 0.3,
+    "order": "B+A",
+    "query": "In what city was Marie Curie born?",
+    "keyword": "Warsaw",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "importance_only",
+    "recomp": 0.3,
+    "order": "B+A",
+    "query": "What elements did Curie discover?",
+    "keyword": "polonium",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "importance_only",
+    "recomp": 0.3,
+    "order": "B+A",
+    "query": "What year did Curie win the Chemistry Nobel?",
+    "keyword": "1911",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "importance_only",
+    "recomp": 0.3,
+    "order": "B+A",
+    "query": "What are petites Curies?",
+    "keyword": "X-ray",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "importance_only",
+    "recomp": 0.3,
+    "order": "B+A",
+    "query": "Compare the birth years of Einstein and Curie.",
+    "keyword": "1879",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "importance_only",
+    "recomp": 0.3,
+    "order": "B+A",
+    "query": "Who won more Nobel Prizes, Einstein or Curie?",
+    "keyword": "Curie",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "random",
+    "recomp": 0.03,
+    "order": "A+B",
+    "query": "In what city was Einstein born?",
+    "keyword": "Ulm",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "random",
+    "recomp": 0.03,
+    "order": "A+B",
+    "query": "What year did Einstein get the Nobel Prize?",
+    "keyword": "1921",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "random",
+    "recomp": 0.03,
+    "order": "A+B",
+    "query": "When did Einstein become a US citizen?",
+    "keyword": "1940",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "random",
+    "recomp": 0.03,
+    "order": "A+B",
+    "query": "How many scientific papers did Einstein publish?",
+    "keyword": "300",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "random",
+    "recomp": 0.03,
+    "order": "A+B",
+    "query": "In what city was Marie Curie born?",
+    "keyword": "Warsaw",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "random",
+    "recomp": 0.03,
+    "order": "A+B",
+    "query": "What elements did Curie discover?",
+    "keyword": "polonium",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "random",
+    "recomp": 0.03,
+    "order": "A+B",
+    "query": "What year did Curie win the Chemistry Nobel?",
+    "keyword": "1911",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "random",
+    "recomp": 0.03,
+    "order": "A+B",
+    "query": "What are petites Curies?",
+    "keyword": "X-ray",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "random",
+    "recomp": 0.03,
+    "order": "A+B",
+    "query": "Compare the birth years of Einstein and Curie.",
+    "keyword": "1879",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "random",
+    "recomp": 0.03,
+    "order": "A+B",
+    "query": "Who won more Nobel Prizes, Einstein or Curie?",
+    "keyword": "Curie",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "random",
+    "recomp": 0.03,
+    "order": "B+A",
+    "query": "In what city was Einstein born?",
+    "keyword": "Ulm",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "random",
+    "recomp": 0.03,
+    "order": "B+A",
+    "query": "What year did Einstein get the Nobel Prize?",
+    "keyword": "1921",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "random",
+    "recomp": 0.03,
+    "order": "B+A",
+    "query": "When did Einstein become a US citizen?",
+    "keyword": "1940",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "random",
+    "recomp": 0.03,
+    "order": "B+A",
+    "query": "How many scientific papers did Einstein publish?",
+    "keyword": "300",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "random",
+    "recomp": 0.03,
+    "order": "B+A",
+    "query": "In what city was Marie Curie born?",
+    "keyword": "Warsaw",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "random",
+    "recomp": 0.03,
+    "order": "B+A",
+    "query": "What elements did Curie discover?",
+    "keyword": "polonium",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "random",
+    "recomp": 0.03,
+    "order": "B+A",
+    "query": "What year did Curie win the Chemistry Nobel?",
+    "keyword": "1911",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "random",
+    "recomp": 0.03,
+    "order": "B+A",
+    "query": "What are petites Curies?",
+    "keyword": "X-ray",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "random",
+    "recomp": 0.03,
+    "order": "B+A",
+    "query": "Compare the birth years of Einstein and Curie.",
+    "keyword": "1879",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "random",
+    "recomp": 0.03,
+    "order": "B+A",
+    "query": "Who won more Nobel Prizes, Einstein or Curie?",
+    "keyword": "Curie",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "random",
+    "recomp": 0.05,
+    "order": "A+B",
+    "query": "In what city was Einstein born?",
+    "keyword": "Ulm",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "random",
+    "recomp": 0.05,
+    "order": "A+B",
+    "query": "What year did Einstein get the Nobel Prize?",
+    "keyword": "1921",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "random",
+    "recomp": 0.05,
+    "order": "A+B",
+    "query": "When did Einstein become a US citizen?",
+    "keyword": "1940",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "random",
+    "recomp": 0.05,
+    "order": "A+B",
+    "query": "How many scientific papers did Einstein publish?",
+    "keyword": "300",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "random",
+    "recomp": 0.05,
+    "order": "A+B",
+    "query": "In what city was Marie Curie born?",
+    "keyword": "Warsaw",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "random",
+    "recomp": 0.05,
+    "order": "A+B",
+    "query": "What elements did Curie discover?",
+    "keyword": "polonium",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "random",
+    "recomp": 0.05,
+    "order": "A+B",
+    "query": "What year did Curie win the Chemistry Nobel?",
+    "keyword": "1911",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "random",
+    "recomp": 0.05,
+    "order": "A+B",
+    "query": "What are petites Curies?",
+    "keyword": "X-ray",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "random",
+    "recomp": 0.05,
+    "order": "A+B",
+    "query": "Compare the birth years of Einstein and Curie.",
+    "keyword": "1879",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "random",
+    "recomp": 0.05,
+    "order": "A+B",
+    "query": "Who won more Nobel Prizes, Einstein or Curie?",
+    "keyword": "Curie",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "random",
+    "recomp": 0.05,
+    "order": "B+A",
+    "query": "In what city was Einstein born?",
+    "keyword": "Ulm",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "random",
+    "recomp": 0.05,
+    "order": "B+A",
+    "query": "What year did Einstein get the Nobel Prize?",
+    "keyword": "1921",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "random",
+    "recomp": 0.05,
+    "order": "B+A",
+    "query": "When did Einstein become a US citizen?",
+    "keyword": "1940",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "random",
+    "recomp": 0.05,
+    "order": "B+A",
+    "query": "How many scientific papers did Einstein publish?",
+    "keyword": "300",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "random",
+    "recomp": 0.05,
+    "order": "B+A",
+    "query": "In what city was Marie Curie born?",
+    "keyword": "Warsaw",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "random",
+    "recomp": 0.05,
+    "order": "B+A",
+    "query": "What elements did Curie discover?",
+    "keyword": "polonium",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "random",
+    "recomp": 0.05,
+    "order": "B+A",
+    "query": "What year did Curie win the Chemistry Nobel?",
+    "keyword": "1911",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "random",
+    "recomp": 0.05,
+    "order": "B+A",
+    "query": "What are petites Curies?",
+    "keyword": "X-ray",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "random",
+    "recomp": 0.05,
+    "order": "B+A",
+    "query": "Compare the birth years of Einstein and Curie.",
+    "keyword": "1879",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "random",
+    "recomp": 0.05,
+    "order": "B+A",
+    "query": "Who won more Nobel Prizes, Einstein or Curie?",
+    "keyword": "Curie",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "random",
+    "recomp": 0.1,
+    "order": "A+B",
+    "query": "In what city was Einstein born?",
+    "keyword": "Ulm",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "random",
+    "recomp": 0.1,
+    "order": "A+B",
+    "query": "What year did Einstein get the Nobel Prize?",
+    "keyword": "1921",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "random",
+    "recomp": 0.1,
+    "order": "A+B",
+    "query": "When did Einstein become a US citizen?",
+    "keyword": "1940",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "random",
+    "recomp": 0.1,
+    "order": "A+B",
+    "query": "How many scientific papers did Einstein publish?",
+    "keyword": "300",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "random",
+    "recomp": 0.1,
+    "order": "A+B",
+    "query": "In what city was Marie Curie born?",
+    "keyword": "Warsaw",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "random",
+    "recomp": 0.1,
+    "order": "A+B",
+    "query": "What elements did Curie discover?",
+    "keyword": "polonium",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "random",
+    "recomp": 0.1,
+    "order": "A+B",
+    "query": "What year did Curie win the Chemistry Nobel?",
+    "keyword": "1911",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "random",
+    "recomp": 0.1,
+    "order": "A+B",
+    "query": "What are petites Curies?",
+    "keyword": "X-ray",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "random",
+    "recomp": 0.1,
+    "order": "A+B",
+    "query": "Compare the birth years of Einstein and Curie.",
+    "keyword": "1879",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "random",
+    "recomp": 0.1,
+    "order": "A+B",
+    "query": "Who won more Nobel Prizes, Einstein or Curie?",
+    "keyword": "Curie",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "random",
+    "recomp": 0.1,
+    "order": "B+A",
+    "query": "In what city was Einstein born?",
+    "keyword": "Ulm",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "random",
+    "recomp": 0.1,
+    "order": "B+A",
+    "query": "What year did Einstein get the Nobel Prize?",
+    "keyword": "1921",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "random",
+    "recomp": 0.1,
+    "order": "B+A",
+    "query": "When did Einstein become a US citizen?",
+    "keyword": "1940",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "random",
+    "recomp": 0.1,
+    "order": "B+A",
+    "query": "How many scientific papers did Einstein publish?",
+    "keyword": "300",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "random",
+    "recomp": 0.1,
+    "order": "B+A",
+    "query": "In what city was Marie Curie born?",
+    "keyword": "Warsaw",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "random",
+    "recomp": 0.1,
+    "order": "B+A",
+    "query": "What elements did Curie discover?",
+    "keyword": "polonium",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "random",
+    "recomp": 0.1,
+    "order": "B+A",
+    "query": "What year did Curie win the Chemistry Nobel?",
+    "keyword": "1911",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "random",
+    "recomp": 0.1,
+    "order": "B+A",
+    "query": "What are petites Curies?",
+    "keyword": "X-ray",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "random",
+    "recomp": 0.1,
+    "order": "B+A",
+    "query": "Compare the birth years of Einstein and Curie.",
+    "keyword": "1879",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "random",
+    "recomp": 0.1,
+    "order": "B+A",
+    "query": "Who won more Nobel Prizes, Einstein or Curie?",
+    "keyword": "Curie",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "random",
+    "recomp": 0.15,
+    "order": "A+B",
+    "query": "In what city was Einstein born?",
+    "keyword": "Ulm",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "random",
+    "recomp": 0.15,
+    "order": "A+B",
+    "query": "What year did Einstein get the Nobel Prize?",
+    "keyword": "1921",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "random",
+    "recomp": 0.15,
+    "order": "A+B",
+    "query": "When did Einstein become a US citizen?",
+    "keyword": "1940",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "random",
+    "recomp": 0.15,
+    "order": "A+B",
+    "query": "How many scientific papers did Einstein publish?",
+    "keyword": "300",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "random",
+    "recomp": 0.15,
+    "order": "A+B",
+    "query": "In what city was Marie Curie born?",
+    "keyword": "Warsaw",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "random",
+    "recomp": 0.15,
+    "order": "A+B",
+    "query": "What elements did Curie discover?",
+    "keyword": "polonium",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "random",
+    "recomp": 0.15,
+    "order": "A+B",
+    "query": "What year did Curie win the Chemistry Nobel?",
+    "keyword": "1911",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "random",
+    "recomp": 0.15,
+    "order": "A+B",
+    "query": "What are petites Curies?",
+    "keyword": "X-ray",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "random",
+    "recomp": 0.15,
+    "order": "A+B",
+    "query": "Compare the birth years of Einstein and Curie.",
+    "keyword": "1879",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "random",
+    "recomp": 0.15,
+    "order": "A+B",
+    "query": "Who won more Nobel Prizes, Einstein or Curie?",
+    "keyword": "Curie",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "random",
+    "recomp": 0.15,
+    "order": "B+A",
+    "query": "In what city was Einstein born?",
+    "keyword": "Ulm",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "random",
+    "recomp": 0.15,
+    "order": "B+A",
+    "query": "What year did Einstein get the Nobel Prize?",
+    "keyword": "1921",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "random",
+    "recomp": 0.15,
+    "order": "B+A",
+    "query": "When did Einstein become a US citizen?",
+    "keyword": "1940",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "random",
+    "recomp": 0.15,
+    "order": "B+A",
+    "query": "How many scientific papers did Einstein publish?",
+    "keyword": "300",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "random",
+    "recomp": 0.15,
+    "order": "B+A",
+    "query": "In what city was Marie Curie born?",
+    "keyword": "Warsaw",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "random",
+    "recomp": 0.15,
+    "order": "B+A",
+    "query": "What elements did Curie discover?",
+    "keyword": "polonium",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "random",
+    "recomp": 0.15,
+    "order": "B+A",
+    "query": "What year did Curie win the Chemistry Nobel?",
+    "keyword": "1911",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "random",
+    "recomp": 0.15,
+    "order": "B+A",
+    "query": "What are petites Curies?",
+    "keyword": "X-ray",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "random",
+    "recomp": 0.15,
+    "order": "B+A",
+    "query": "Compare the birth years of Einstein and Curie.",
+    "keyword": "1879",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "random",
+    "recomp": 0.15,
+    "order": "B+A",
+    "query": "Who won more Nobel Prizes, Einstein or Curie?",
+    "keyword": "Curie",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "random",
+    "recomp": 0.3,
+    "order": "A+B",
+    "query": "In what city was Einstein born?",
+    "keyword": "Ulm",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "random",
+    "recomp": 0.3,
+    "order": "A+B",
+    "query": "What year did Einstein get the Nobel Prize?",
+    "keyword": "1921",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "random",
+    "recomp": 0.3,
+    "order": "A+B",
+    "query": "When did Einstein become a US citizen?",
+    "keyword": "1940",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "random",
+    "recomp": 0.3,
+    "order": "A+B",
+    "query": "How many scientific papers did Einstein publish?",
+    "keyword": "300",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "random",
+    "recomp": 0.3,
+    "order": "A+B",
+    "query": "In what city was Marie Curie born?",
+    "keyword": "Warsaw",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "random",
+    "recomp": 0.3,
+    "order": "A+B",
+    "query": "What elements did Curie discover?",
+    "keyword": "polonium",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "random",
+    "recomp": 0.3,
+    "order": "A+B",
+    "query": "What year did Curie win the Chemistry Nobel?",
+    "keyword": "1911",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "random",
+    "recomp": 0.3,
+    "order": "A+B",
+    "query": "What are petites Curies?",
+    "keyword": "X-ray",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "random",
+    "recomp": 0.3,
+    "order": "A+B",
+    "query": "Compare the birth years of Einstein and Curie.",
+    "keyword": "1879",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "random",
+    "recomp": 0.3,
+    "order": "A+B",
+    "query": "Who won more Nobel Prizes, Einstein or Curie?",
+    "keyword": "Curie",
+    "output": " Marie Curie won more Nobel Prizes than Albert Einstein.",
+    "match": true,
+    "rouge_l": 1.0
+  },
+  {
+    "method": "random",
+    "recomp": 0.3,
+    "order": "B+A",
+    "query": "In what city was Einstein born?",
+    "keyword": "Ulm",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "random",
+    "recomp": 0.3,
+    "order": "B+A",
+    "query": "What year did Einstein get the Nobel Prize?",
+    "keyword": "1921",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "random",
+    "recomp": 0.3,
+    "order": "B+A",
+    "query": "When did Einstein become a US citizen?",
+    "keyword": "1940",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "random",
+    "recomp": 0.3,
+    "order": "B+A",
+    "query": "How many scientific papers did Einstein publish?",
+    "keyword": "300",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "random",
+    "recomp": 0.3,
+    "order": "B+A",
+    "query": "In what city was Marie Curie born?",
+    "keyword": "Warsaw",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "random",
+    "recomp": 0.3,
+    "order": "B+A",
+    "query": "What elements did Curie discover?",
+    "keyword": "polonium",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "random",
+    "recomp": 0.3,
+    "order": "B+A",
+    "query": "What year did Curie win the Chemistry Nobel?",
+    "keyword": "1911",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "random",
+    "recomp": 0.3,
+    "order": "B+A",
+    "query": "What are petites Curies?",
+    "keyword": "X-ray",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "random",
+    "recomp": 0.3,
+    "order": "B+A",
+    "query": "Compare the birth years of Einstein and Curie.",
+    "keyword": "1879",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "random",
+    "recomp": 0.3,
+    "order": "B+A",
+    "query": "Who won more Nobel Prizes, Einstein or Curie?",
+    "keyword": "Curie",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  }
+]
