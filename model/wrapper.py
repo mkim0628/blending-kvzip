@@ -295,14 +295,16 @@ class ModelKVzip():
         recomp_ratio: float = 0.15,
         check_layers: list = None,
         update_cache: bool = False,
+        position_offset: int = 0,
     ) -> str:
         """압축된 KV chunk를 blending하여 query에 응답.
 
         Compressed-state blending:
-          1. Full forward로 fresh K/V 획득
-          2. Check layer에서 head별로 flatten K와 fresh K 비교 (IW-HKVD)
-          3. imp_indices를 flatten에 직접 overwrite
-          4. 원본 EvictCache 객체로 generate → 압축 유지!
+          1. RoPE 위치 보정 (position_offset > 0이면)
+          2. Full forward로 fresh K/V 획득
+          3. Check layer에서 head별로 flatten K와 fresh K 비교 (IW-HKVD)
+          4. imp_indices를 flatten에 직접 overwrite
+          5. 원본 EvictCache 객체로 generate → 압축 유지!
 
         Args:
             query: 사용자 쿼리 (str or tensor)
@@ -319,6 +321,7 @@ class ModelKVzip():
         kv = chunk_kvs[0]  # EvictCache 객체 그대로!
         n_layers = kv.n_layers
         n_heads_kv = kv.n_heads_kv
+        is_pruned = getattr(kv, 'pruned', False)
 
         # ── 1. Full forward로 fresh K/V 획득 ──
         query_ids = query
@@ -330,8 +333,33 @@ class ModelKVzip():
         context_len = prefill_ids.shape[1]
 
         print(f"[Blend] Total: {all_ids.shape[1]} tokens "
-              f"(context: {context_len}, query: {query_ids.shape[1]})")
+              f"(context: {context_len}, query: {query_ids.shape[1]}, "
+              f"position_offset: {position_offset})")
 
+        # ── 1.5. RoPE 위치 보정 (position_offset > 0이면) ──
+        if position_offset > 0 and is_pruned:
+            from attention.blend import reapply_rope
+            rotary_emb = self.model.model.rotary_emb
+            t0 = time.perf_counter()
+
+            for l in range(n_layers):
+                cu_len_k = kv.info["cu_len_k"][l]
+                valid_pad = torch.ones(1, n_heads_kv, kv.start_idx, dtype=torch.bool)
+                full_valid = torch.cat([valid_pad, kv.valid[l].cpu()], dim=-1)
+
+                for h in range(n_heads_kv):
+                    kept_pos = full_valid[0, h].nonzero(as_tuple=True)[0]  # 원래 절대 위치
+                    old_positions = kept_pos.to(device)
+                    new_positions = (kept_pos + position_offset).to(device)
+
+                    k_h = kv.key_cache[l][cu_len_k[h]:cu_len_k[h+1]]  # [len_k_h, D]
+                    kv.key_cache[l][cu_len_k[h]:cu_len_k[h+1]] = \
+                        reapply_rope(k_h, old_positions, new_positions, rotary_emb)
+
+            t_rope = time.perf_counter() - t0
+            print(f"[Blend] RoPE re-rotation: {t_rope*1000:.0f}ms (offset={position_offset})")
+
+        # ── 1.6. Fresh forward ──
         fresh_cache = DynamicCache()
         t0 = time.perf_counter()
         self.model(all_ids, past_key_values=fresh_cache, use_cache=True)

@@ -17,6 +17,53 @@ from attention.kvcache import EvictCache
 
 
 # ──────────────────────────────────────────────────────────────
+# 0. RoPE 위치 보정
+# ──────────────────────────────────────────────────────────────
+
+def reapply_rope(k, old_positions, new_positions, rotary_emb):
+    """Cached K의 RoPE를 원래 위치에서 새 위치로 재적용.
+
+    수학: K_new_rope = R(new_pos) * R(-old_pos) * K_old_rope
+    RoPE: k_rotated = k * cos + rotate_half(k) * sin
+    Reverse: k_unrotated = k * cos - rotate_half(k) * sin  (sin 부호 반전)
+
+    Args:
+        k: [num_tokens, head_dim] — 원래 위치 RoPE가 적용된 K
+        old_positions: [num_tokens] — 원래 위치 인덱스
+        new_positions: [num_tokens] — 새 위치 인덱스
+        rotary_emb: 모델의 rotary_emb 모듈 (cos, sin 생성용)
+
+    Returns:
+        k_rerotated: [num_tokens, head_dim] — 새 위치 RoPE가 적용된 K
+    """
+    from transformers.models.llama.modeling_llama import rotate_half
+
+    device = k.device
+    orig_dtype = k.dtype
+
+    # fp32로 계산 (bf16 precision 손실 방지)
+    k = k.float()
+
+    # rotary_emb에서 cos, sin 가져오기
+    dummy = k.unsqueeze(0).unsqueeze(0)  # [1, 1, T, D]
+    cos_old, sin_old = rotary_emb(dummy, old_positions.unsqueeze(0))  # [1, T, D]
+    cos_new, sin_new = rotary_emb(dummy, new_positions.unsqueeze(0))
+
+    cos_old = cos_old.squeeze(0).float()  # [T, D]
+    sin_old = sin_old.squeeze(0).float()
+    cos_new = cos_new.squeeze(0).float()
+    sin_new = sin_new.squeeze(0).float()
+
+    # Step 1: Undo old RoPE — R(-old_pos) * k
+    k_pre = k * cos_old - rotate_half(k) * sin_old
+
+    # Step 2: Apply new RoPE — R(new_pos) * k_pre
+    k_rerotated = k_pre * cos_new + rotate_half(k_pre) * sin_new
+
+    return k_rerotated.to(orig_dtype)
+
+
+# ──────────────────────────────────────────────────────────────
 # 1. ChunkStore: 압축 KV를 디스크에 저장/로드
 # ──────────────────────────────────────────────────────────────
 
