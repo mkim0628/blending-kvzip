@@ -230,3 +230,63 @@ def blend_hook(
     kv.value_cache[layer_idx] = v_full
 
     return query_states, k_full, v_full
+
+
+# ──────────────────────────────────────────────────────────────
+# 4. Position Mapping for Document Reorder
+# ──────────────────────────────────────────────────────────────
+
+def compute_position_mapping(
+    old_token_ids: torch.Tensor,
+    new_token_ids: torch.Tensor,
+    start_idx: int,
+) -> torch.Tensor:
+    """Compute per-token position mapping from old context to new context.
+
+    For document reorder: old=[sys+doc1+doc2], new=[sys+doc2+doc1]
+    Each token in old context is mapped to its position in new context.
+
+    Algorithm:
+      1. System prompt (0..start_idx-1): identity mapping
+      2. Context tokens: find matching token sequences in new context
+         Uses greedy left-to-right matching within the context region.
+
+    Args:
+        old_token_ids: [T_old] — old context token ids (flat, no batch dim)
+        new_token_ids: [T_new] — new context token ids (flat, no batch dim)
+        start_idx: system prompt length (these positions are identity-mapped)
+
+    Returns:
+        mapping: [T_old] — mapping[old_pos] = new_pos
+    """
+    T_old = old_token_ids.shape[0]
+    T_new = new_token_ids.shape[0]
+    mapping = torch.arange(T_old, dtype=torch.long, device=old_token_ids.device)
+
+    # System prompt: identity
+    # Context region: match tokens
+    old_ctx = old_token_ids[start_idx:]
+    new_ctx = new_token_ids[start_idx:]
+
+    if old_ctx.shape[0] == 0 or new_ctx.shape[0] == 0:
+        return mapping
+
+    # Build index: new_token -> list of positions
+    from collections import defaultdict
+    new_pos_map = defaultdict(list)
+    for i, tok in enumerate(new_ctx.tolist()):
+        new_pos_map[tok].append(i + start_idx)
+
+    # Greedy matching: for each old context token, find first unused match
+    used = set()
+    for i, tok in enumerate(old_ctx.tolist()):
+        old_pos = i + start_idx
+        candidates = new_pos_map.get(tok, [])
+        for c in candidates:
+            if c not in used:
+                mapping[old_pos] = c
+                used.add(c)
+                break
+        # If no match found, keep identity (token was replaced)
+
+    return mapping

@@ -296,6 +296,7 @@ class ModelKVzip():
         check_layers: list = None,
         method: str = "iw_hkvd",
         context: Union[str, torch.Tensor] = None,
+        rope_rerotation: bool = False,
     ) -> str:
         """Layer-by-layer CacheBlend for KVzip pruned KV.
 
@@ -343,6 +344,47 @@ class ModelKVzip():
         all_ids = torch.cat([context_ids, query_ids], dim=1)
         context_len = stored_ctx_len  # HKVD comparison range = cached KV positions
         T_all = all_ids.shape[1]
+
+        # ── RoPE Re-rotation (document reorder support) ──
+        if rope_rerotation and is_pruned and context is not None:
+            from attention.blend import reapply_rope, compute_position_mapping
+            import time as _time
+            rotary_emb = self.model.model.rotary_emb
+            t_rope_start = _time.perf_counter()
+
+            # Compute per-token position mapping: old context -> new context
+            old_tokens = kv.prefill_ids[0]  # [stored_ctx_len]
+            new_tokens = context_ids[0] if context_ids.dim() == 2 else context_ids
+            map_len = min(old_tokens.shape[0], new_tokens.shape[0], stored_ctx_len)
+            position_mapping = compute_position_mapping(
+                old_tokens[:map_len], new_tokens[:map_len], kv.start_idx)
+
+            # Apply re-rotation to all layers
+            n_rerotated = 0
+            for l in range(n_layers):
+                cu = kv.info["cu_len_k"][l]
+                vp = torch.ones(1, n_heads_kv, kv.start_idx, dtype=torch.bool, device=device)
+                fv = torch.cat([vp, kv.valid[l].to(device)], dim=-1)
+
+                for h in range(n_heads_kv):
+                    kept = fv[0, h].nonzero(as_tuple=True)[0]
+                    old_pos = kept.to(device)
+                    new_pos = position_mapping[kept].to(device)
+                    changed = (old_pos != new_pos)
+                    if changed.any():
+                        changed_idx = changed.nonzero(as_tuple=True)[0]
+                        k_h = kv.key_cache[l][cu[h]:cu[h+1]]
+                        k_changed = k_h[changed_idx]
+                        k_h[changed_idx] = reapply_rope(
+                            k_changed,
+                            old_pos[changed_idx],
+                            new_pos[changed_idx],
+                            rotary_emb)
+                        n_rerotated += len(changed_idx)
+
+            t_rope = _time.perf_counter() - t_rope_start
+            print(f"[BlendV2] RoPE re-rotation: {t_rope*1000:.0f}ms "
+                  f"({n_rerotated} tokens across {n_layers} layers)")
 
         num_heads = self.config.num_attention_heads
         num_kv_heads = self.config.num_key_value_heads
