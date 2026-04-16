@@ -295,36 +295,62 @@ class ModelKVzip():
         recomp_ratio: float = 0.15,
         check_layers: list = None,
         method: str = "iw_hkvd",
+        context: Union[str, torch.Tensor] = None,
     ) -> str:
-        """Layer-by-layer CacheBlend — LMCache 방식과 동일한 구조.
+        """Layer-by-layer CacheBlend for KVzip pruned KV.
 
-        핵심 차이 (vs blend_generate):
-          - full forward를 하지 않음!
-          - layer별로 진행하면서 attention은 항상 cached KV 사용
-          - check layer에서 imp 선택 → 이후 imp 토큰만 forward
-          - TTFT 절약 + overwrite 효과 모두 달성
+        Args:
+          context: New context to blend against (e.g. reordered docs).
+                   If None, uses kv.prefill_ids (same context, diff≈0).
+
+        Strategy:
+          - Pre-check layers: fresh K/V + standard causal attention (normal forward)
+          - Check layer: fresh attention + HKVD comparison → select imp tokens
+          - Post-check layers: imp-only forward + attention with cached KV (causal=False)
+          - TTFT saving comes from post-check layers forwarding fewer tokens
         """
         import time
+        from flash_attn import flash_attn_func, flash_attn_varlen_func
         from transformers.models.llama.modeling_llama import apply_rotary_pos_emb
 
         check_layers = check_layers or [1]
+        max_check = max(check_layers)
         device = self.device
 
         kv = chunk_kvs[0]
         n_layers = kv.n_layers
         n_heads_kv = kv.n_heads_kv
+        is_pruned = getattr(kv, 'pruned', False)
 
         query_ids = query
         if type(query) == str:
             query_ids = self.encode(query)
 
-        # 전체 prompt 토큰
-        all_ids = torch.cat([kv.prefill_ids, query_ids], dim=1)
-        context_len = kv.prefill_ids.shape[1]
+        # Use new context if provided (e.g. reordered docs), else original
+        if context is not None:
+            if isinstance(context, str):
+                context_ids = self.encode(context)
+            else:
+                context_ids = context
+            # Prepend system prompt from original KV
+            sys_ids = kv.prefill_ids[:, :kv.start_idx]
+            context_ids = torch.cat([sys_ids, context_ids], dim=1)
+        else:
+            context_ids = kv.prefill_ids
 
-        print(f"[BlendV2] {all_ids.shape[1]} tokens (context: {context_len}, query: {query_ids.shape[1]})")
+        # context_len must match stored KV length for position alignment
+        stored_ctx_len = kv.prefill_ids.shape[1]
+        all_ids = torch.cat([context_ids, query_ids], dim=1)
+        context_len = stored_ctx_len  # HKVD comparison range = cached KV positions
+        T_all = all_ids.shape[1]
 
-        # ── Layer-by-layer forward ──
+        num_heads = self.config.num_attention_heads
+        num_kv_heads = self.config.num_key_value_heads
+        head_dim = self.config.hidden_size // num_heads
+        n_group = num_heads // num_kv_heads
+
+        print(f"[BlendV2] {T_all} tokens (context: {context_len}, query: {query_ids.shape[1]})")
+
         model_layers = self.model.model.layers
         rotary_emb = self.model.model.rotary_emb
 
@@ -334,17 +360,17 @@ class ModelKVzip():
         residual = None
         imp_indices = None
 
-        # Position ids + RoPE cos/sin
-        position_ids = torch.arange(all_ids.shape[1], device=device).unsqueeze(0)
+        # RoPE cos/sin for all positions
+        position_ids = torch.arange(T_all, device=device).unsqueeze(0)
         cos_sin = rotary_emb(hidden_states.unsqueeze(0).unsqueeze(0), position_ids)
-        all_cos, all_sin = cos_sin[0].squeeze(0), cos_sin[1].squeeze(0)  # [T, head_dim]
+        all_cos, all_sin = cos_sin[0].squeeze(0), cos_sin[1].squeeze(0)
 
         t_start = time.perf_counter()
 
         for layer_idx in range(n_layers):
             layer = model_layers[layer_idx]
 
-            # Residual connection + LayerNorm (Qwen2 style)
+            # Residual + LayerNorm
             if residual is None:
                 residual = hidden_states
                 hidden_states = layer.input_layernorm(hidden_states)
@@ -353,56 +379,51 @@ class ModelKVzip():
                 residual = hidden_states
                 hidden_states = layer.input_layernorm(hidden_states)
 
-            # QKV Projection (Qwen2는 개별 proj)
+            # QKV Projection
             q = layer.self_attn.q_proj(hidden_states)
             k_new = layer.self_attn.k_proj(hidden_states)
             v_new = layer.self_attn.v_proj(hidden_states)
 
-            # RoPE — imp_indices가 있으면 해당 positions만
+            # RoPE — apply_rotary_pos_emb expects [B, T, D], it unsqueezes dim=1 internally
             if imp_indices is not None:
-                cos_sel = all_cos[imp_indices].unsqueeze(0).unsqueeze(0)
-                sin_sel = all_sin[imp_indices].unsqueeze(0).unsqueeze(0)
+                cos_sel = all_cos[imp_indices].unsqueeze(0)
+                sin_sel = all_sin[imp_indices].unsqueeze(0)
             else:
-                cos_sel = all_cos.unsqueeze(0).unsqueeze(0)
-                sin_sel = all_sin.unsqueeze(0).unsqueeze(0)
+                cos_sel = all_cos.unsqueeze(0)
+                sin_sel = all_sin.unsqueeze(0)
 
-            num_heads = self.config.num_attention_heads
-            num_kv_heads = self.config.num_key_value_heads
-            head_dim = self.config.hidden_size // num_heads
             T_cur = q.shape[0]
+            q_4d = q.view(T_cur, num_heads, head_dim).unsqueeze(0).transpose(1, 2)
+            k_4d = k_new.view(T_cur, num_kv_heads, head_dim).unsqueeze(0).transpose(1, 2)
+            q_4d, k_4d = apply_rotary_pos_emb(q_4d, k_4d, cos_sel, sin_sel)
 
-            q = q.view(T_cur, num_heads, head_dim).unsqueeze(0).transpose(1, 2)
-            k_new = k_new.view(T_cur, num_kv_heads, head_dim).unsqueeze(0).transpose(1, 2)
-            q, k_new = apply_rotary_pos_emb(q, k_new, cos_sel, sin_sel)
-            q = q.squeeze(0).transpose(0, 1).reshape(T_cur, -1)  # [T, H*D]
-            k_new = k_new.squeeze(0).transpose(0, 1).reshape(T_cur, -1)
-            v_new = v_new  # [T, H_kv*D]
+            # ── Phase 1: Pre-check layers — fresh K/V with causal attention ──
+            if imp_indices is None:
+                # Standard causal attention with fresh K/V using SDPA
+                # q_4d: [1, H, T, D], k_4d: [1, Hkv, T, D]
+                # GQA: expand K/V heads to match Q heads
+                k_exp = k_4d.repeat_interleave(n_group, dim=1)  # [1, H, T, D]
+                v_4d = v_new.view(T_cur, num_kv_heads, head_dim).unsqueeze(0).transpose(1, 2)
+                v_exp = v_4d.repeat_interleave(n_group, dim=1)  # [1, H, T, D]
+                attn_output = torch.nn.functional.scaled_dot_product_attention(
+                    q_4d, k_exp, v_exp, is_causal=True)
+                attn_output = attn_output.transpose(1, 2).reshape(T_cur, -1)  # [T, H*D]
 
-            # ── Cached KV 로드 ──
-            # KVzip pruned이면 flatten, 아니면 dense
-            is_pruned = getattr(kv, 'pruned', False)
-
-            if is_pruned:
-                # KVzip flatten: old_k = [Σh len_h, D_head]
-                old_k = kv.key_cache[layer_idx]
-                old_v = kv.value_cache[layer_idx]
-            else:
-                old_k = kv.key_cache[layer_idx].view(-1, head_dim * num_kv_heads)
-                old_v = kv.value_cache[layer_idx].view(-1, head_dim * num_kv_heads)
-
-            # ── Check layer: HKVD ──
-            if layer_idx in check_layers and imp_indices is None:
-                if is_pruned:
+                # Check layer: HKVD comparison + imp selection
+                if layer_idx in check_layers and is_pruned:
                     cu = kv.info["cu_len_k"][layer_idx]
                     vp = torch.ones(1, num_kv_heads, kv.start_idx, dtype=torch.bool, device=device)
                     fv = torch.cat([vp, kv.valid[layer_idx]], dim=-1)
+
+                    # Flatten k_new for comparison: [1, Hkv, T, D] → per head
+                    k_new_flat = k_4d  # [1, Hkv, T_all, D]
 
                     total_diff = 0
                     all_imp_abs = set()
                     for h in range(num_kv_heads):
                         kept = fv[0, h].nonzero(as_tuple=True)[0].to(device)
-                        k_old_h = old_k[cu[h]:cu[h+1]]  # [len_h, D]
-                        k_new_h = k_new[:context_len].view(-1, num_kv_heads, head_dim)[:, h, :][kept]
+                        k_old_h = kv.key_cache[layer_idx][cu[h]:cu[h+1]]  # [len_h, D]
+                        k_new_h = k_new_flat[0, h, :context_len, :][kept]  # [len_h, D]
 
                         diff_h = ((k_new_h - k_old_h) ** 2).sum(-1)
                         total_diff += diff_h.sum().item()
@@ -425,114 +446,94 @@ class ModelKVzip():
                         for idx in kept[top_h].tolist():
                             all_imp_abs.add(idx)
 
-                    # imp_indices = context 토큰 중 선택된 것 + 모든 query 토큰
                     imp_context = sorted(all_imp_abs)
-                    imp_query = list(range(context_len, all_ids.shape[1]))
-                    imp_indices = torch.tensor(imp_context + imp_query, device=device, dtype=torch.long)
+                    # Post-check: forward ONLY query tokens (not imp context)
+                    # Context tokens with causal=False see "future" KV → corrupts hidden states
+                    # Query tokens are at the end → attend to all cached KV correctly
+                    imp_query = list(range(context_len, T_all))
+                    imp_indices = torch.tensor(imp_query, device=device, dtype=torch.long)
+                    imp_ctx_abs = set(imp_context)
 
-                    print(f"  [BlendV2] Layer {layer_idx}: {len(imp_context)} context + {len(imp_query)} query = {len(imp_indices)} tokens selected (diff={total_diff:.0f})")
+                    print(f"  [BlendV2] Layer {layer_idx}: overwrite {len(imp_context)} context, forward {len(imp_query)} query (diff={total_diff:.0f})")
 
-                    # hidden_states, residual, q, k_new, v_new를 imp만으로 줄임
-                    q = q[imp_indices]
-                    k_new = k_new[imp_indices]
-                    v_new = v_new[imp_indices]
+                    # Shrink to query only
                     residual = residual[imp_indices]
+                    attn_output = attn_output[imp_indices]
 
-            # ── Overwrite: cached KV의 imp 위치만 fresh K/V로 교체 ──
-            if imp_indices is not None and is_pruned:
-                cu = kv.info["cu_len_k"][layer_idx]
-                vp = torch.ones(1, num_kv_heads, kv.start_idx, dtype=torch.bool, device=device)
-                fv = torch.cat([vp, kv.valid[layer_idx]], dim=-1)
+                # Append query K/V to cache for decode (everything past context_len)
+                if is_pruned:
+                    n_q = T_all - context_len  # may differ from query_ids.shape[1] if context len changed
+                    k_q = k_4d[:, :, context_len:, :]  # [1, Hkv, n_q, D]
+                    v_q = v_new[context_len:].view(1, n_q, num_kv_heads, head_dim).transpose(1, 2)
+                    kv.update(k_q, v_q, layer_idx)
+                    kv.info["offset"][layer_idx] += n_q
+                    kv.info["cu_len_k"][layer_idx] += n_q * kv.info["cu_head"]
 
-                # imp_context 토큰만 overwrite (query 토큰은 cached에 없음)
-                imp_ctx = [i for i in imp_indices.tolist() if i < context_len]
-                imp_ctx_set = set(imp_ctx)
-                # imp_indices 내에서 context 부분의 local index
-                local_ctx_idx = [i for i, p in enumerate(imp_indices.tolist()) if p < context_len]
-
-                for h in range(num_kv_heads):
-                    kept = fv[0, h].nonzero(as_tuple=True)[0]
-                    local_imp = [i for i, p in enumerate(kept.tolist()) if p in imp_ctx_set]
-                    if not local_imp:
-                        continue
-                    lt = torch.tensor(local_imp, dtype=torch.long, device=device)
-
-                    # k_new는 현재 imp_indices 순서. context 부분만 추출
-                    k_imp_ctx = k_new[torch.tensor(local_ctx_idx, device=device)].view(-1, num_kv_heads, head_dim)[:, h, :]
-                    v_imp_ctx = v_new[torch.tensor(local_ctx_idx, device=device)].view(-1, num_kv_heads, head_dim)[:, h, :]
-
-                    # 매핑: imp_ctx의 절대위치 → kept의 local index
-                    # 이미 local_imp가 이 매핑
-                    if k_imp_ctx.shape[0] == lt.shape[0]:
-                        kv.key_cache[layer_idx][cu[h] + lt] = k_imp_ctx
-                        kv.value_cache[layer_idx][cu[h] + lt] = v_imp_ctx
-
-            # ── Attention: KVzip의 prepare()를 직접 사용! ──
-            if is_pruned:
-                from flash_attn import flash_attn_varlen_func
-
-                T_q = q.shape[0]
-                n_group = num_heads // num_kv_heads
-
-                # Q를 [1, H, T_q, D] 형태로
-                q_4d = q.view(T_q, num_heads, head_dim).unsqueeze(0).transpose(1, 2)
-                # K/V는 이미 flatten: old_k, old_v
-
-                # 직접 Q reshape + info 구성 (prepare()의 side effect 없이)
-                n_group = num_heads // num_kv_heads
-                q_prep = q_4d.view(1, num_kv_heads, n_group, T_q, head_dim)
-                q_prep = q_prep.transpose(2, 3).contiguous().view(-1, n_group, head_dim)
-
-                cu_len_q = T_q * kv.info["cu_head"]
-                cu_len_k = kv.info["cu_len_k"][layer_idx]
-                max_len_k = kv.info["max_len_k"][layer_idx]
-                if isinstance(max_len_k, torch.Tensor):
-                    max_len_k = int(max_len_k.item())
-                offset = kv.info["offset"][layer_idx]
-
-                k_prep = old_k.view(-1, 1, head_dim)
-                v_prep = old_v.view(-1, 1, head_dim)
-
-                info = {
-                    "cu_len_q": cu_len_q,
-                    "cu_len_k": cu_len_k,
-                    "max_len_q": T_q,
-                    "max_len_k": max_len_k + offset,
-                }
-
-                attn_output = flash_attn_varlen_func(
-                    q_prep, k_prep, v_prep,
-                    cu_seqlens_q=info["cu_len_q"],
-                    cu_seqlens_k=info["cu_len_k"],
-                    max_seqlen_q=info["max_len_q"],
-                    max_seqlen_k=info["max_len_k"],
-                    dropout_p=0.0,
-                    causal=True,
-                )
-
-                # reshape back: [H_kv * T_q, group, D] → [T_q, H*D]
-                attn_output = attn_output.view(1, num_kv_heads, T_q, n_group, head_dim).transpose(1, 2)
-                attn_output = attn_output.contiguous().view(T_q, -1)
+                # Overwrite cached K/V at imp context positions (check layer only)
+                if layer_idx in check_layers and is_pruned and imp_ctx_abs:
+                    for h in range(num_kv_heads):
+                        kept = fv[0, h].nonzero(as_tuple=True)[0]
+                        local_imp = [i for i, p in enumerate(kept.tolist()) if p in imp_ctx_abs]
+                        if not local_imp:
+                            continue
+                        lt = torch.tensor(local_imp, dtype=torch.long, device=device)
+                        k_fresh_h = k_new_flat[0, h, :context_len, :][kept[lt]]
+                        v_fresh_h = v_new[:context_len].view(-1, num_kv_heads, head_dim)[:, h, :][kept[lt]]
+                        kv.key_cache[layer_idx][cu[h] + lt] = k_fresh_h
+                        kv.value_cache[layer_idx][cu[h] + lt] = v_fresh_h
 
             else:
-                from transformers.modeling_flash_attention_utils import _flash_attention_forward
-                q_4d = q.view(1, T_cur, num_heads, head_dim)
-                k_4d = old_k.view(1, -1, num_kv_heads, head_dim)
-                v_4d = old_v.view(1, -1, num_kv_heads, head_dim)
-                attn_output = _flash_attention_forward(q_4d, k_4d, v_4d, None, T_cur, is_causal=True)
-                attn_output = attn_output.reshape(T_cur, -1)
-
-            # ── Query K/V를 kv에 append (decode 시 재사용) ──
-            if imp_indices is not None and is_pruned:
-                # imp_indices 중 query 부분 추출
-                query_local = [i for i, p in enumerate(imp_indices.tolist()) if p >= context_len]
-                if query_local:
-                    q_local_t = torch.tensor(query_local, device=device, dtype=torch.long)
-                    k_q = k_new[q_local_t].view(1, len(query_local), num_kv_heads, head_dim).transpose(1, 2)
-                    v_q = v_new[q_local_t].view(1, len(query_local), num_kv_heads, head_dim).transpose(1, 2)
+                # ── Phase 2: Post-check layers — query-only forward with cached KV ──
+                if is_pruned:
+                    # Append query K/V to cache BEFORE attention so query tokens
+                    # can see each other (self-attention) + all cached context
+                    n_q = T_cur
+                    k_q = k_4d  # [1, Hkv, T_cur, D]
+                    v_q = v_new.view(1, T_cur, num_kv_heads, head_dim).transpose(1, 2)
                     kv.update(k_q, v_q, layer_idx)
+                    kv.info["offset"][layer_idx] += n_q
+                    kv.info["cu_len_k"][layer_idx] += n_q * kv.info["cu_head"]
 
-            # Output projection + residual + MLP (Qwen2 style)
+                    # Now attend to full cache (context + query K/V)
+                    old_k = kv.key_cache[layer_idx]
+                    old_v = kv.value_cache[layer_idx]
+
+                    q_prep = q_4d.view(1, num_kv_heads, n_group, T_cur, head_dim)
+                    q_prep = q_prep.transpose(2, 3).contiguous().view(-1, n_group, head_dim)
+
+                    cu_len_q = T_cur * kv.info["cu_head"]
+                    cu_len_k = kv.info["cu_len_k"][layer_idx]
+                    max_len_k = kv.info["max_len_k"][layer_idx]
+                    if isinstance(max_len_k, torch.Tensor):
+                        max_len_k = int(max_len_k.item())
+                    offset = kv.info["offset"][layer_idx]
+
+                    k_prep = old_k.view(-1, 1, head_dim)
+                    v_prep = old_v.view(-1, 1, head_dim)
+
+                    # causal=True works here: query K/V appended at the end of cache,
+                    # so causal mask correctly lets Q[i] see all context + query[0..i]
+                    attn_output = flash_attn_varlen_func(
+                        q_prep, k_prep, v_prep,
+                        cu_seqlens_q=cu_len_q,
+                        cu_seqlens_k=cu_len_k,
+                        max_seqlen_q=T_cur,
+                        max_seqlen_k=max_len_k + offset,
+                        dropout_p=0.0,
+                        causal=True,
+                    )
+
+                    attn_output = attn_output.view(1, num_kv_heads, T_cur, n_group, head_dim).transpose(1, 2)
+                    attn_output = attn_output.contiguous().view(T_cur, -1)
+                else:
+                    k_exp = k_4d.repeat_interleave(n_group, dim=1)
+                    v_4d = v_new.view(T_cur, num_kv_heads, head_dim).unsqueeze(0).transpose(1, 2)
+                    v_exp = v_4d.repeat_interleave(n_group, dim=1)
+                    attn_output = torch.nn.functional.scaled_dot_product_attention(
+                        q_4d, k_exp, v_exp, is_causal=True)
+                    attn_output = attn_output.transpose(1, 2).reshape(T_cur, -1)
+
+            # Output projection + residual + MLP
             hidden_states = layer.self_attn.o_proj(attn_output)
             hidden_states = residual + hidden_states
             residual = hidden_states
@@ -542,16 +543,16 @@ class ModelKVzip():
         t_blend = time.perf_counter() - t_start
         print(f"[BlendV2] Layer-by-layer forward: {t_blend*1000:.0f}ms")
 
-        # ── Final norm + lm_head → 첫 토큰 ──
+        # ── Final norm + lm_head → first token ──
         hidden_final = residual + hidden_states
         hidden_final = self.model.model.norm(hidden_final)
-        last_hidden = hidden_final[-1:]  # 마지막 토큰 (query의 마지막)
+        last_hidden = hidden_final[-1:]
         logits = self.model.lm_head(last_hidden)
-        first_token = torch.argmax(logits, dim=-1)  # [1]
+        first_token = torch.argmax(logits, dim=-1)
 
         # ── Decode loop ──
-        kv._seen_tokens = context_len + query_ids.shape[1]
-        kv.prefill_ids = torch.cat([kv.prefill_ids, query_ids], dim=1)
+        kv._seen_tokens = T_all  # all tokens including any extra from new context
+        kv.prefill_ids = all_ids  # use the actual all_ids for decode continuation
 
         generated = [first_token.item()]
         max_new = self.gen_kwargs.get("max_new_tokens", 512)
@@ -566,7 +567,6 @@ class ModelKVzip():
             next_token = torch.argmax(next_logits).item()
             generated.append(next_token)
 
-        # EOS 제거
         if generated and generated[-1] == eos_id:
             generated = generated[:-1]
         output = self.tokenizer.decode(generated)
