@@ -447,16 +447,15 @@ class ModelKVzip():
                             all_imp_abs.add(idx)
 
                     imp_context = sorted(all_imp_abs)
-                    # Post-check: forward ONLY query tokens (not imp context)
-                    # Context tokens with causal=False see "future" KV → corrupts hidden states
-                    # Query tokens are at the end → attend to all cached KV correctly
+                    # Post-check: forward imp context + query (like LMCache CacheBlend)
+                    # imp context tokens continue → their K/V overwrite cached KV at EVERY layer
                     imp_query = list(range(context_len, T_all))
-                    imp_indices = torch.tensor(imp_query, device=device, dtype=torch.long)
-                    imp_ctx_abs = set(imp_context)
+                    imp_indices = torch.tensor(imp_context + imp_query, device=device, dtype=torch.long)
+                    n_imp_ctx = len(imp_context)
 
-                    print(f"  [BlendV2] Layer {layer_idx}: overwrite {len(imp_context)} context, forward {len(imp_query)} query (diff={total_diff:.0f})")
+                    print(f"  [BlendV2] Layer {layer_idx}: {n_imp_ctx} imp context + {len(imp_query)} query = {len(imp_indices)} tokens (diff={total_diff:.0f})")
 
-                    # Shrink to query only
+                    # Shrink to imp context + query
                     residual = residual[imp_indices]
                     attn_output = attn_output[imp_indices]
 
@@ -470,10 +469,11 @@ class ModelKVzip():
                     kv.info["cu_len_k"][layer_idx] += n_q * kv.info["cu_head"]
 
                 # Overwrite cached K/V at imp context positions (check layer only)
-                if layer_idx in check_layers and is_pruned and imp_ctx_abs:
+                if layer_idx in check_layers and is_pruned and imp_context:
+                    imp_ctx_set_chk = set(imp_context)
                     for h in range(num_kv_heads):
                         kept = fv[0, h].nonzero(as_tuple=True)[0]
-                        local_imp = [i for i, p in enumerate(kept.tolist()) if p in imp_ctx_abs]
+                        local_imp = [i for i, p in enumerate(kept.tolist()) if p in imp_ctx_set_chk]
                         if not local_imp:
                             continue
                         lt = torch.tensor(local_imp, dtype=torch.long, device=device)
@@ -483,18 +483,43 @@ class ModelKVzip():
                         kv.value_cache[layer_idx][cu[h] + lt] = v_fresh_h
 
             else:
-                # ── Phase 2: Post-check layers — query-only forward with cached KV ──
+                # ── Phase 2: Post-check layers — imp context + query forward ──
                 if is_pruned:
-                    # Append query K/V to cache BEFORE attention so query tokens
-                    # can see each other (self-attention) + all cached context
-                    n_q = T_cur
-                    k_q = k_4d  # [1, Hkv, T_cur, D]
-                    v_q = v_new.view(1, T_cur, num_kv_heads, head_dim).transpose(1, 2)
-                    kv.update(k_q, v_q, layer_idx)
-                    kv.info["offset"][layer_idx] += n_q
-                    kv.info["cu_len_k"][layer_idx] += n_q * kv.info["cu_head"]
+                    # Overwrite cached K/V at imp context positions with fresh K/V
+                    # This propagates the overwrite through ALL post-check layers
+                    imp_ctx_local = [i for i, p in enumerate(imp_indices.tolist()) if p < context_len]
+                    if imp_ctx_local:
+                        cu = kv.info["cu_len_k"][layer_idx]
+                        vp = torch.ones(1, num_kv_heads, kv.start_idx, dtype=torch.bool, device=device)
+                        fv_l = torch.cat([vp, kv.valid[layer_idx]], dim=-1)
+                        imp_ctx_abs_positions = [imp_indices[i].item() for i in imp_ctx_local]
+                        imp_ctx_set = set(imp_ctx_abs_positions)
 
-                    # Now attend to full cache (context + query K/V)
+                        for h in range(num_kv_heads):
+                            kept = fv_l[0, h].nonzero(as_tuple=True)[0]
+                            local_imp = [i for i, p in enumerate(kept.tolist()) if p in imp_ctx_set]
+                            if not local_imp:
+                                continue
+                            lt = torch.tensor(local_imp, dtype=torch.long, device=device)
+                            imp_local_t = torch.tensor(imp_ctx_local, device=device, dtype=torch.long)
+                            k_imp_h = k_4d[0, h, imp_local_t, :]
+                            v_imp_h = v_new[imp_local_t].view(-1, num_kv_heads, head_dim)[:, h, :]
+                            if k_imp_h.shape[0] == lt.shape[0]:
+                                kv.key_cache[layer_idx][cu[h] + lt] = k_imp_h
+                                kv.value_cache[layer_idx][cu[h] + lt] = v_imp_h
+
+                    # Append query K/V (non-context tokens) to cache BEFORE attention
+                    query_local = [i for i, p in enumerate(imp_indices.tolist()) if p >= context_len]
+                    if query_local:
+                        q_local_t = torch.tensor(query_local, device=device, dtype=torch.long)
+                        n_q = len(query_local)
+                        k_q = k_4d[:, :, q_local_t, :]
+                        v_q = v_new[q_local_t].view(1, n_q, num_kv_heads, head_dim).transpose(1, 2)
+                        kv.update(k_q, v_q, layer_idx)
+                        kv.info["offset"][layer_idx] += n_q
+                        kv.info["cu_len_k"][layer_idx] += n_q * kv.info["cu_head"]
+
+                    # Attend to full cache (context with overwrites + query K/V)
                     old_k = kv.key_cache[layer_idx]
                     old_v = kv.value_cache[layer_idx]
 
@@ -511,8 +536,6 @@ class ModelKVzip():
                     k_prep = old_k.view(-1, 1, head_dim)
                     v_prep = old_v.view(-1, 1, head_dim)
 
-                    # causal=True works here: query K/V appended at the end of cache,
-                    # so causal mask correctly lets Q[i] see all context + query[0..i]
                     attn_output = flash_attn_varlen_func(
                         q_prep, k_prep, v_prep,
                         cu_seqlens_q=cu_len_q,
