@@ -1,0 +1,2162 @@
+[
+  {
+    "method": "iw_hkvd",
+    "recomp": 0.01,
+    "query": "In what city was Einstein born?",
+    "keyword": "Ulm",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "iw_hkvd",
+    "recomp": 0.01,
+    "query": "What year was Principia published?",
+    "keyword": "1687",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "iw_hkvd",
+    "recomp": 0.01,
+    "query": "What elements did Curie discover?",
+    "keyword": "polonium",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "iw_hkvd",
+    "recomp": 0.01,
+    "query": "What ship did Darwin sail on?",
+    "keyword": "Beagle",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "iw_hkvd",
+    "recomp": 0.01,
+    "query": "How many patents did Tesla hold?",
+    "keyword": "300",
+    "output": " According to the given context, Nikola Tesla held over 300 patents.",
+    "match": true,
+    "rouge_l": 0.625
+  },
+  {
+    "method": "iw_hkvd",
+    "recomp": 0.01,
+    "query": "What year did Einstein get the Nobel?",
+    "keyword": "1921",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "iw_hkvd",
+    "recomp": 0.01,
+    "query": "Where was Newton born?",
+    "keyword": "Woolsthorpe",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "iw_hkvd",
+    "recomp": 0.01,
+    "query": "When did the French scientist Curie die?",
+    "keyword": "1934",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "iw_hkvd",
+    "recomp": 0.01,
+    "query": "What year was Origin of Species published?",
+    "keyword": "1859",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "iw_hkvd",
+    "recomp": 0.01,
+    "query": "In what room did Tesla die?",
+    "keyword": "3327",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "iw_hkvd",
+    "recomp": 0.03,
+    "query": "In what city was Einstein born?",
+    "keyword": "Ulm",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "iw_hkvd",
+    "recomp": 0.03,
+    "query": "What year was Principia published?",
+    "keyword": "1687",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "iw_hkvd",
+    "recomp": 0.03,
+    "query": "What elements did Curie discover?",
+    "keyword": "polonium",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "iw_hkvd",
+    "recomp": 0.03,
+    "query": "What ship did Darwin sail on?",
+    "keyword": "Beagle",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "iw_hkvd",
+    "recomp": 0.03,
+    "query": "How many patents did Tesla hold?",
+    "keyword": "300",
+    "output": " According to the given context, Nikola Tesla held over 300 patents.",
+    "match": true,
+    "rouge_l": 0.625
+  },
+  {
+    "method": "iw_hkvd",
+    "recomp": 0.03,
+    "query": "What year did Einstein get the Nobel?",
+    "keyword": "1921",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "iw_hkvd",
+    "recomp": 0.03,
+    "query": "Where was Newton born?",
+    "keyword": "Woolsthorpe",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "iw_hkvd",
+    "recomp": 0.03,
+    "query": "When did the French scientist Curie die?",
+    "keyword": "1934",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "iw_hkvd",
+    "recomp": 0.03,
+    "query": "What year was Origin of Species published?",
+    "keyword": "1859",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "iw_hkvd",
+    "recomp": 0.03,
+    "query": "In what room did Tesla die?",
+    "keyword": "3327",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "iw_hkvd",
+    "recomp": 0.05,
+    "query": "In what city was Einstein born?",
+    "keyword": "Ulm",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "iw_hkvd",
+    "recomp": 0.05,
+    "query": "What year was Principia published?",
+    "keyword": "1687",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "iw_hkvd",
+    "recomp": 0.05,
+    "query": "What elements did Curie discover?",
+    "keyword": "polonium",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "iw_hkvd",
+    "recomp": 0.05,
+    "query": "What ship did Darwin sail on?",
+    "keyword": "Beagle",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "iw_hkvd",
+    "recomp": 0.05,
+    "query": "How many patents did Tesla hold?",
+    "keyword": "300",
+    "output": " According to the given context, Nikola Tesla held over 300 patents.",
+    "match": true,
+    "rouge_l": 0.625
+  },
+  {
+    "method": "iw_hkvd",
+    "recomp": 0.05,
+    "query": "What year did Einstein get the Nobel?",
+    "keyword": "1921",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "iw_hkvd",
+    "recomp": 0.05,
+    "query": "Where was Newton born?",
+    "keyword": "Woolsthorpe",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "iw_hkvd",
+    "recomp": 0.05,
+    "query": "When did the French scientist Curie die?",
+    "keyword": "1934",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "iw_hkvd",
+    "recomp": 0.05,
+    "query": "What year was Origin of Species published?",
+    "keyword": "1859",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "iw_hkvd",
+    "recomp": 0.05,
+    "query": "In what room did Tesla die?",
+    "keyword": "3327",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "iw_hkvd",
+    "recomp": 0.1,
+    "query": "In what city was Einstein born?",
+    "keyword": "Ulm",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "iw_hkvd",
+    "recomp": 0.1,
+    "query": "What year was Principia published?",
+    "keyword": "1687",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "iw_hkvd",
+    "recomp": 0.1,
+    "query": "What elements did Curie discover?",
+    "keyword": "polonium",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "iw_hkvd",
+    "recomp": 0.1,
+    "query": "What ship did Darwin sail on?",
+    "keyword": "Beagle",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "iw_hkvd",
+    "recomp": 0.1,
+    "query": "How many patents did Tesla hold?",
+    "keyword": "300",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "iw_hkvd",
+    "recomp": 0.1,
+    "query": "What year did Einstein get the Nobel?",
+    "keyword": "1921",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "iw_hkvd",
+    "recomp": 0.1,
+    "query": "Where was Newton born?",
+    "keyword": "Woolsthorpe",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "iw_hkvd",
+    "recomp": 0.1,
+    "query": "When did the French scientist Curie die?",
+    "keyword": "1934",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "iw_hkvd",
+    "recomp": 0.1,
+    "query": "What year was Origin of Species published?",
+    "keyword": "1859",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "iw_hkvd",
+    "recomp": 0.1,
+    "query": "In what room did Tesla die?",
+    "keyword": "3327",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "iw_hkvd",
+    "recomp": 0.15,
+    "query": "In what city was Einstein born?",
+    "keyword": "Ulm",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "iw_hkvd",
+    "recomp": 0.15,
+    "query": "What year was Principia published?",
+    "keyword": "1687",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "iw_hkvd",
+    "recomp": 0.15,
+    "query": "What elements did Curie discover?",
+    "keyword": "polonium",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "iw_hkvd",
+    "recomp": 0.15,
+    "query": "What ship did Darwin sail on?",
+    "keyword": "Beagle",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "iw_hkvd",
+    "recomp": 0.15,
+    "query": "How many patents did Tesla hold?",
+    "keyword": "300",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "iw_hkvd",
+    "recomp": 0.15,
+    "query": "What year did Einstein get the Nobel?",
+    "keyword": "1921",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "iw_hkvd",
+    "recomp": 0.15,
+    "query": "Where was Newton born?",
+    "keyword": "Woolsthorpe",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "iw_hkvd",
+    "recomp": 0.15,
+    "query": "When did the French scientist Curie die?",
+    "keyword": "1934",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "iw_hkvd",
+    "recomp": 0.15,
+    "query": "What year was Origin of Species published?",
+    "keyword": "1859",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "iw_hkvd",
+    "recomp": 0.15,
+    "query": "In what room did Tesla die?",
+    "keyword": "3327",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "iw_hkvd",
+    "recomp": 0.3,
+    "query": "In what city was Einstein born?",
+    "keyword": "Ulm",
+    "output": " In what year was he born? What two theories did he develop? When did he receive the Nobel Prize in Physics? In what city did he move to in 1933?\n\nUlm, Germany, 1879, special relativity, general relativity, 1921, Princeton, New Jersey.",
+    "match": true,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "iw_hkvd",
+    "recomp": 0.3,
+    "query": "What year was Principia published?",
+    "keyword": "1687",
+    "output": " Principia was published in 1687.",
+    "match": true,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "iw_hkvd",
+    "recomp": 0.3,
+    "query": "What elements did Curie discover?",
+    "keyword": "polonium",
+    "output": " Marie Curie discovered polonium and radium. Her research on radioactivity led to X-ray machines in World War One. She died in 1934 from radiation exposure.\n\nDid Curie discover any elements? Yes, she discovered polonium and radium.",
+    "match": true,
+    "rouge_l": 0.244
+  },
+  {
+    "method": "iw_hkvd",
+    "recomp": 0.3,
+    "query": "What ship did Darwin sail on?",
+    "keyword": "Beagle",
+    "output": " HMS Beagle. Starting in 1831. \n\nWhat did Tesla conduct experiments in? Wireless. In Colorado Springs in 1899. \n\nWhere did Einstein move to? Princeton New Jersey in 1933. \n\nWhen did Newton publish Principia Mathematica? 1687. \n\nIn what year was Marie Curie born? 1867. \n\nWho received the Nobel Prize in Physics in 1921 for the photoelectric effect? Albert Einstein. \n\nWhat did Einstein develop the theory of special relativity in? 1905. \n\nWhat did Einstein's famous equation E equals mc squared describe? Mass energy equivalence. \n\nWhen did Einstein receive the Nobel Prize in Physics? 1921. \n\nWhat did Isaac Newton formulate three laws of motion and universal gravitation? Three laws of motion and universal gravitation. \n\nWhen was Principia Mathematica published? 1687. \n\nWhat did Albert Einstein receive the Nobel Prize in Physics for? The photoelectric effect. \n\nWhen did Einstein move to Princeton New Jersey? 1933. \n\nWhat did Marie Curie win the Physics Nobel in? 1903. \n\nWhat did Marie Curie discover? Polonium and radium. \n\nWhat did Marie Curie's research on radioactivity lead to in World War One? X-ray machines. \n\nWhen did Nikola Tesla die? 1943. \n\nIn what year did Tesla hold over 300 patents? Not specified. \n\nWhat did Tesla conduct wireless experiments in? Colorado Springs in 1899. \n\nWhat did Einstein develop the theory of general relativity in? 1915. \n\nWhen did Einstein publish his famous equation E equals mc squared? Not specified. \n\nWhat did Albert Einstein publish in 1905? The theory of special relativity. \n\nWhat did Isaac Newton discover white light is composed of a spectrum of colors? Not specified. \n\nWhat did Einstein receive the Nobel Prize in Physics for? The photoelectric effect. \n\nWhen did Einstein formulate the theory of special relativity? 1905. \n\nWhen did Einstein publish the theory of special relativity? 1905. \n\nWhat did Albert Einstein develop the theory of general relativity in? 1915. \n\nWhen did Einstein receive the Nobel Prize in Physics for the photoelectric effect? 1921. \n\nWhat did Isaac Newton formulate universal gravitation?",
+    "match": true,
+    "rouge_l": 0.006
+  },
+  {
+    "method": "iw_hkvd",
+    "recomp": 0.3,
+    "query": "How many patents did Tesla hold?",
+    "keyword": "300",
+    "output": " Tesla held over 300 patents.",
+    "match": true,
+    "rouge_l": 1.0
+  },
+  {
+    "method": "iw_hkvd",
+    "recomp": 0.3,
+    "query": "What year did Einstein get the Nobel?",
+    "keyword": "1921",
+    "output": " For what? In 1921, for the photoelectric effect.\n\nWhat year did Newton get the Master title? For what? In 1696, for the Royal Mint.",
+    "match": true,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "iw_hkvd",
+    "recomp": 0.3,
+    "query": "Where was Newton born?",
+    "keyword": "Woolsthorpe",
+    "output": " Woolsthorpe England.",
+    "match": true,
+    "rouge_l": 0.5
+  },
+  {
+    "method": "iw_hkvd",
+    "recomp": 0.3,
+    "query": "When did the French scientist Curie die?",
+    "keyword": "1934",
+    "output": " What was her field of study? When did she win the Nobel Prize in Physics? What was her contribution to the field of radioactivity? When did she conduct research on radium? What was her nationality? When did she discover polonium? What was her field of study? When did she win the Nobel Prize in Chemistry? What was her contribution to the field of radioactivity? What was her nationality? When did she conduct research on radium? What was her field of study? When did she win the Nobel Prize in Physics? What was her contribution to the field of physics? What was her nationality? When did she publish the book On the Origin of Species? What was her contribution to the field of biology? What was her nationality? When did she sail on the Beagle? What was her contribution to the field of biology? What was her nationality? When did she publish the book Principia Mathematica? What was her contribution to the field of mathematics? What was her nationality? When did she receive the Nobel Prize in Physics? What was her contribution to the field of physics? What was her nationality? When did she move to Princeton New Jersey? What was her contribution to the field of physics? What was her nationality? When did she receive the Nobel Prize in Chemistry? What was her contribution to the field of chemistry? What was her nationality? When did she conduct research on radium? What was her field of study? When did she win the Nobel Prize in Physics? What was her contribution to the field of physics? What was her nationality? When did she publish the book On the Origin of Species? What was her contribution to the field of biology? What was her nationality? When did she sail on the Beagle? What was her contribution to the field of biology? What was her nationality? When did she publish the book Principia Mathematica? What was her contribution to the field of mathematics? What was her nationality? When did she receive the Nobel Prize in Physics? What was her contribution to the field of physics? What was her nationality? When did she move to Princeton New Jersey? What was her contribution to the field of physics? What was her nationality? When did she die? What was her contribution to the field of physics? What was her nationality? When did she receive the Nobel Prize in Chemistry? What was her contribution to the field of chemistry? What was her nationality? When did she conduct research on radium? What was her field of study? When did she win the Nobel Prize in Physics",
+    "match": false,
+    "rouge_l": 0.005
+  },
+  {
+    "method": "iw_hkvd",
+    "recomp": 0.3,
+    "query": "What year was Origin of Species published?",
+    "keyword": "1859",
+    "output": " Origin of Species was published in 1859.",
+    "match": true,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "iw_hkvd",
+    "recomp": 0.3,
+    "query": "In what room did Tesla die?",
+    "keyword": "3327",
+    "output": " Nikola Tesla died in room 3327 of the New Yorker Hotel in 1943.",
+    "match": true,
+    "rouge_l": 0.143
+  },
+  {
+    "method": "diff_only",
+    "recomp": 0.01,
+    "query": "In what city was Einstein born?",
+    "keyword": "Ulm",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "diff_only",
+    "recomp": 0.01,
+    "query": "What year was Principia published?",
+    "keyword": "1687",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "diff_only",
+    "recomp": 0.01,
+    "query": "What elements did Curie discover?",
+    "keyword": "polonium",
+    "output": " Marie Curie discovered polonium and radium.",
+    "match": true,
+    "rouge_l": 0.909
+  },
+  {
+    "method": "diff_only",
+    "recomp": 0.01,
+    "query": "What ship did Darwin sail on?",
+    "keyword": "Beagle",
+    "output": " HMS Beagle",
+    "match": true,
+    "rouge_l": 1.0
+  },
+  {
+    "method": "diff_only",
+    "recomp": 0.01,
+    "query": "How many patents did Tesla hold?",
+    "keyword": "300",
+    "output": " According to the given context, Nikola Tesla held over 300 patents.",
+    "match": true,
+    "rouge_l": 0.625
+  },
+  {
+    "method": "diff_only",
+    "recomp": 0.01,
+    "query": "What year did Einstein get the Nobel?",
+    "keyword": "1921",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "diff_only",
+    "recomp": 0.01,
+    "query": "Where was Newton born?",
+    "keyword": "Woolsthorpe",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "diff_only",
+    "recomp": 0.01,
+    "query": "When did the French scientist Curie die?",
+    "keyword": "1934",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "diff_only",
+    "recomp": 0.01,
+    "query": "What year was Origin of Species published?",
+    "keyword": "1859",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "diff_only",
+    "recomp": 0.01,
+    "query": "In what room did Tesla die?",
+    "keyword": "3327",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "diff_only",
+    "recomp": 0.03,
+    "query": "In what city was Einstein born?",
+    "keyword": "Ulm",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "diff_only",
+    "recomp": 0.03,
+    "query": "What year was Principia published?",
+    "keyword": "1687",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "diff_only",
+    "recomp": 0.03,
+    "query": "What elements did Curie discover?",
+    "keyword": "polonium",
+    "output": " Marie Curie discovered polonium and radium.",
+    "match": true,
+    "rouge_l": 0.909
+  },
+  {
+    "method": "diff_only",
+    "recomp": 0.03,
+    "query": "What ship did Darwin sail on?",
+    "keyword": "Beagle",
+    "output": " HMS Beagle",
+    "match": true,
+    "rouge_l": 1.0
+  },
+  {
+    "method": "diff_only",
+    "recomp": 0.03,
+    "query": "How many patents did Tesla hold?",
+    "keyword": "300",
+    "output": " According to the given context, Nikola Tesla held over 300 patents.",
+    "match": true,
+    "rouge_l": 0.625
+  },
+  {
+    "method": "diff_only",
+    "recomp": 0.03,
+    "query": "What year did Einstein get the Nobel?",
+    "keyword": "1921",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "diff_only",
+    "recomp": 0.03,
+    "query": "Where was Newton born?",
+    "keyword": "Woolsthorpe",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "diff_only",
+    "recomp": 0.03,
+    "query": "When did the French scientist Curie die?",
+    "keyword": "1934",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "diff_only",
+    "recomp": 0.03,
+    "query": "What year was Origin of Species published?",
+    "keyword": "1859",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "diff_only",
+    "recomp": 0.03,
+    "query": "In what room did Tesla die?",
+    "keyword": "3327",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "diff_only",
+    "recomp": 0.05,
+    "query": "In what city was Einstein born?",
+    "keyword": "Ulm",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "diff_only",
+    "recomp": 0.05,
+    "query": "What year was Principia published?",
+    "keyword": "1687",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "diff_only",
+    "recomp": 0.05,
+    "query": "What elements did Curie discover?",
+    "keyword": "polonium",
+    "output": " Marie Curie discovered polonium and radium.",
+    "match": true,
+    "rouge_l": 0.909
+  },
+  {
+    "method": "diff_only",
+    "recomp": 0.05,
+    "query": "What ship did Darwin sail on?",
+    "keyword": "Beagle",
+    "output": " HMS Beagle",
+    "match": true,
+    "rouge_l": 1.0
+  },
+  {
+    "method": "diff_only",
+    "recomp": 0.05,
+    "query": "How many patents did Tesla hold?",
+    "keyword": "300",
+    "output": " According to the given context, Nikola Tesla held over 300 patents.",
+    "match": true,
+    "rouge_l": 0.625
+  },
+  {
+    "method": "diff_only",
+    "recomp": 0.05,
+    "query": "What year did Einstein get the Nobel?",
+    "keyword": "1921",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "diff_only",
+    "recomp": 0.05,
+    "query": "Where was Newton born?",
+    "keyword": "Woolsthorpe",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "diff_only",
+    "recomp": 0.05,
+    "query": "When did the French scientist Curie die?",
+    "keyword": "1934",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "diff_only",
+    "recomp": 0.05,
+    "query": "What year was Origin of Species published?",
+    "keyword": "1859",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "diff_only",
+    "recomp": 0.05,
+    "query": "In what room did Tesla die?",
+    "keyword": "3327",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "diff_only",
+    "recomp": 0.1,
+    "query": "In what city was Einstein born?",
+    "keyword": "Ulm",
+    "output": " According to the context, Einstein was born in Ulm, Germany.",
+    "match": true,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "diff_only",
+    "recomp": 0.1,
+    "query": "What year was Principia published?",
+    "keyword": "1687",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "diff_only",
+    "recomp": 0.1,
+    "query": "What elements did Curie discover?",
+    "keyword": "polonium",
+    "output": " According to the context, Marie Curie discovered polonium and radium.",
+    "match": true,
+    "rouge_l": 0.667
+  },
+  {
+    "method": "diff_only",
+    "recomp": 0.1,
+    "query": "What ship did Darwin sail on?",
+    "keyword": "Beagle",
+    "output": " HMS Beagle",
+    "match": true,
+    "rouge_l": 1.0
+  },
+  {
+    "method": "diff_only",
+    "recomp": 0.1,
+    "query": "How many patents did Tesla hold?",
+    "keyword": "300",
+    "output": " According to the context, Nikola Tesla held over 300 patents.",
+    "match": true,
+    "rouge_l": 0.667
+  },
+  {
+    "method": "diff_only",
+    "recomp": 0.1,
+    "query": "What year did Einstein get the Nobel?",
+    "keyword": "1921",
+    "output": " \n\nEinstein received the Nobel Prize in Physics in 1921.",
+    "match": true,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "diff_only",
+    "recomp": 0.1,
+    "query": "Where was Newton born?",
+    "keyword": "Woolsthorpe",
+    "output": " According to the given context, Isaac Newton was born in Woolsthorpe, England.",
+    "match": true,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "diff_only",
+    "recomp": 0.1,
+    "query": "When did the French scientist Curie die?",
+    "keyword": "1934",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "diff_only",
+    "recomp": 0.1,
+    "query": "What year was Origin of Species published?",
+    "keyword": "1859",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "diff_only",
+    "recomp": 0.1,
+    "query": "In what room did Tesla die?",
+    "keyword": "3327",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "diff_only",
+    "recomp": 0.15,
+    "query": "In what city was Einstein born?",
+    "keyword": "Ulm",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "diff_only",
+    "recomp": 0.15,
+    "query": "What year was Principia published?",
+    "keyword": "1687",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "diff_only",
+    "recomp": 0.15,
+    "query": "What elements did Curie discover?",
+    "keyword": "polonium",
+    "output": " Marie Curie discovered polonium and radium.",
+    "match": true,
+    "rouge_l": 0.909
+  },
+  {
+    "method": "diff_only",
+    "recomp": 0.15,
+    "query": "What ship did Darwin sail on?",
+    "keyword": "Beagle",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "diff_only",
+    "recomp": 0.15,
+    "query": "How many patents did Tesla hold?",
+    "keyword": "300",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "diff_only",
+    "recomp": 0.15,
+    "query": "What year did Einstein get the Nobel?",
+    "keyword": "1921",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "diff_only",
+    "recomp": 0.15,
+    "query": "Where was Newton born?",
+    "keyword": "Woolsthorpe",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "diff_only",
+    "recomp": 0.15,
+    "query": "When did the French scientist Curie die?",
+    "keyword": "1934",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "diff_only",
+    "recomp": 0.15,
+    "query": "What year was Origin of Species published?",
+    "keyword": "1859",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "diff_only",
+    "recomp": 0.15,
+    "query": "In what room did Tesla die?",
+    "keyword": "3327",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "diff_only",
+    "recomp": 0.3,
+    "query": "In what city was Einstein born?",
+    "keyword": "Ulm",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "diff_only",
+    "recomp": 0.3,
+    "query": "What year was Principia published?",
+    "keyword": "1687",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "diff_only",
+    "recomp": 0.3,
+    "query": "What elements did Curie discover?",
+    "keyword": "polonium",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "diff_only",
+    "recomp": 0.3,
+    "query": "What ship did Darwin sail on?",
+    "keyword": "Beagle",
+    "output": " HMS Beagle",
+    "match": true,
+    "rouge_l": 1.0
+  },
+  {
+    "method": "diff_only",
+    "recomp": 0.3,
+    "query": "How many patents did Tesla hold?",
+    "keyword": "300",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "diff_only",
+    "recomp": 0.3,
+    "query": "What year did Einstein get the Nobel?",
+    "keyword": "1921",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "diff_only",
+    "recomp": 0.3,
+    "query": "Where was Newton born?",
+    "keyword": "Woolsthorpe",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "diff_only",
+    "recomp": 0.3,
+    "query": "When did the French scientist Curie die?",
+    "keyword": "1934",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "diff_only",
+    "recomp": 0.3,
+    "query": "What year was Origin of Species published?",
+    "keyword": "1859",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "diff_only",
+    "recomp": 0.3,
+    "query": "In what room did Tesla die?",
+    "keyword": "3327",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "importance_only",
+    "recomp": 0.01,
+    "query": "In what city was Einstein born?",
+    "keyword": "Ulm",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "importance_only",
+    "recomp": 0.01,
+    "query": "What year was Principia published?",
+    "keyword": "1687",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "importance_only",
+    "recomp": 0.01,
+    "query": "What elements did Curie discover?",
+    "keyword": "polonium",
+    "output": " Marie Curie discovered polonium and radium.",
+    "match": true,
+    "rouge_l": 0.909
+  },
+  {
+    "method": "importance_only",
+    "recomp": 0.01,
+    "query": "What ship did Darwin sail on?",
+    "keyword": "Beagle",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "importance_only",
+    "recomp": 0.01,
+    "query": "How many patents did Tesla hold?",
+    "keyword": "300",
+    "output": " Tesla held over 300 patents.",
+    "match": true,
+    "rouge_l": 1.0
+  },
+  {
+    "method": "importance_only",
+    "recomp": 0.01,
+    "query": "What year did Einstein get the Nobel?",
+    "keyword": "1921",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "importance_only",
+    "recomp": 0.01,
+    "query": "Where was Newton born?",
+    "keyword": "Woolsthorpe",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "importance_only",
+    "recomp": 0.01,
+    "query": "When did the French scientist Curie die?",
+    "keyword": "1934",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "importance_only",
+    "recomp": 0.01,
+    "query": "What year was Origin of Species published?",
+    "keyword": "1859",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "importance_only",
+    "recomp": 0.01,
+    "query": "In what room did Tesla die?",
+    "keyword": "3327",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "importance_only",
+    "recomp": 0.03,
+    "query": "In what city was Einstein born?",
+    "keyword": "Ulm",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "importance_only",
+    "recomp": 0.03,
+    "query": "What year was Principia published?",
+    "keyword": "1687",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "importance_only",
+    "recomp": 0.03,
+    "query": "What elements did Curie discover?",
+    "keyword": "polonium",
+    "output": " Marie Curie discovered polonium and radium.",
+    "match": true,
+    "rouge_l": 0.909
+  },
+  {
+    "method": "importance_only",
+    "recomp": 0.03,
+    "query": "What ship did Darwin sail on?",
+    "keyword": "Beagle",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "importance_only",
+    "recomp": 0.03,
+    "query": "How many patents did Tesla hold?",
+    "keyword": "300",
+    "output": " Tesla held over 300 patents.",
+    "match": true,
+    "rouge_l": 1.0
+  },
+  {
+    "method": "importance_only",
+    "recomp": 0.03,
+    "query": "What year did Einstein get the Nobel?",
+    "keyword": "1921",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "importance_only",
+    "recomp": 0.03,
+    "query": "Where was Newton born?",
+    "keyword": "Woolsthorpe",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "importance_only",
+    "recomp": 0.03,
+    "query": "When did the French scientist Curie die?",
+    "keyword": "1934",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "importance_only",
+    "recomp": 0.03,
+    "query": "What year was Origin of Species published?",
+    "keyword": "1859",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "importance_only",
+    "recomp": 0.03,
+    "query": "In what room did Tesla die?",
+    "keyword": "3327",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "importance_only",
+    "recomp": 0.05,
+    "query": "In what city was Einstein born?",
+    "keyword": "Ulm",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "importance_only",
+    "recomp": 0.05,
+    "query": "What year was Principia published?",
+    "keyword": "1687",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "importance_only",
+    "recomp": 0.05,
+    "query": "What elements did Curie discover?",
+    "keyword": "polonium",
+    "output": " Marie Curie discovered polonium and radium.",
+    "match": true,
+    "rouge_l": 0.909
+  },
+  {
+    "method": "importance_only",
+    "recomp": 0.05,
+    "query": "What ship did Darwin sail on?",
+    "keyword": "Beagle",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "importance_only",
+    "recomp": 0.05,
+    "query": "How many patents did Tesla hold?",
+    "keyword": "300",
+    "output": " Tesla held over 300 patents.",
+    "match": true,
+    "rouge_l": 1.0
+  },
+  {
+    "method": "importance_only",
+    "recomp": 0.05,
+    "query": "What year did Einstein get the Nobel?",
+    "keyword": "1921",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "importance_only",
+    "recomp": 0.05,
+    "query": "Where was Newton born?",
+    "keyword": "Woolsthorpe",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "importance_only",
+    "recomp": 0.05,
+    "query": "When did the French scientist Curie die?",
+    "keyword": "1934",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "importance_only",
+    "recomp": 0.05,
+    "query": "What year was Origin of Species published?",
+    "keyword": "1859",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "importance_only",
+    "recomp": 0.05,
+    "query": "In what room did Tesla die?",
+    "keyword": "3327",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "importance_only",
+    "recomp": 0.1,
+    "query": "In what city was Einstein born?",
+    "keyword": "Ulm",
+    "output": " Ulm.\n\nIn what year did Newton formulate three laws of motion and universal gravitation? 1687.\n\nIn what year did Marie Curie win the Physics Nobel? 1903.\n\nIn what city was Darwin born? Shrewsbury.\n\nIn what year was Tesla born? 1856.\n\nIn what state did Einstein move to in 1933? New Jersey.\n\nIn what year did Newton receive the Master of the Royal Mint? 1696.\n\nIn what year did Marie Curie die? 1934.\n\nIn what year did Einstein publish E equals mc squared? Not specified, but it's not 1905 or 1915.\n\nIn what year did Einstein receive the Nobel Prize in Physics? 1921.\n\nIn what year did Newton publish Principia Mathematica? 1687.\n\nIn what year did Einstein develop the theory of special relativity? 1905.\n\nIn what year did Einstein develop the theory of general relativity? 1915.\n\nIn what year did Marie Curie discover polonium and radium? Not specified, but it's not 1903 or 1911.\n\nIn what year did Einstein receive the Nobel Prize in Physics for the photoelectric effect? 1921.\n\nIn what year did Einstein move to Princeton New Jersey? 1933.\n\nIn what year did Tesla conduct wireless experiments in Colorado Springs? 1899.\n\nIn what city was Newton born? Woolsthorpe.\n\nIn what year did Marie Curie win the Chemistry Nobel? 1911.\n\nIn what year did Einstein publish his famous equation E equals mc squared? Not specified, but it's not 1905 or 1915.\n\nIn what year did Einstein receive the Nobel Prize in Physics for the photoelectric effect? 1921.\n\nIn what year did Newton publish Principia Mathematica? 1687.\n\nIn what year did Einstein develop the theory of special relativity? 1905.\n\nIn what year did Einstein develop the theory of general relativity? 1915.\n\nIn what year did Marie Curie discover polonium and radium? Not specified, but it's not 1903 or 1911.\n\nIn what year did Einstein receive the Nobel Prize in Physics for the photoelectric effect? 1921.\n\nIn what",
+    "match": true,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "importance_only",
+    "recomp": 0.1,
+    "query": "What year was Principia published?",
+    "keyword": "1687",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "importance_only",
+    "recomp": 0.1,
+    "query": "What elements did Curie discover?",
+    "keyword": "polonium",
+    "output": " Curie discovered polonium and radium.",
+    "match": true,
+    "rouge_l": 1.0
+  },
+  {
+    "method": "importance_only",
+    "recomp": 0.1,
+    "query": "What ship did Darwin sail on?",
+    "keyword": "Beagle",
+    "output": " \n\nHMS Beagle",
+    "match": true,
+    "rouge_l": 1.0
+  },
+  {
+    "method": "importance_only",
+    "recomp": 0.1,
+    "query": "How many patents did Tesla hold?",
+    "keyword": "300",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "importance_only",
+    "recomp": 0.1,
+    "query": "What year did Einstein get the Nobel?",
+    "keyword": "1921",
+    "output": " Albert Einstein received the Nobel Prize in Physics in 1921 for the photoelectric effect.",
+    "match": true,
+    "rouge_l": 0.133
+  },
+  {
+    "method": "importance_only",
+    "recomp": 0.1,
+    "query": "Where was Newton born?",
+    "keyword": "Woolsthorpe",
+    "output": " What year? What did he publish in 1687? What did he discover about light? What position did he hold from 1696? Where was Einstein born? What year? What did he develop in 1905 and 1915? What is his famous equation? When did he receive the Nobel Prize in Physics? Where did he move in 1933? Where was Marie Curie born? What year? What did she win Nobel Prizes for? What did she discover? What did her research lead to in World War One? When did she die? Where was Charles Darwin born? What year? What did he publish in 1859? What did his voyage provide? When did he die? Where was Nikola Tesla born? What year? What did he develop? How many patents did he hold? When did he conduct wireless experiments? In what hotel did he die? When did Einstein receive the Nobel Prize in Physics? Where did Einstein move in 1933? What year was Marie Curie born? What did she win Nobel Prizes for? What did she discover? What did her research lead to in World War One? When did she die? Where was Charles Darwin born? What year? What did he publish in 1859? What did his voyage provide? When did he die? Where was Nikola Tesla born? What year? What did he develop? How many patents did he hold? When did he conduct wireless experiments? In what hotel did he die? When did Einstein receive the Nobel Prize in Physics? Where did Einstein move in 1933? What year was Marie Curie born? What did she win Nobel Prizes for? What did she discover? What did her research lead to in World War One? When did she die? Where was Charles Darwin born? What year? What did he publish in 1859? What did his voyage provide? When did he die? Where was Nikola Tesla born? What year? What did he develop? How many patents did he hold? When did he conduct wireless experiments? In what hotel did he die? When did Einstein receive the Nobel Prize in Physics? Where did Einstein move in 1933? What year was Marie Curie born? What did she win Nobel Prizes for? What did she discover? What did her research lead to in World War One? When did she die? Where was Charles Darwin born? What year? What did",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "importance_only",
+    "recomp": 0.1,
+    "query": "When did the French scientist Curie die?",
+    "keyword": "1934",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "importance_only",
+    "recomp": 0.1,
+    "query": "What year was Origin of Species published?",
+    "keyword": "1859",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "importance_only",
+    "recomp": 0.1,
+    "query": "In what room did Tesla die?",
+    "keyword": "3327",
+    "output": " \n\nRoom 3327 of the New Yorker Hotel.",
+    "match": true,
+    "rouge_l": 0.25
+  },
+  {
+    "method": "importance_only",
+    "recomp": 0.15,
+    "query": "In what city was Einstein born?",
+    "keyword": "Ulm",
+    "output": " Ulm.\n\nIn what year did Newton formulate his three laws of motion and universal gravitation? 1687.\n\nIn what year was Marie Curie born? 1867.\n\nIn what city was Darwin born? Shrewsbury.\n\nIn what year did Tesla conduct his wireless experiments? 1899.\n\nIn what hotel did Tesla die? The New Yorker.\n\nIn what country was Marie Curie born? Poland.\n\nIn what year did Einstein receive the Nobel Prize in Physics? 1921.\n\nIn what year did Einstein develop the theory of special relativity? 1905.\n\nIn what year did Einstein develop the theory of general relativity? 1915.\n\nIn what year did Isaac Newton publish Principia Mathematica? 1687.\n\nIn what year did Albert Einstein publish \"On the Origin of Species\"? 1859.\n\nIn what year did Charles Darwin publish \"On the Origin of Species\"? 1859.\n\nIn what year did Isaac Newton publish \"Principia Mathematica\"? 1687.\n\nIn what year did Marie Curie win the Physics Nobel? 1903.\n\nIn what year did Marie Curie win the Chemistry Nobel? 1911.\n\nIn what year did Albert Einstein move to Princeton New Jersey? 1933.\n\nIn what year did Nikola Tesla hold over 300 patents? Over 300.\n\nIn what year did Marie Curie die? 1934.\n\nIn what year did Albert Einstein receive the Nobel Prize in Physics? 1921.\n\nIn what year did Isaac Newton discover white light is composed of a spectrum of colors? 1687.\n\nIn what year did Albert Einstein develop the theory of special relativity? 1905.\n\nIn what year did Albert Einstein develop the theory of general relativity? 1915.\n\nIn what year did Isaac Newton formulate three laws of motion and universal gravitation? 1687.\n\nIn what year did Charles Darwin publish \"On the Origin of Species\"? 1859.\n\nIn what year did Nikola Tesla conduct wireless experiments in Colorado Springs? 1899.\n\nIn what year did Albert Einstein move to Princeton New Jersey? 1933.\n\nIn what year did Marie Curie win the Chemistry Nobel? 1911.\n\nIn what year did Marie Curie win the Physics Nobel? 1903.\n\nIn",
+    "match": true,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "importance_only",
+    "recomp": 0.15,
+    "query": "What year was Principia published?",
+    "keyword": "1687",
+    "output": " According to the context, Principia Mathematica was published in 1687.",
+    "match": true,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "importance_only",
+    "recomp": 0.15,
+    "query": "What elements did Curie discover?",
+    "keyword": "polonium",
+    "output": " Polonium and Radium.",
+    "match": true,
+    "rouge_l": 0.75
+  },
+  {
+    "method": "importance_only",
+    "recomp": 0.15,
+    "query": "What ship did Darwin sail on?",
+    "keyword": "Beagle",
+    "output": " \n\nHMS Beagle\n\nWho was buried in Westminster Abbey? \n\nCharles Darwin\n\nWhat year was Tesla born? \n\n1856\n\nWhat did Einstein receive the Nobel Prize in Physics for? \n\nthe photoelectric effect\n\nWhen did Marie Curie die? \n\n1934\n\nWhat did Tesla conduct experiments in? \n\nColorado Springs\n\nIn what year was Albert Einstein born? \n\n1879\n\nWho won the Chemistry Nobel in 1911? \n\nMarie Curie\n\nWhen did Nikola Tesla die? \n\n1943\n\nWhat did Marie Curie discover? \n\npolonium and radium\n\nWhen did Charles Darwin publish his work? \n\n1859\n\nIn which country was Marie Curie born? \n\nPoland\n\nWhat did Albert Einstein develop the theory of? \n\nspecial relativity and general relativity\n\nWhen did Isaac Newton formulate his laws of motion? \n\n1687\n\nIn which year did Albert Einstein move to Princeton, New Jersey? \n\n1933\n\nWhat did Isaac Newton discover about white light? \n\ncomposed of a spectrum of colors\n\nWhen did Marie Curie win the Physics Nobel? \n\n1903\n\nWhat did Charles Darwin publish that described evolution by natural selection? \n\nOn the Origin of Species\n\nWhen did Nikola Tesla hold over 300 patents? \n\nTesla\n\nWhen did Marie Curie die from? \n\nradiation exposure\n\nIn which hotel did Nikola Tesla die in? \n\nNew Yorker Hotel\n\nWhat did Albert Einstein's famous equation describe? \n\nmass energy equivalence\n\nWhen did Isaac Newton publish his Principia Mathematica? \n\n1687\n\nIn which city was Albert Einstein born? \n\nUlm\n\nWhat did Marie Curie win two Nobel Prizes for? \n\nPhysics and Chemistry\n\nWhen did Charles Darwin start his voyage on HMS Beagle? \n\n1831\n\nIn which year did Albert Einstein receive the Nobel Prize in Physics? \n\n1921\n\nWhat did Tesla conduct wireless experiments in? \n\nColorado Springs\n\nIn which year was Marie Curie born? \n\n1867\n\nWhat did Einstein develop that describes the relationship between mass and energy? \n\nE equals mc squared\n\nWhen did Albert Einstein develop the theory of special relativity? \n\n1905\n\nWhat did Isaac Newton serve as? \n\nMaster of the Royal Mint\n\nWhen did Marie Curie win the Chemistry Nobel? \n\n1911\n\nIn which country was Nikola Tesla born? \n\nCroatia\n\nWhat did Charles Darwin publish",
+    "match": true,
+    "rouge_l": 0.012
+  },
+  {
+    "method": "importance_only",
+    "recomp": 0.15,
+    "query": "How many patents did Tesla hold?",
+    "keyword": "300",
+    "output": " Nikola Tesla held over 300 patents. Marie Curie was born in Warsaw Poland in 1867. She won the Physics Nobel in 1903 and Chemistry Nobel in 1911. She discovered polonium and radium. Her research on radioactivity led to X-ray machines in World War One. She died in 1934 from radiation exposure. Charles Darwin was born in Shrewsbury England in 1809. He published On the Origin of Species in 1859 describing evolution by natural selection. His voyage on HMS Beagle starting in 1831 provided key observations. He was buried in Westminster Abbey in 1882. Nikola Tesla was born in Smiljan Croatia in 1856. He developed the alternating current AC electrical system. Tesla held over 300 patents. He conducted wireless experiments in Colorado Springs in 1899. Tesla died in room 3327 of the New Yorker Hotel in 1943. \n\nNikola Tesla held over 300 patents. The exact number is 306.",
+    "match": true,
+    "rouge_l": 0.066
+  },
+  {
+    "method": "importance_only",
+    "recomp": 0.15,
+    "query": "What year did Einstein get the Nobel?",
+    "keyword": "1921",
+    "output": " Albert Einstein received the Nobel Prize in Physics in 1921.",
+    "match": true,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "importance_only",
+    "recomp": 0.15,
+    "query": "Where was Newton born?",
+    "keyword": "Woolsthorpe",
+    "output": " What year? Where was Einstein born? What year? Where was Marie Curie born? What year? Where was Charles Darwin born? What year? Where was Nikola Tesla born? What year? Who formulated three laws of motion and universal gravitation? Who published Principia Mathematica in 1687? Who discovered white light is composed of a spectrum of colors? Who developed the theory of special relativity in 1905? Who received the Nobel Prize in Physics in 1921 for the photoelectric effect? Who moved to Princeton New Jersey in 1933? Who was buried in Westminster Abbey in 1882? Who held over 300 patents? Who conducted wireless experiments in Colorado Springs in 1899? Who died in room 3327 of the New Yorker Hotel in 1943? Who published On the Origin of Species in 1859 describing evolution by natural selection? Who was born in Ulm Germany in 1879? Who formulated three laws of motion and universal gravitation? Who served as Master of the Royal Mint from 1696? Who was born in Woolsthorpe England in 1643? Who was buried in Westminster Abbey in 1882? Who was born in Smiljan Croatia in 1856? Who published Principia Mathematica in 1687? Who developed the alternating current AC electrical system? Who held over 300 patents? Who was buried in Westminster Abbey in 1882? Who conducted wireless experiments in Colorado Springs in 1899? Who died in room 3327 of the New Yorker Hotel in 1943? Who was born in Shrewsbury England in 1809? Who was born in Warsaw Poland in 1867? Who was born in Ulm Germany in 1879? Who was born in Woolsthorpe England in 1643? Who was born in Smiljan Croatia in 1856? Who was born in Shrewsbury England in 1809? Who was born in Warsaw Poland in 1867? Who was born in Ulm Germany in 1879? Who was born in Woolsthorpe England in 1643? Who was born in Smiljan Croatia in 1856? Who was",
+    "match": true,
+    "rouge_l": 0.013
+  },
+  {
+    "method": "importance_only",
+    "recomp": 0.15,
+    "query": "When did the French scientist Curie die?",
+    "keyword": "1934",
+    "output": " Marie Curie died in 1934 from radiation exposure.",
+    "match": true,
+    "rouge_l": 0.615
+  },
+  {
+    "method": "importance_only",
+    "recomp": 0.15,
+    "query": "What year was Origin of Species published?",
+    "keyword": "1859",
+    "output": " Charles Darwin published \"On the Origin of Species\" in 1859.",
+    "match": true,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "importance_only",
+    "recomp": 0.15,
+    "query": "In what room did Tesla die?",
+    "keyword": "3327",
+    "output": " \n\nRoom 3327 of the New Yorker Hotel.",
+    "match": true,
+    "rouge_l": 0.25
+  },
+  {
+    "method": "importance_only",
+    "recomp": 0.3,
+    "query": "In what city was Einstein born?",
+    "keyword": "Ulm",
+    "output": " What year did he develop the theory of special relativity? What is the famous equation that describes mass-energy equivalence? When did he receive the Nobel Prize in Physics?\n\nEinstein was born in Ulm, Germany in 1879. He developed the theory of special relativity in 1905. His famous equation E equals mc squared describes mass-energy equivalence. He received the Nobel Prize in Physics in 1921.",
+    "match": true,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "importance_only",
+    "recomp": 0.3,
+    "query": "What year was Principia published?",
+    "keyword": "1687",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "importance_only",
+    "recomp": 0.3,
+    "query": "What elements did Curie discover?",
+    "keyword": "polonium",
+    "output": " Marie Curie discovered polonium and radium. Her research on radioactivity led to X-ray machines in World War One. She died in 1934 from radiation exposure.",
+    "match": true,
+    "rouge_l": 0.333
+  },
+  {
+    "method": "importance_only",
+    "recomp": 0.3,
+    "query": "What ship did Darwin sail on?",
+    "keyword": "Beagle",
+    "output": " \n\nWhen did Einstein move to Princeton? \n\nWhere was Tesla born? \n\nWhat did Tesla develop? \n\nIn what year was Marie Curie born? \n\nWho did Einstein receive the Nobel Prize in Physics from? \n\nWhat did Marie Curie discover that led to X-ray machines in World War One? \n\nWhen did Tesla die? \n\nWhat did Marie Curie win Nobel Prizes for? \n\nWhat did Einstein develop the theory of? \n\nWhen did Newton publish Principia Mathematica? \n\nWhere did Marie Curie die? \n\nWhen did Einstein move to Princeton? \n\nWhat year was Nikola Tesla born? \n\nWho was Albert Einstein's wife? \n\nWhat did Charles Darwin publish that described evolution by natural selection? \n\nWhen did Isaac Newton formulate universal gravitation? \n\nWhat did Marie Curie discover that led to X-ray machines in World War One? \n\nWhen did Marie Curie die? \n\nWhat did Nikola Tesla conduct experiments in? \n\nWhen did Charles Darwin publish On the Origin of Species? \n\nWhat did Marie Curie win Nobel Prizes for? \n\nWhen did Albert Einstein receive the Nobel Prize in Physics? \n\nWhat did Marie Curie die of? \n\nWhat did Isaac Newton discover about white light? \n\nWhen did Marie Curie die? \n\nWhat did Albert Einstein develop the theory of? \n\nWhen did Marie Curie die? \n\nWhat did Albert Einstein receive the Nobel Prize for? \n\nWhen did Einstein move to Princeton? \n\nWhat year was Nikola Tesla born? \n\nWhen did Einstein receive the Nobel Prize in Physics? \n\nWhat did Marie Curie discover that led to X-ray machines in World War One? \n\nWhen did Einstein die? \n\nWhat did Albert Einstein develop the theory of? \n\nWhen did Isaac Newton formulate universal gravitation? \n\nWhat did Marie Curie discover that led to X-ray machines in World War One? \n\nWhen did Einstein move to Princeton? \n\nWhat year was Nikola Tesla born? \n\nWhen did Einstein receive the Nobel Prize in Physics? \n\nWhat did Marie Curie win Nobel Prizes for? \n\nWhen did Albert Einstein receive the Nobel Prize in Physics? \n\nWhat did Marie Curie die of? \n\nWhat did Albert Einstein develop the theory of? \n\nWhen did Marie Curie die? \n\nWhat did Albert Einstein receive the Nobel Prize for? \n\nWhen did Einstein move to Princeton? \n\nWhat year was Nikola Tesla born? \n\nWhen did Einstein receive the Nobel Prize in Physics? \n\nWhat did Marie Curie discover that led to X-ray machines in World War One? \n\nWhen did Einstein die? \n\nWhat did",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "importance_only",
+    "recomp": 0.3,
+    "query": "How many patents did Tesla hold?",
+    "keyword": "300",
+    "output": " \n\nTesla held over 300 patents.",
+    "match": true,
+    "rouge_l": 1.0
+  },
+  {
+    "method": "importance_only",
+    "recomp": 0.3,
+    "query": "What year did Einstein get the Nobel?",
+    "keyword": "1921",
+    "output": " Einstein got the Nobel Prize in Physics in 1921.",
+    "match": true,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "importance_only",
+    "recomp": 0.3,
+    "query": "Where was Newton born?",
+    "keyword": "Woolsthorpe",
+    "output": " What year did Einstein receive the Nobel Prize? Where was Marie Curie born? When did Tesla die? Where was Einstein born? What year was Marie Curie born? Where was Charles Darwin born? When did Tesla develop the alternating current? Where was Isaac Newton born? What year did Marie Curie receive the Nobel Prize in Chemistry? Where was Nikola Tesla born? When was Marie Curie born? Where was Albert Einstein born? What year did Nikola Tesla develop the alternating current? Where was Isaac Newton born? What year did Albert Einstein receive the Nobel Prize? Where was Marie Curie born? What year did Charles Darwin publish On the Origin of Species? Where was Nikola Tesla born? What year did Marie Curie die? Where was Albert Einstein born? What year did Marie Curie receive the Nobel Prize in Physics? Where was Isaac Newton born? What year did Albert Einstein move to Princeton? Where was Charles Darwin born? When did Marie Curie receive the Nobel Prize in Physics? Where was Nikola Tesla born? What year did Marie Curie receive the Nobel Prize in Chemistry? Where was Albert Einstein born? What year did Marie Curie die? Where was Isaac Newton born? What year did Albert Einstein receive the Nobel Prize? Where was Marie Curie born? What year did Charles Darwin publish On the Origin of Species? Where was Nikola Tesla born? What year did Marie Curie receive the Nobel Prize in Physics? Where was Albert Einstein born? What year did Marie Curie receive the Nobel Prize in Chemistry? Where was Isaac Newton born? What year did Albert Einstein move to Princeton? Where was Charles Darwin born? When did Marie Curie die? Where was Nikola Tesla born? What year did Albert Einstein receive the Nobel Prize? Where was Marie Curie born? What year did Charles Darwin publish On the Origin of Species? Where was Nikola Tesla born? What year did Marie Curie receive the Nobel Prize in Physics? Where was Albert Einstein born? What year did Marie Curie receive the Nobel Prize in Chemistry? Where was Isaac Newton born? What year did Albert Einstein move to Princeton? Where was Charles Darwin born? When did Marie Curie die? Where was Nikola Tesla born? What year did Albert Einstein receive the Nobel Prize? Where was Marie Curie born? What year did Charles Darwin publish On the Origin of Species? Where was Nikola Tesla born? What year did Marie Curie receive the Nobel Prize in Physics? Where was Albert Einstein born? What year did Marie Curie receive the Nobel Prize in Chemistry? Where was Isaac Newton born?",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "importance_only",
+    "recomp": 0.3,
+    "query": "When did the French scientist Curie die?",
+    "keyword": "1934",
+    "output": " \n\n Marie Curie died in 1934.",
+    "match": true,
+    "rouge_l": 1.0
+  },
+  {
+    "method": "importance_only",
+    "recomp": 0.3,
+    "query": "What year was Origin of Species published?",
+    "keyword": "1859",
+    "output": " \n\nWho received the Nobel Prize in Physics for the discovery of the photoelectric effect? \n\nIn what year was Albert Einstein born? \n\nWhat year did Tesla develop the alternating current? \n\nWhen did Marie Curie die? \n\nWho served as Master of the Royal Mint? \n\nWhat year was Principia Mathematica published? \n\nWhere was Isaac Newton born? \n\nWhen did Charles Darwin publish On the Origin of Species? \n\nWhat year did Nikola Tesla conduct wireless experiments? \n\nWho was buried in Westminster Abbey? \n\nWhat year was Albert Einstein awarded the Nobel Prize in Physics? \n\nHow many Nobel Prizes did Marie Curie win? \n\nWhat is the mass energy equivalence equation? \n\nWhen did Einstein move to Princeton? \n\nWhat year was Charles Darwin born? \n\nWho discovered polonium and radium? \n\nWhen did Marie Curie die from? \n\nWhat year was Albert Einstein awarded the Nobel Prize in Physics? \n\nWhen did Isaac Newton formulate universal gravitation? \n\nWhat year was Albert Einstein born in? \n\nWhen did Tesla die? \n\nWhat year was Einstein awarded the Nobel Prize in Physics? \n\nWhen did Einstein receive the Nobel Prize? \n\nWhat year did Marie Curie win the Physics Nobel? \n\nWhen did Marie Curie die? \n\nWhat year was Albert Einstein born? \n\nWhen did Einstein move to Princeton? \n\nWhat year was Isaac Newton born? \n\nWhen did Charles Darwin publish On the Origin of Species? \n\nWhat year was Nikola Tesla born? \n\nWhen did Marie Curie discover polonium and radium? \n\nWhat year did Einstein receive the Nobel Prize? \n\nWhen did Einstein receive the Nobel Prize in Physics? \n\nWhat year did Einstein receive the Nobel Prize? \n\nWhen did Einstein receive the Nobel Prize in Physics? \n\nWhat year did Einstein receive the Nobel Prize? \n\nWhen did Einstein receive the Nobel Prize in Physics? \n\nWhat year did Einstein receive the Nobel Prize? \n\nWhen did Einstein receive the Nobel Prize in Physics? \n\nWhat year did Einstein receive the Nobel Prize? \n\nWhen did Einstein receive the Nobel Prize in Physics? \n\nWhat year did Einstein receive the Nobel Prize? \n\nWhen did Einstein receive the Nobel Prize in Physics? \n\nWhat year did Einstein receive the Nobel Prize? \n\nWhen did Einstein receive the Nobel Prize in Physics? \n\nWhat year did Einstein receive the Nobel Prize? \n\nWhen did Einstein receive the Nobel Prize in Physics? \n\nWhat year did Einstein receive the Nobel Prize? \n\nWhen did Einstein receive the Nobel Prize in Physics? \n\nWhat year did Einstein receive the Nobel Prize? \n\nWhen did Einstein receive the Nobel",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "importance_only",
+    "recomp": 0.3,
+    "query": "In what room did Tesla die?",
+    "keyword": "3327",
+    "output": " Room 3327 of the New Yorker Hotel in 1943.",
+    "match": true,
+    "rouge_l": 0.2
+  },
+  {
+    "method": "random",
+    "recomp": 0.01,
+    "query": "In what city was Einstein born?",
+    "keyword": "Ulm",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "random",
+    "recomp": 0.01,
+    "query": "What year was Principia published?",
+    "keyword": "1687",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "random",
+    "recomp": 0.01,
+    "query": "What elements did Curie discover?",
+    "keyword": "polonium",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "random",
+    "recomp": 0.01,
+    "query": "What ship did Darwin sail on?",
+    "keyword": "Beagle",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "random",
+    "recomp": 0.01,
+    "query": "How many patents did Tesla hold?",
+    "keyword": "300",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "random",
+    "recomp": 0.01,
+    "query": "What year did Einstein get the Nobel?",
+    "keyword": "1921",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "random",
+    "recomp": 0.01,
+    "query": "Where was Newton born?",
+    "keyword": "Woolsthorpe",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "random",
+    "recomp": 0.01,
+    "query": "When did the French scientist Curie die?",
+    "keyword": "1934",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "random",
+    "recomp": 0.01,
+    "query": "What year was Origin of Species published?",
+    "keyword": "1859",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "random",
+    "recomp": 0.01,
+    "query": "In what room did Tesla die?",
+    "keyword": "3327",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "random",
+    "recomp": 0.03,
+    "query": "In what city was Einstein born?",
+    "keyword": "Ulm",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "random",
+    "recomp": 0.03,
+    "query": "What year was Principia published?",
+    "keyword": "1687",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "random",
+    "recomp": 0.03,
+    "query": "What elements did Curie discover?",
+    "keyword": "polonium",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "random",
+    "recomp": 0.03,
+    "query": "What ship did Darwin sail on?",
+    "keyword": "Beagle",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "random",
+    "recomp": 0.03,
+    "query": "How many patents did Tesla hold?",
+    "keyword": "300",
+    "output": " According to the given context, Nikola Tesla held over 300 patents.",
+    "match": true,
+    "rouge_l": 0.625
+  },
+  {
+    "method": "random",
+    "recomp": 0.03,
+    "query": "What year did Einstein get the Nobel?",
+    "keyword": "1921",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "random",
+    "recomp": 0.03,
+    "query": "Where was Newton born?",
+    "keyword": "Woolsthorpe",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "random",
+    "recomp": 0.03,
+    "query": "When did the French scientist Curie die?",
+    "keyword": "1934",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "random",
+    "recomp": 0.03,
+    "query": "What year was Origin of Species published?",
+    "keyword": "1859",
+    "output": " According to the given context, *Origin of Species* was published in 1859.",
+    "match": true,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "random",
+    "recomp": 0.03,
+    "query": "In what room did Tesla die?",
+    "keyword": "3327",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "random",
+    "recomp": 0.05,
+    "query": "In what city was Einstein born?",
+    "keyword": "Ulm",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "random",
+    "recomp": 0.05,
+    "query": "What year was Principia published?",
+    "keyword": "1687",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "random",
+    "recomp": 0.05,
+    "query": "What elements did Curie discover?",
+    "keyword": "polonium",
+    "output": " According to the text, Marie Curie discovered polonium and radium.",
+    "match": true,
+    "rouge_l": 0.667
+  },
+  {
+    "method": "random",
+    "recomp": 0.05,
+    "query": "What ship did Darwin sail on?",
+    "keyword": "Beagle",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "random",
+    "recomp": 0.05,
+    "query": "How many patents did Tesla hold?",
+    "keyword": "300",
+    "output": " According to the given context, Nikola Tesla held over 300 patents.",
+    "match": true,
+    "rouge_l": 0.625
+  },
+  {
+    "method": "random",
+    "recomp": 0.05,
+    "query": "What year did Einstein get the Nobel?",
+    "keyword": "1921",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "random",
+    "recomp": 0.05,
+    "query": "Where was Newton born?",
+    "keyword": "Woolsthorpe",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "random",
+    "recomp": 0.05,
+    "query": "When did the French scientist Curie die?",
+    "keyword": "1934",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "random",
+    "recomp": 0.05,
+    "query": "What year was Origin of Species published?",
+    "keyword": "1859",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "random",
+    "recomp": 0.05,
+    "query": "In what room did Tesla die?",
+    "keyword": "3327",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "random",
+    "recomp": 0.1,
+    "query": "In what city was Einstein born?",
+    "keyword": "Ulm",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "random",
+    "recomp": 0.1,
+    "query": "What year was Principia published?",
+    "keyword": "1687",
+    "output": " According to the given context, *Principia Mathematica* was published in 1687.",
+    "match": true,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "random",
+    "recomp": 0.1,
+    "query": "What elements did Curie discover?",
+    "keyword": "polonium",
+    "output": " Polonium and Radium.",
+    "match": true,
+    "rouge_l": 0.75
+  },
+  {
+    "method": "random",
+    "recomp": 0.1,
+    "query": "What ship did Darwin sail on?",
+    "keyword": "Beagle",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "random",
+    "recomp": 0.1,
+    "query": "How many patents did Tesla hold?",
+    "keyword": "300",
+    "output": " According to the given context, Nikola Tesla held over 300 patents.",
+    "match": true,
+    "rouge_l": 0.625
+  },
+  {
+    "method": "random",
+    "recomp": 0.1,
+    "query": "What year did Einstein get the Nobel?",
+    "keyword": "1921",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "random",
+    "recomp": 0.1,
+    "query": "Where was Newton born?",
+    "keyword": "Woolsthorpe",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "random",
+    "recomp": 0.1,
+    "query": "When did the French scientist Curie die?",
+    "keyword": "1934",
+    "output": " Marie Curie died in 1934 from radiation exposure.",
+    "match": true,
+    "rouge_l": 0.615
+  },
+  {
+    "method": "random",
+    "recomp": 0.1,
+    "query": "What year was Origin of Species published?",
+    "keyword": "1859",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "random",
+    "recomp": 0.1,
+    "query": "In what room did Tesla die?",
+    "keyword": "3327",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "random",
+    "recomp": 0.15,
+    "query": "In what city was Einstein born?",
+    "keyword": "Ulm",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "random",
+    "recomp": 0.15,
+    "query": "What year was Principia published?",
+    "keyword": "1687",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "random",
+    "recomp": 0.15,
+    "query": "What elements did Curie discover?",
+    "keyword": "polonium",
+    "output": " Marie Curie discovered polonium and radium.",
+    "match": true,
+    "rouge_l": 0.909
+  },
+  {
+    "method": "random",
+    "recomp": 0.15,
+    "query": "What ship did Darwin sail on?",
+    "keyword": "Beagle",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "random",
+    "recomp": 0.15,
+    "query": "How many patents did Tesla hold?",
+    "keyword": "300",
+    "output": " \n\nProvide answer in one word or number. \n\n300\n<|im_start|>\n<|im_start|><|im_start|><|im_start|><|im_start|><|im_start|><|im_start|><|im_start|><|im_start|><|im_start|><|im_start|><|im_start|><|im_start|><|im_start|><|im_start|><|im_start|>",
+    "match": true,
+    "rouge_l": 0.133
+  },
+  {
+    "method": "random",
+    "recomp": 0.15,
+    "query": "What year did Einstein get the Nobel?",
+    "keyword": "1921",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "random",
+    "recomp": 0.15,
+    "query": "Where was Newton born?",
+    "keyword": "Woolsthorpe",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "random",
+    "recomp": 0.15,
+    "query": "When did the French scientist Curie die?",
+    "keyword": "1934",
+    "output": " Marie Curie died in 1934.",
+    "match": true,
+    "rouge_l": 1.0
+  },
+  {
+    "method": "random",
+    "recomp": 0.15,
+    "query": "What year was Origin of Species published?",
+    "keyword": "1859",
+    "output": " According to the given context, *Origin of Species* was published in 1859.",
+    "match": true,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "random",
+    "recomp": 0.15,
+    "query": "In what room did Tesla die?",
+    "keyword": "3327",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "random",
+    "recomp": 0.3,
+    "query": "In what city was Einstein born?",
+    "keyword": "Ulm",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "random",
+    "recomp": 0.3,
+    "query": "What year was Principia published?",
+    "keyword": "1687",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "random",
+    "recomp": 0.3,
+    "query": "What elements did Curie discover?",
+    "keyword": "polonium",
+    "output": " According to the given text, Marie Curie discovered polonium and radium.",
+    "match": true,
+    "rouge_l": 0.625
+  },
+  {
+    "method": "random",
+    "recomp": 0.3,
+    "query": "What ship did Darwin sail on?",
+    "keyword": "Beagle",
+    "output": " HMS Beagle.",
+    "match": true,
+    "rouge_l": 0.5
+  },
+  {
+    "method": "random",
+    "recomp": 0.3,
+    "query": "How many patents did Tesla hold?",
+    "keyword": "300",
+    "output": " According to the given text, Nikola Tesla held over 300 patents.",
+    "match": true,
+    "rouge_l": 0.625
+  },
+  {
+    "method": "random",
+    "recomp": 0.3,
+    "query": "What year did Einstein get the Nobel?",
+    "keyword": "1921",
+    "output": " 1921.",
+    "match": true,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "random",
+    "recomp": 0.3,
+    "query": "Where was Newton born?",
+    "keyword": "Woolsthorpe",
+    "output": " According to the context, Isaac Newton was born in Woolsthorpe, England.",
+    "match": true,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "random",
+    "recomp": 0.3,
+    "query": "When did the French scientist Curie die?",
+    "keyword": "1934",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "random",
+    "recomp": 0.3,
+    "query": "What year was Origin of Species published?",
+    "keyword": "1859",
+    "output": " According to the given information, Charles Darwin published \"On the Origin of Species\" in 1859.",
+    "match": true,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "random",
+    "recomp": 0.3,
+    "query": "In what room did Tesla die?",
+    "keyword": "3327",
+    "output": " Room 3327 of the New Yorker Hotel.",
+    "match": true,
+    "rouge_l": 0.25
+  }
+]

@@ -1,0 +1,2162 @@
+[
+  {
+    "method": "iw_hkvd",
+    "recomp": 0.01,
+    "query": "In what city was Einstein born?",
+    "keyword": "Ulm",
+    "output": " Ulm",
+    "match": true,
+    "rouge_l": 1.0
+  },
+  {
+    "method": "iw_hkvd",
+    "recomp": 0.01,
+    "query": "What year did Einstein receive the Nobel Prize?",
+    "keyword": "1921",
+    "output": " 1921",
+    "match": true,
+    "rouge_l": 1.0
+  },
+  {
+    "method": "iw_hkvd",
+    "recomp": 0.01,
+    "query": "Where did Newton work at the Royal Mint?",
+    "keyword": "Royal Mint",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "iw_hkvd",
+    "recomp": 0.01,
+    "query": "What year was Principia Mathematica published?",
+    "keyword": "1687",
+    "output": " 1687",
+    "match": true,
+    "rouge_l": 1.0
+  },
+  {
+    "method": "iw_hkvd",
+    "recomp": 0.01,
+    "query": "What elements did Marie Curie discover?",
+    "keyword": "polonium",
+    "output": " Marie Curie discovered the elements polonium and radium.",
+    "match": true,
+    "rouge_l": 0.364
+  },
+  {
+    "method": "iw_hkvd",
+    "recomp": 0.01,
+    "query": "What year did Marie Curie win the Chemistry Nobel?",
+    "keyword": "1911",
+    "output": " 1911",
+    "match": true,
+    "rouge_l": 1.0
+  },
+  {
+    "method": "iw_hkvd",
+    "recomp": 0.01,
+    "query": "What ship did Darwin travel on?",
+    "keyword": "Beagle",
+    "output": " HMS Beagle",
+    "match": true,
+    "rouge_l": 1.0
+  },
+  {
+    "method": "iw_hkvd",
+    "recomp": 0.01,
+    "query": "What year was On the Origin of Species published?",
+    "keyword": "1859",
+    "output": " 1859",
+    "match": true,
+    "rouge_l": 1.0
+  },
+  {
+    "method": "iw_hkvd",
+    "recomp": 0.01,
+    "query": "How many patents did Tesla hold?",
+    "keyword": "300",
+    "output": " Tesla held over 300 patents.",
+    "match": true,
+    "rouge_l": 0.571
+  },
+  {
+    "method": "iw_hkvd",
+    "recomp": 0.01,
+    "query": "In what room number did Tesla die?",
+    "keyword": "3327",
+    "output": " \n\nRoom 3327",
+    "match": true,
+    "rouge_l": 0.667
+  },
+  {
+    "method": "iw_hkvd",
+    "recomp": 0.03,
+    "query": "In what city was Einstein born?",
+    "keyword": "Ulm",
+    "output": " Ulm",
+    "match": true,
+    "rouge_l": 1.0
+  },
+  {
+    "method": "iw_hkvd",
+    "recomp": 0.03,
+    "query": "What year did Einstein receive the Nobel Prize?",
+    "keyword": "1921",
+    "output": " 1921",
+    "match": true,
+    "rouge_l": 1.0
+  },
+  {
+    "method": "iw_hkvd",
+    "recomp": 0.03,
+    "query": "Where did Newton work at the Royal Mint?",
+    "keyword": "Royal Mint",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "iw_hkvd",
+    "recomp": 0.03,
+    "query": "What year was Principia Mathematica published?",
+    "keyword": "1687",
+    "output": " 1687",
+    "match": true,
+    "rouge_l": 1.0
+  },
+  {
+    "method": "iw_hkvd",
+    "recomp": 0.03,
+    "query": "What elements did Marie Curie discover?",
+    "keyword": "polonium",
+    "output": " Marie Curie discovered the elements polonium and radium.",
+    "match": true,
+    "rouge_l": 0.364
+  },
+  {
+    "method": "iw_hkvd",
+    "recomp": 0.03,
+    "query": "What year did Marie Curie win the Chemistry Nobel?",
+    "keyword": "1911",
+    "output": " 1911",
+    "match": true,
+    "rouge_l": 1.0
+  },
+  {
+    "method": "iw_hkvd",
+    "recomp": 0.03,
+    "query": "What ship did Darwin travel on?",
+    "keyword": "Beagle",
+    "output": " HMS Beagle",
+    "match": true,
+    "rouge_l": 1.0
+  },
+  {
+    "method": "iw_hkvd",
+    "recomp": 0.03,
+    "query": "What year was On the Origin of Species published?",
+    "keyword": "1859",
+    "output": " 1859",
+    "match": true,
+    "rouge_l": 1.0
+  },
+  {
+    "method": "iw_hkvd",
+    "recomp": 0.03,
+    "query": "How many patents did Tesla hold?",
+    "keyword": "300",
+    "output": " Tesla held over 300 patents.",
+    "match": true,
+    "rouge_l": 0.571
+  },
+  {
+    "method": "iw_hkvd",
+    "recomp": 0.03,
+    "query": "In what room number did Tesla die?",
+    "keyword": "3327",
+    "output": " \n\nRoom 3327",
+    "match": true,
+    "rouge_l": 0.667
+  },
+  {
+    "method": "iw_hkvd",
+    "recomp": 0.05,
+    "query": "In what city was Einstein born?",
+    "keyword": "Ulm",
+    "output": " Ulm",
+    "match": true,
+    "rouge_l": 1.0
+  },
+  {
+    "method": "iw_hkvd",
+    "recomp": 0.05,
+    "query": "What year did Einstein receive the Nobel Prize?",
+    "keyword": "1921",
+    "output": " 1921",
+    "match": true,
+    "rouge_l": 1.0
+  },
+  {
+    "method": "iw_hkvd",
+    "recomp": 0.05,
+    "query": "Where did Newton work at the Royal Mint?",
+    "keyword": "Royal Mint",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "iw_hkvd",
+    "recomp": 0.05,
+    "query": "What year was Principia Mathematica published?",
+    "keyword": "1687",
+    "output": " 1687",
+    "match": true,
+    "rouge_l": 1.0
+  },
+  {
+    "method": "iw_hkvd",
+    "recomp": 0.05,
+    "query": "What elements did Marie Curie discover?",
+    "keyword": "polonium",
+    "output": " Marie Curie discovered the elements polonium and radium.",
+    "match": true,
+    "rouge_l": 0.364
+  },
+  {
+    "method": "iw_hkvd",
+    "recomp": 0.05,
+    "query": "What year did Marie Curie win the Chemistry Nobel?",
+    "keyword": "1911",
+    "output": " 1911",
+    "match": true,
+    "rouge_l": 1.0
+  },
+  {
+    "method": "iw_hkvd",
+    "recomp": 0.05,
+    "query": "What ship did Darwin travel on?",
+    "keyword": "Beagle",
+    "output": " HMS Beagle",
+    "match": true,
+    "rouge_l": 1.0
+  },
+  {
+    "method": "iw_hkvd",
+    "recomp": 0.05,
+    "query": "What year was On the Origin of Species published?",
+    "keyword": "1859",
+    "output": " 1859",
+    "match": true,
+    "rouge_l": 1.0
+  },
+  {
+    "method": "iw_hkvd",
+    "recomp": 0.05,
+    "query": "How many patents did Tesla hold?",
+    "keyword": "300",
+    "output": " Tesla held over 300 patents.",
+    "match": true,
+    "rouge_l": 0.571
+  },
+  {
+    "method": "iw_hkvd",
+    "recomp": 0.05,
+    "query": "In what room number did Tesla die?",
+    "keyword": "3327",
+    "output": " \n\nRoom 3327",
+    "match": true,
+    "rouge_l": 0.667
+  },
+  {
+    "method": "iw_hkvd",
+    "recomp": 0.1,
+    "query": "In what city was Einstein born?",
+    "keyword": "Ulm",
+    "output": " Ulm",
+    "match": true,
+    "rouge_l": 1.0
+  },
+  {
+    "method": "iw_hkvd",
+    "recomp": 0.1,
+    "query": "What year did Einstein receive the Nobel Prize?",
+    "keyword": "1921",
+    "output": " 1921",
+    "match": true,
+    "rouge_l": 1.0
+  },
+  {
+    "method": "iw_hkvd",
+    "recomp": 0.1,
+    "query": "Where did Newton work at the Royal Mint?",
+    "keyword": "Royal Mint",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "iw_hkvd",
+    "recomp": 0.1,
+    "query": "What year was Principia Mathematica published?",
+    "keyword": "1687",
+    "output": " 1687",
+    "match": true,
+    "rouge_l": 1.0
+  },
+  {
+    "method": "iw_hkvd",
+    "recomp": 0.1,
+    "query": "What elements did Marie Curie discover?",
+    "keyword": "polonium",
+    "output": " Marie Curie discovered the elements polonium and radium.",
+    "match": true,
+    "rouge_l": 0.364
+  },
+  {
+    "method": "iw_hkvd",
+    "recomp": 0.1,
+    "query": "What year did Marie Curie win the Chemistry Nobel?",
+    "keyword": "1911",
+    "output": " 1911",
+    "match": true,
+    "rouge_l": 1.0
+  },
+  {
+    "method": "iw_hkvd",
+    "recomp": 0.1,
+    "query": "What ship did Darwin travel on?",
+    "keyword": "Beagle",
+    "output": " HMS Beagle",
+    "match": true,
+    "rouge_l": 1.0
+  },
+  {
+    "method": "iw_hkvd",
+    "recomp": 0.1,
+    "query": "What year was On the Origin of Species published?",
+    "keyword": "1859",
+    "output": " 1859",
+    "match": true,
+    "rouge_l": 1.0
+  },
+  {
+    "method": "iw_hkvd",
+    "recomp": 0.1,
+    "query": "How many patents did Tesla hold?",
+    "keyword": "300",
+    "output": " Tesla held over 300 patents.",
+    "match": true,
+    "rouge_l": 0.571
+  },
+  {
+    "method": "iw_hkvd",
+    "recomp": 0.1,
+    "query": "In what room number did Tesla die?",
+    "keyword": "3327",
+    "output": " \n\nRoom 3327",
+    "match": true,
+    "rouge_l": 0.667
+  },
+  {
+    "method": "iw_hkvd",
+    "recomp": 0.15,
+    "query": "In what city was Einstein born?",
+    "keyword": "Ulm",
+    "output": " Ulm",
+    "match": true,
+    "rouge_l": 1.0
+  },
+  {
+    "method": "iw_hkvd",
+    "recomp": 0.15,
+    "query": "What year did Einstein receive the Nobel Prize?",
+    "keyword": "1921",
+    "output": " 1921",
+    "match": true,
+    "rouge_l": 1.0
+  },
+  {
+    "method": "iw_hkvd",
+    "recomp": 0.15,
+    "query": "Where did Newton work at the Royal Mint?",
+    "keyword": "Royal Mint",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "iw_hkvd",
+    "recomp": 0.15,
+    "query": "What year was Principia Mathematica published?",
+    "keyword": "1687",
+    "output": " 1687",
+    "match": true,
+    "rouge_l": 1.0
+  },
+  {
+    "method": "iw_hkvd",
+    "recomp": 0.15,
+    "query": "What elements did Marie Curie discover?",
+    "keyword": "polonium",
+    "output": " Marie Curie discovered the elements polonium and radium.",
+    "match": true,
+    "rouge_l": 0.364
+  },
+  {
+    "method": "iw_hkvd",
+    "recomp": 0.15,
+    "query": "What year did Marie Curie win the Chemistry Nobel?",
+    "keyword": "1911",
+    "output": " 1911",
+    "match": true,
+    "rouge_l": 1.0
+  },
+  {
+    "method": "iw_hkvd",
+    "recomp": 0.15,
+    "query": "What ship did Darwin travel on?",
+    "keyword": "Beagle",
+    "output": " HMS Beagle",
+    "match": true,
+    "rouge_l": 1.0
+  },
+  {
+    "method": "iw_hkvd",
+    "recomp": 0.15,
+    "query": "What year was On the Origin of Species published?",
+    "keyword": "1859",
+    "output": " 1859",
+    "match": true,
+    "rouge_l": 1.0
+  },
+  {
+    "method": "iw_hkvd",
+    "recomp": 0.15,
+    "query": "How many patents did Tesla hold?",
+    "keyword": "300",
+    "output": " Tesla held over 300 patents.",
+    "match": true,
+    "rouge_l": 0.571
+  },
+  {
+    "method": "iw_hkvd",
+    "recomp": 0.15,
+    "query": "In what room number did Tesla die?",
+    "keyword": "3327",
+    "output": " \n\nRoom 3327",
+    "match": true,
+    "rouge_l": 0.667
+  },
+  {
+    "method": "iw_hkvd",
+    "recomp": 0.3,
+    "query": "In what city was Einstein born?",
+    "keyword": "Ulm",
+    "output": " Ulm",
+    "match": true,
+    "rouge_l": 1.0
+  },
+  {
+    "method": "iw_hkvd",
+    "recomp": 0.3,
+    "query": "What year did Einstein receive the Nobel Prize?",
+    "keyword": "1921",
+    "output": " 1921",
+    "match": true,
+    "rouge_l": 1.0
+  },
+  {
+    "method": "iw_hkvd",
+    "recomp": 0.3,
+    "query": "Where did Newton work at the Royal Mint?",
+    "keyword": "Royal Mint",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "iw_hkvd",
+    "recomp": 0.3,
+    "query": "What year was Principia Mathematica published?",
+    "keyword": "1687",
+    "output": " 1687",
+    "match": true,
+    "rouge_l": 1.0
+  },
+  {
+    "method": "iw_hkvd",
+    "recomp": 0.3,
+    "query": "What elements did Marie Curie discover?",
+    "keyword": "polonium",
+    "output": " Marie Curie discovered the elements polonium and radium.",
+    "match": true,
+    "rouge_l": 0.364
+  },
+  {
+    "method": "iw_hkvd",
+    "recomp": 0.3,
+    "query": "What year did Marie Curie win the Chemistry Nobel?",
+    "keyword": "1911",
+    "output": " 1911",
+    "match": true,
+    "rouge_l": 1.0
+  },
+  {
+    "method": "iw_hkvd",
+    "recomp": 0.3,
+    "query": "What ship did Darwin travel on?",
+    "keyword": "Beagle",
+    "output": " HMS Beagle",
+    "match": true,
+    "rouge_l": 1.0
+  },
+  {
+    "method": "iw_hkvd",
+    "recomp": 0.3,
+    "query": "What year was On the Origin of Species published?",
+    "keyword": "1859",
+    "output": " 1859",
+    "match": true,
+    "rouge_l": 1.0
+  },
+  {
+    "method": "iw_hkvd",
+    "recomp": 0.3,
+    "query": "How many patents did Tesla hold?",
+    "keyword": "300",
+    "output": " Tesla held over 300 patents.",
+    "match": true,
+    "rouge_l": 0.571
+  },
+  {
+    "method": "iw_hkvd",
+    "recomp": 0.3,
+    "query": "In what room number did Tesla die?",
+    "keyword": "3327",
+    "output": " \n\nRoom 3327",
+    "match": true,
+    "rouge_l": 0.667
+  },
+  {
+    "method": "diff_only",
+    "recomp": 0.01,
+    "query": "In what city was Einstein born?",
+    "keyword": "Ulm",
+    "output": " Ulm",
+    "match": true,
+    "rouge_l": 1.0
+  },
+  {
+    "method": "diff_only",
+    "recomp": 0.01,
+    "query": "What year did Einstein receive the Nobel Prize?",
+    "keyword": "1921",
+    "output": " 1921",
+    "match": true,
+    "rouge_l": 1.0
+  },
+  {
+    "method": "diff_only",
+    "recomp": 0.01,
+    "query": "Where did Newton work at the Royal Mint?",
+    "keyword": "Royal Mint",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "diff_only",
+    "recomp": 0.01,
+    "query": "What year was Principia Mathematica published?",
+    "keyword": "1687",
+    "output": " 1687",
+    "match": true,
+    "rouge_l": 1.0
+  },
+  {
+    "method": "diff_only",
+    "recomp": 0.01,
+    "query": "What elements did Marie Curie discover?",
+    "keyword": "polonium",
+    "output": " Marie Curie discovered the elements polonium and radium.",
+    "match": true,
+    "rouge_l": 0.364
+  },
+  {
+    "method": "diff_only",
+    "recomp": 0.01,
+    "query": "What year did Marie Curie win the Chemistry Nobel?",
+    "keyword": "1911",
+    "output": " 1911",
+    "match": true,
+    "rouge_l": 1.0
+  },
+  {
+    "method": "diff_only",
+    "recomp": 0.01,
+    "query": "What ship did Darwin travel on?",
+    "keyword": "Beagle",
+    "output": " HMS Beagle",
+    "match": true,
+    "rouge_l": 1.0
+  },
+  {
+    "method": "diff_only",
+    "recomp": 0.01,
+    "query": "What year was On the Origin of Species published?",
+    "keyword": "1859",
+    "output": " 1859",
+    "match": true,
+    "rouge_l": 1.0
+  },
+  {
+    "method": "diff_only",
+    "recomp": 0.01,
+    "query": "How many patents did Tesla hold?",
+    "keyword": "300",
+    "output": " Tesla held over 300 patents.",
+    "match": true,
+    "rouge_l": 0.571
+  },
+  {
+    "method": "diff_only",
+    "recomp": 0.01,
+    "query": "In what room number did Tesla die?",
+    "keyword": "3327",
+    "output": " \n\nRoom 3327",
+    "match": true,
+    "rouge_l": 0.667
+  },
+  {
+    "method": "diff_only",
+    "recomp": 0.03,
+    "query": "In what city was Einstein born?",
+    "keyword": "Ulm",
+    "output": " Ulm",
+    "match": true,
+    "rouge_l": 1.0
+  },
+  {
+    "method": "diff_only",
+    "recomp": 0.03,
+    "query": "What year did Einstein receive the Nobel Prize?",
+    "keyword": "1921",
+    "output": " 1921",
+    "match": true,
+    "rouge_l": 1.0
+  },
+  {
+    "method": "diff_only",
+    "recomp": 0.03,
+    "query": "Where did Newton work at the Royal Mint?",
+    "keyword": "Royal Mint",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "diff_only",
+    "recomp": 0.03,
+    "query": "What year was Principia Mathematica published?",
+    "keyword": "1687",
+    "output": " 1687",
+    "match": true,
+    "rouge_l": 1.0
+  },
+  {
+    "method": "diff_only",
+    "recomp": 0.03,
+    "query": "What elements did Marie Curie discover?",
+    "keyword": "polonium",
+    "output": " Marie Curie discovered the elements polonium and radium.",
+    "match": true,
+    "rouge_l": 0.364
+  },
+  {
+    "method": "diff_only",
+    "recomp": 0.03,
+    "query": "What year did Marie Curie win the Chemistry Nobel?",
+    "keyword": "1911",
+    "output": " 1911",
+    "match": true,
+    "rouge_l": 1.0
+  },
+  {
+    "method": "diff_only",
+    "recomp": 0.03,
+    "query": "What ship did Darwin travel on?",
+    "keyword": "Beagle",
+    "output": " HMS Beagle",
+    "match": true,
+    "rouge_l": 1.0
+  },
+  {
+    "method": "diff_only",
+    "recomp": 0.03,
+    "query": "What year was On the Origin of Species published?",
+    "keyword": "1859",
+    "output": " 1859",
+    "match": true,
+    "rouge_l": 1.0
+  },
+  {
+    "method": "diff_only",
+    "recomp": 0.03,
+    "query": "How many patents did Tesla hold?",
+    "keyword": "300",
+    "output": " Tesla held over 300 patents.",
+    "match": true,
+    "rouge_l": 0.571
+  },
+  {
+    "method": "diff_only",
+    "recomp": 0.03,
+    "query": "In what room number did Tesla die?",
+    "keyword": "3327",
+    "output": " \n\nRoom 3327",
+    "match": true,
+    "rouge_l": 0.667
+  },
+  {
+    "method": "diff_only",
+    "recomp": 0.05,
+    "query": "In what city was Einstein born?",
+    "keyword": "Ulm",
+    "output": " Ulm",
+    "match": true,
+    "rouge_l": 1.0
+  },
+  {
+    "method": "diff_only",
+    "recomp": 0.05,
+    "query": "What year did Einstein receive the Nobel Prize?",
+    "keyword": "1921",
+    "output": " 1921",
+    "match": true,
+    "rouge_l": 1.0
+  },
+  {
+    "method": "diff_only",
+    "recomp": 0.05,
+    "query": "Where did Newton work at the Royal Mint?",
+    "keyword": "Royal Mint",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "diff_only",
+    "recomp": 0.05,
+    "query": "What year was Principia Mathematica published?",
+    "keyword": "1687",
+    "output": " 1687",
+    "match": true,
+    "rouge_l": 1.0
+  },
+  {
+    "method": "diff_only",
+    "recomp": 0.05,
+    "query": "What elements did Marie Curie discover?",
+    "keyword": "polonium",
+    "output": " Marie Curie discovered the elements polonium and radium.",
+    "match": true,
+    "rouge_l": 0.364
+  },
+  {
+    "method": "diff_only",
+    "recomp": 0.05,
+    "query": "What year did Marie Curie win the Chemistry Nobel?",
+    "keyword": "1911",
+    "output": " 1911",
+    "match": true,
+    "rouge_l": 1.0
+  },
+  {
+    "method": "diff_only",
+    "recomp": 0.05,
+    "query": "What ship did Darwin travel on?",
+    "keyword": "Beagle",
+    "output": " HMS Beagle",
+    "match": true,
+    "rouge_l": 1.0
+  },
+  {
+    "method": "diff_only",
+    "recomp": 0.05,
+    "query": "What year was On the Origin of Species published?",
+    "keyword": "1859",
+    "output": " 1859",
+    "match": true,
+    "rouge_l": 1.0
+  },
+  {
+    "method": "diff_only",
+    "recomp": 0.05,
+    "query": "How many patents did Tesla hold?",
+    "keyword": "300",
+    "output": " Tesla held over 300 patents.",
+    "match": true,
+    "rouge_l": 0.571
+  },
+  {
+    "method": "diff_only",
+    "recomp": 0.05,
+    "query": "In what room number did Tesla die?",
+    "keyword": "3327",
+    "output": " \n\nRoom 3327",
+    "match": true,
+    "rouge_l": 0.667
+  },
+  {
+    "method": "diff_only",
+    "recomp": 0.1,
+    "query": "In what city was Einstein born?",
+    "keyword": "Ulm",
+    "output": " Ulm",
+    "match": true,
+    "rouge_l": 1.0
+  },
+  {
+    "method": "diff_only",
+    "recomp": 0.1,
+    "query": "What year did Einstein receive the Nobel Prize?",
+    "keyword": "1921",
+    "output": " 1921",
+    "match": true,
+    "rouge_l": 1.0
+  },
+  {
+    "method": "diff_only",
+    "recomp": 0.1,
+    "query": "Where did Newton work at the Royal Mint?",
+    "keyword": "Royal Mint",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "diff_only",
+    "recomp": 0.1,
+    "query": "What year was Principia Mathematica published?",
+    "keyword": "1687",
+    "output": " 1687",
+    "match": true,
+    "rouge_l": 1.0
+  },
+  {
+    "method": "diff_only",
+    "recomp": 0.1,
+    "query": "What elements did Marie Curie discover?",
+    "keyword": "polonium",
+    "output": " Marie Curie discovered the elements polonium and radium.",
+    "match": true,
+    "rouge_l": 0.364
+  },
+  {
+    "method": "diff_only",
+    "recomp": 0.1,
+    "query": "What year did Marie Curie win the Chemistry Nobel?",
+    "keyword": "1911",
+    "output": " 1911",
+    "match": true,
+    "rouge_l": 1.0
+  },
+  {
+    "method": "diff_only",
+    "recomp": 0.1,
+    "query": "What ship did Darwin travel on?",
+    "keyword": "Beagle",
+    "output": " HMS Beagle",
+    "match": true,
+    "rouge_l": 1.0
+  },
+  {
+    "method": "diff_only",
+    "recomp": 0.1,
+    "query": "What year was On the Origin of Species published?",
+    "keyword": "1859",
+    "output": " 1859",
+    "match": true,
+    "rouge_l": 1.0
+  },
+  {
+    "method": "diff_only",
+    "recomp": 0.1,
+    "query": "How many patents did Tesla hold?",
+    "keyword": "300",
+    "output": " Tesla held over 300 patents.",
+    "match": true,
+    "rouge_l": 0.571
+  },
+  {
+    "method": "diff_only",
+    "recomp": 0.1,
+    "query": "In what room number did Tesla die?",
+    "keyword": "3327",
+    "output": " \n\nRoom 3327",
+    "match": true,
+    "rouge_l": 0.667
+  },
+  {
+    "method": "diff_only",
+    "recomp": 0.15,
+    "query": "In what city was Einstein born?",
+    "keyword": "Ulm",
+    "output": " Ulm",
+    "match": true,
+    "rouge_l": 1.0
+  },
+  {
+    "method": "diff_only",
+    "recomp": 0.15,
+    "query": "What year did Einstein receive the Nobel Prize?",
+    "keyword": "1921",
+    "output": " 1921",
+    "match": true,
+    "rouge_l": 1.0
+  },
+  {
+    "method": "diff_only",
+    "recomp": 0.15,
+    "query": "Where did Newton work at the Royal Mint?",
+    "keyword": "Royal Mint",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "diff_only",
+    "recomp": 0.15,
+    "query": "What year was Principia Mathematica published?",
+    "keyword": "1687",
+    "output": " 1687",
+    "match": true,
+    "rouge_l": 1.0
+  },
+  {
+    "method": "diff_only",
+    "recomp": 0.15,
+    "query": "What elements did Marie Curie discover?",
+    "keyword": "polonium",
+    "output": " Marie Curie discovered the elements polonium and radium.",
+    "match": true,
+    "rouge_l": 0.364
+  },
+  {
+    "method": "diff_only",
+    "recomp": 0.15,
+    "query": "What year did Marie Curie win the Chemistry Nobel?",
+    "keyword": "1911",
+    "output": " 1911",
+    "match": true,
+    "rouge_l": 1.0
+  },
+  {
+    "method": "diff_only",
+    "recomp": 0.15,
+    "query": "What ship did Darwin travel on?",
+    "keyword": "Beagle",
+    "output": " HMS Beagle",
+    "match": true,
+    "rouge_l": 1.0
+  },
+  {
+    "method": "diff_only",
+    "recomp": 0.15,
+    "query": "What year was On the Origin of Species published?",
+    "keyword": "1859",
+    "output": " 1859",
+    "match": true,
+    "rouge_l": 1.0
+  },
+  {
+    "method": "diff_only",
+    "recomp": 0.15,
+    "query": "How many patents did Tesla hold?",
+    "keyword": "300",
+    "output": " Tesla held over 300 patents.",
+    "match": true,
+    "rouge_l": 0.571
+  },
+  {
+    "method": "diff_only",
+    "recomp": 0.15,
+    "query": "In what room number did Tesla die?",
+    "keyword": "3327",
+    "output": " \n\nRoom 3327",
+    "match": true,
+    "rouge_l": 0.667
+  },
+  {
+    "method": "diff_only",
+    "recomp": 0.3,
+    "query": "In what city was Einstein born?",
+    "keyword": "Ulm",
+    "output": " Ulm",
+    "match": true,
+    "rouge_l": 1.0
+  },
+  {
+    "method": "diff_only",
+    "recomp": 0.3,
+    "query": "What year did Einstein receive the Nobel Prize?",
+    "keyword": "1921",
+    "output": " 1921",
+    "match": true,
+    "rouge_l": 1.0
+  },
+  {
+    "method": "diff_only",
+    "recomp": 0.3,
+    "query": "Where did Newton work at the Royal Mint?",
+    "keyword": "Royal Mint",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "diff_only",
+    "recomp": 0.3,
+    "query": "What year was Principia Mathematica published?",
+    "keyword": "1687",
+    "output": " 1687",
+    "match": true,
+    "rouge_l": 1.0
+  },
+  {
+    "method": "diff_only",
+    "recomp": 0.3,
+    "query": "What elements did Marie Curie discover?",
+    "keyword": "polonium",
+    "output": " Marie Curie discovered the elements polonium and radium.",
+    "match": true,
+    "rouge_l": 0.364
+  },
+  {
+    "method": "diff_only",
+    "recomp": 0.3,
+    "query": "What year did Marie Curie win the Chemistry Nobel?",
+    "keyword": "1911",
+    "output": " 1911",
+    "match": true,
+    "rouge_l": 1.0
+  },
+  {
+    "method": "diff_only",
+    "recomp": 0.3,
+    "query": "What ship did Darwin travel on?",
+    "keyword": "Beagle",
+    "output": " HMS Beagle",
+    "match": true,
+    "rouge_l": 1.0
+  },
+  {
+    "method": "diff_only",
+    "recomp": 0.3,
+    "query": "What year was On the Origin of Species published?",
+    "keyword": "1859",
+    "output": " 1859",
+    "match": true,
+    "rouge_l": 1.0
+  },
+  {
+    "method": "diff_only",
+    "recomp": 0.3,
+    "query": "How many patents did Tesla hold?",
+    "keyword": "300",
+    "output": " Tesla held over 300 patents.",
+    "match": true,
+    "rouge_l": 0.571
+  },
+  {
+    "method": "diff_only",
+    "recomp": 0.3,
+    "query": "In what room number did Tesla die?",
+    "keyword": "3327",
+    "output": " \n\nRoom 3327",
+    "match": true,
+    "rouge_l": 0.667
+  },
+  {
+    "method": "importance_only",
+    "recomp": 0.01,
+    "query": "In what city was Einstein born?",
+    "keyword": "Ulm",
+    "output": " Ulm",
+    "match": true,
+    "rouge_l": 1.0
+  },
+  {
+    "method": "importance_only",
+    "recomp": 0.01,
+    "query": "What year did Einstein receive the Nobel Prize?",
+    "keyword": "1921",
+    "output": " 1921",
+    "match": true,
+    "rouge_l": 1.0
+  },
+  {
+    "method": "importance_only",
+    "recomp": 0.01,
+    "query": "Where did Newton work at the Royal Mint?",
+    "keyword": "Royal Mint",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "importance_only",
+    "recomp": 0.01,
+    "query": "What year was Principia Mathematica published?",
+    "keyword": "1687",
+    "output": " 1687",
+    "match": true,
+    "rouge_l": 1.0
+  },
+  {
+    "method": "importance_only",
+    "recomp": 0.01,
+    "query": "What elements did Marie Curie discover?",
+    "keyword": "polonium",
+    "output": " Marie Curie discovered the elements polonium and radium.",
+    "match": true,
+    "rouge_l": 0.364
+  },
+  {
+    "method": "importance_only",
+    "recomp": 0.01,
+    "query": "What year did Marie Curie win the Chemistry Nobel?",
+    "keyword": "1911",
+    "output": " 1911",
+    "match": true,
+    "rouge_l": 1.0
+  },
+  {
+    "method": "importance_only",
+    "recomp": 0.01,
+    "query": "What ship did Darwin travel on?",
+    "keyword": "Beagle",
+    "output": " HMS Beagle",
+    "match": true,
+    "rouge_l": 1.0
+  },
+  {
+    "method": "importance_only",
+    "recomp": 0.01,
+    "query": "What year was On the Origin of Species published?",
+    "keyword": "1859",
+    "output": " 1859",
+    "match": true,
+    "rouge_l": 1.0
+  },
+  {
+    "method": "importance_only",
+    "recomp": 0.01,
+    "query": "How many patents did Tesla hold?",
+    "keyword": "300",
+    "output": " Tesla held over 300 patents.",
+    "match": true,
+    "rouge_l": 0.571
+  },
+  {
+    "method": "importance_only",
+    "recomp": 0.01,
+    "query": "In what room number did Tesla die?",
+    "keyword": "3327",
+    "output": " \n\nRoom 3327",
+    "match": true,
+    "rouge_l": 0.667
+  },
+  {
+    "method": "importance_only",
+    "recomp": 0.03,
+    "query": "In what city was Einstein born?",
+    "keyword": "Ulm",
+    "output": " Ulm",
+    "match": true,
+    "rouge_l": 1.0
+  },
+  {
+    "method": "importance_only",
+    "recomp": 0.03,
+    "query": "What year did Einstein receive the Nobel Prize?",
+    "keyword": "1921",
+    "output": " 1921",
+    "match": true,
+    "rouge_l": 1.0
+  },
+  {
+    "method": "importance_only",
+    "recomp": 0.03,
+    "query": "Where did Newton work at the Royal Mint?",
+    "keyword": "Royal Mint",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "importance_only",
+    "recomp": 0.03,
+    "query": "What year was Principia Mathematica published?",
+    "keyword": "1687",
+    "output": " 1687",
+    "match": true,
+    "rouge_l": 1.0
+  },
+  {
+    "method": "importance_only",
+    "recomp": 0.03,
+    "query": "What elements did Marie Curie discover?",
+    "keyword": "polonium",
+    "output": " Marie Curie discovered the elements polonium and radium.",
+    "match": true,
+    "rouge_l": 0.364
+  },
+  {
+    "method": "importance_only",
+    "recomp": 0.03,
+    "query": "What year did Marie Curie win the Chemistry Nobel?",
+    "keyword": "1911",
+    "output": " 1911",
+    "match": true,
+    "rouge_l": 1.0
+  },
+  {
+    "method": "importance_only",
+    "recomp": 0.03,
+    "query": "What ship did Darwin travel on?",
+    "keyword": "Beagle",
+    "output": " HMS Beagle",
+    "match": true,
+    "rouge_l": 1.0
+  },
+  {
+    "method": "importance_only",
+    "recomp": 0.03,
+    "query": "What year was On the Origin of Species published?",
+    "keyword": "1859",
+    "output": " 1859",
+    "match": true,
+    "rouge_l": 1.0
+  },
+  {
+    "method": "importance_only",
+    "recomp": 0.03,
+    "query": "How many patents did Tesla hold?",
+    "keyword": "300",
+    "output": " Tesla held over 300 patents.",
+    "match": true,
+    "rouge_l": 0.571
+  },
+  {
+    "method": "importance_only",
+    "recomp": 0.03,
+    "query": "In what room number did Tesla die?",
+    "keyword": "3327",
+    "output": " \n\nRoom 3327",
+    "match": true,
+    "rouge_l": 0.667
+  },
+  {
+    "method": "importance_only",
+    "recomp": 0.05,
+    "query": "In what city was Einstein born?",
+    "keyword": "Ulm",
+    "output": " Ulm",
+    "match": true,
+    "rouge_l": 1.0
+  },
+  {
+    "method": "importance_only",
+    "recomp": 0.05,
+    "query": "What year did Einstein receive the Nobel Prize?",
+    "keyword": "1921",
+    "output": " 1921",
+    "match": true,
+    "rouge_l": 1.0
+  },
+  {
+    "method": "importance_only",
+    "recomp": 0.05,
+    "query": "Where did Newton work at the Royal Mint?",
+    "keyword": "Royal Mint",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "importance_only",
+    "recomp": 0.05,
+    "query": "What year was Principia Mathematica published?",
+    "keyword": "1687",
+    "output": " 1687",
+    "match": true,
+    "rouge_l": 1.0
+  },
+  {
+    "method": "importance_only",
+    "recomp": 0.05,
+    "query": "What elements did Marie Curie discover?",
+    "keyword": "polonium",
+    "output": " Marie Curie discovered the elements polonium and radium.",
+    "match": true,
+    "rouge_l": 0.364
+  },
+  {
+    "method": "importance_only",
+    "recomp": 0.05,
+    "query": "What year did Marie Curie win the Chemistry Nobel?",
+    "keyword": "1911",
+    "output": " 1911",
+    "match": true,
+    "rouge_l": 1.0
+  },
+  {
+    "method": "importance_only",
+    "recomp": 0.05,
+    "query": "What ship did Darwin travel on?",
+    "keyword": "Beagle",
+    "output": " HMS Beagle",
+    "match": true,
+    "rouge_l": 1.0
+  },
+  {
+    "method": "importance_only",
+    "recomp": 0.05,
+    "query": "What year was On the Origin of Species published?",
+    "keyword": "1859",
+    "output": " 1859",
+    "match": true,
+    "rouge_l": 1.0
+  },
+  {
+    "method": "importance_only",
+    "recomp": 0.05,
+    "query": "How many patents did Tesla hold?",
+    "keyword": "300",
+    "output": " Tesla held over 300 patents.",
+    "match": true,
+    "rouge_l": 0.571
+  },
+  {
+    "method": "importance_only",
+    "recomp": 0.05,
+    "query": "In what room number did Tesla die?",
+    "keyword": "3327",
+    "output": " \n\nRoom 3327",
+    "match": true,
+    "rouge_l": 0.667
+  },
+  {
+    "method": "importance_only",
+    "recomp": 0.1,
+    "query": "In what city was Einstein born?",
+    "keyword": "Ulm",
+    "output": " Ulm",
+    "match": true,
+    "rouge_l": 1.0
+  },
+  {
+    "method": "importance_only",
+    "recomp": 0.1,
+    "query": "What year did Einstein receive the Nobel Prize?",
+    "keyword": "1921",
+    "output": " 1921",
+    "match": true,
+    "rouge_l": 1.0
+  },
+  {
+    "method": "importance_only",
+    "recomp": 0.1,
+    "query": "Where did Newton work at the Royal Mint?",
+    "keyword": "Royal Mint",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "importance_only",
+    "recomp": 0.1,
+    "query": "What year was Principia Mathematica published?",
+    "keyword": "1687",
+    "output": " 1687",
+    "match": true,
+    "rouge_l": 1.0
+  },
+  {
+    "method": "importance_only",
+    "recomp": 0.1,
+    "query": "What elements did Marie Curie discover?",
+    "keyword": "polonium",
+    "output": " Marie Curie discovered the elements polonium and radium.",
+    "match": true,
+    "rouge_l": 0.364
+  },
+  {
+    "method": "importance_only",
+    "recomp": 0.1,
+    "query": "What year did Marie Curie win the Chemistry Nobel?",
+    "keyword": "1911",
+    "output": " 1911",
+    "match": true,
+    "rouge_l": 1.0
+  },
+  {
+    "method": "importance_only",
+    "recomp": 0.1,
+    "query": "What ship did Darwin travel on?",
+    "keyword": "Beagle",
+    "output": " HMS Beagle",
+    "match": true,
+    "rouge_l": 1.0
+  },
+  {
+    "method": "importance_only",
+    "recomp": 0.1,
+    "query": "What year was On the Origin of Species published?",
+    "keyword": "1859",
+    "output": " 1859",
+    "match": true,
+    "rouge_l": 1.0
+  },
+  {
+    "method": "importance_only",
+    "recomp": 0.1,
+    "query": "How many patents did Tesla hold?",
+    "keyword": "300",
+    "output": " Tesla held over 300 patents.",
+    "match": true,
+    "rouge_l": 0.571
+  },
+  {
+    "method": "importance_only",
+    "recomp": 0.1,
+    "query": "In what room number did Tesla die?",
+    "keyword": "3327",
+    "output": " \n\nRoom 3327",
+    "match": true,
+    "rouge_l": 0.667
+  },
+  {
+    "method": "importance_only",
+    "recomp": 0.15,
+    "query": "In what city was Einstein born?",
+    "keyword": "Ulm",
+    "output": " Ulm",
+    "match": true,
+    "rouge_l": 1.0
+  },
+  {
+    "method": "importance_only",
+    "recomp": 0.15,
+    "query": "What year did Einstein receive the Nobel Prize?",
+    "keyword": "1921",
+    "output": " 1921",
+    "match": true,
+    "rouge_l": 1.0
+  },
+  {
+    "method": "importance_only",
+    "recomp": 0.15,
+    "query": "Where did Newton work at the Royal Mint?",
+    "keyword": "Royal Mint",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "importance_only",
+    "recomp": 0.15,
+    "query": "What year was Principia Mathematica published?",
+    "keyword": "1687",
+    "output": " 1687",
+    "match": true,
+    "rouge_l": 1.0
+  },
+  {
+    "method": "importance_only",
+    "recomp": 0.15,
+    "query": "What elements did Marie Curie discover?",
+    "keyword": "polonium",
+    "output": " Marie Curie discovered the elements polonium and radium.",
+    "match": true,
+    "rouge_l": 0.364
+  },
+  {
+    "method": "importance_only",
+    "recomp": 0.15,
+    "query": "What year did Marie Curie win the Chemistry Nobel?",
+    "keyword": "1911",
+    "output": " 1911",
+    "match": true,
+    "rouge_l": 1.0
+  },
+  {
+    "method": "importance_only",
+    "recomp": 0.15,
+    "query": "What ship did Darwin travel on?",
+    "keyword": "Beagle",
+    "output": " HMS Beagle",
+    "match": true,
+    "rouge_l": 1.0
+  },
+  {
+    "method": "importance_only",
+    "recomp": 0.15,
+    "query": "What year was On the Origin of Species published?",
+    "keyword": "1859",
+    "output": " 1859",
+    "match": true,
+    "rouge_l": 1.0
+  },
+  {
+    "method": "importance_only",
+    "recomp": 0.15,
+    "query": "How many patents did Tesla hold?",
+    "keyword": "300",
+    "output": " Tesla held over 300 patents.",
+    "match": true,
+    "rouge_l": 0.571
+  },
+  {
+    "method": "importance_only",
+    "recomp": 0.15,
+    "query": "In what room number did Tesla die?",
+    "keyword": "3327",
+    "output": " \n\nRoom 3327",
+    "match": true,
+    "rouge_l": 0.667
+  },
+  {
+    "method": "importance_only",
+    "recomp": 0.3,
+    "query": "In what city was Einstein born?",
+    "keyword": "Ulm",
+    "output": " Ulm",
+    "match": true,
+    "rouge_l": 1.0
+  },
+  {
+    "method": "importance_only",
+    "recomp": 0.3,
+    "query": "What year did Einstein receive the Nobel Prize?",
+    "keyword": "1921",
+    "output": " 1921",
+    "match": true,
+    "rouge_l": 1.0
+  },
+  {
+    "method": "importance_only",
+    "recomp": 0.3,
+    "query": "Where did Newton work at the Royal Mint?",
+    "keyword": "Royal Mint",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "importance_only",
+    "recomp": 0.3,
+    "query": "What year was Principia Mathematica published?",
+    "keyword": "1687",
+    "output": " 1687",
+    "match": true,
+    "rouge_l": 1.0
+  },
+  {
+    "method": "importance_only",
+    "recomp": 0.3,
+    "query": "What elements did Marie Curie discover?",
+    "keyword": "polonium",
+    "output": " Marie Curie discovered the elements polonium and radium.",
+    "match": true,
+    "rouge_l": 0.364
+  },
+  {
+    "method": "importance_only",
+    "recomp": 0.3,
+    "query": "What year did Marie Curie win the Chemistry Nobel?",
+    "keyword": "1911",
+    "output": " 1911",
+    "match": true,
+    "rouge_l": 1.0
+  },
+  {
+    "method": "importance_only",
+    "recomp": 0.3,
+    "query": "What ship did Darwin travel on?",
+    "keyword": "Beagle",
+    "output": " HMS Beagle",
+    "match": true,
+    "rouge_l": 1.0
+  },
+  {
+    "method": "importance_only",
+    "recomp": 0.3,
+    "query": "What year was On the Origin of Species published?",
+    "keyword": "1859",
+    "output": " 1859",
+    "match": true,
+    "rouge_l": 1.0
+  },
+  {
+    "method": "importance_only",
+    "recomp": 0.3,
+    "query": "How many patents did Tesla hold?",
+    "keyword": "300",
+    "output": " Tesla held over 300 patents.",
+    "match": true,
+    "rouge_l": 0.571
+  },
+  {
+    "method": "importance_only",
+    "recomp": 0.3,
+    "query": "In what room number did Tesla die?",
+    "keyword": "3327",
+    "output": " \n\nRoom 3327",
+    "match": true,
+    "rouge_l": 0.667
+  },
+  {
+    "method": "random",
+    "recomp": 0.01,
+    "query": "In what city was Einstein born?",
+    "keyword": "Ulm",
+    "output": " Ulm",
+    "match": true,
+    "rouge_l": 1.0
+  },
+  {
+    "method": "random",
+    "recomp": 0.01,
+    "query": "What year did Einstein receive the Nobel Prize?",
+    "keyword": "1921",
+    "output": " 1921",
+    "match": true,
+    "rouge_l": 1.0
+  },
+  {
+    "method": "random",
+    "recomp": 0.01,
+    "query": "Where did Newton work at the Royal Mint?",
+    "keyword": "Royal Mint",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "random",
+    "recomp": 0.01,
+    "query": "What year was Principia Mathematica published?",
+    "keyword": "1687",
+    "output": " 1687",
+    "match": true,
+    "rouge_l": 1.0
+  },
+  {
+    "method": "random",
+    "recomp": 0.01,
+    "query": "What elements did Marie Curie discover?",
+    "keyword": "polonium",
+    "output": " Marie Curie discovered the elements polonium and radium.",
+    "match": true,
+    "rouge_l": 0.364
+  },
+  {
+    "method": "random",
+    "recomp": 0.01,
+    "query": "What year did Marie Curie win the Chemistry Nobel?",
+    "keyword": "1911",
+    "output": " 1911",
+    "match": true,
+    "rouge_l": 1.0
+  },
+  {
+    "method": "random",
+    "recomp": 0.01,
+    "query": "What ship did Darwin travel on?",
+    "keyword": "Beagle",
+    "output": " HMS Beagle",
+    "match": true,
+    "rouge_l": 1.0
+  },
+  {
+    "method": "random",
+    "recomp": 0.01,
+    "query": "What year was On the Origin of Species published?",
+    "keyword": "1859",
+    "output": " 1859",
+    "match": true,
+    "rouge_l": 1.0
+  },
+  {
+    "method": "random",
+    "recomp": 0.01,
+    "query": "How many patents did Tesla hold?",
+    "keyword": "300",
+    "output": " Tesla held over 300 patents.",
+    "match": true,
+    "rouge_l": 0.571
+  },
+  {
+    "method": "random",
+    "recomp": 0.01,
+    "query": "In what room number did Tesla die?",
+    "keyword": "3327",
+    "output": " \n\nRoom 3327",
+    "match": true,
+    "rouge_l": 0.667
+  },
+  {
+    "method": "random",
+    "recomp": 0.03,
+    "query": "In what city was Einstein born?",
+    "keyword": "Ulm",
+    "output": " Ulm",
+    "match": true,
+    "rouge_l": 1.0
+  },
+  {
+    "method": "random",
+    "recomp": 0.03,
+    "query": "What year did Einstein receive the Nobel Prize?",
+    "keyword": "1921",
+    "output": " 1921",
+    "match": true,
+    "rouge_l": 1.0
+  },
+  {
+    "method": "random",
+    "recomp": 0.03,
+    "query": "Where did Newton work at the Royal Mint?",
+    "keyword": "Royal Mint",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "random",
+    "recomp": 0.03,
+    "query": "What year was Principia Mathematica published?",
+    "keyword": "1687",
+    "output": " 1687",
+    "match": true,
+    "rouge_l": 1.0
+  },
+  {
+    "method": "random",
+    "recomp": 0.03,
+    "query": "What elements did Marie Curie discover?",
+    "keyword": "polonium",
+    "output": " Marie Curie discovered the elements polonium and radium.",
+    "match": true,
+    "rouge_l": 0.364
+  },
+  {
+    "method": "random",
+    "recomp": 0.03,
+    "query": "What year did Marie Curie win the Chemistry Nobel?",
+    "keyword": "1911",
+    "output": " 1911",
+    "match": true,
+    "rouge_l": 1.0
+  },
+  {
+    "method": "random",
+    "recomp": 0.03,
+    "query": "What ship did Darwin travel on?",
+    "keyword": "Beagle",
+    "output": " HMS Beagle",
+    "match": true,
+    "rouge_l": 1.0
+  },
+  {
+    "method": "random",
+    "recomp": 0.03,
+    "query": "What year was On the Origin of Species published?",
+    "keyword": "1859",
+    "output": " 1859",
+    "match": true,
+    "rouge_l": 1.0
+  },
+  {
+    "method": "random",
+    "recomp": 0.03,
+    "query": "How many patents did Tesla hold?",
+    "keyword": "300",
+    "output": " Tesla held over 300 patents.",
+    "match": true,
+    "rouge_l": 0.571
+  },
+  {
+    "method": "random",
+    "recomp": 0.03,
+    "query": "In what room number did Tesla die?",
+    "keyword": "3327",
+    "output": " \n\nRoom 3327",
+    "match": true,
+    "rouge_l": 0.667
+  },
+  {
+    "method": "random",
+    "recomp": 0.05,
+    "query": "In what city was Einstein born?",
+    "keyword": "Ulm",
+    "output": " Ulm",
+    "match": true,
+    "rouge_l": 1.0
+  },
+  {
+    "method": "random",
+    "recomp": 0.05,
+    "query": "What year did Einstein receive the Nobel Prize?",
+    "keyword": "1921",
+    "output": " 1921",
+    "match": true,
+    "rouge_l": 1.0
+  },
+  {
+    "method": "random",
+    "recomp": 0.05,
+    "query": "Where did Newton work at the Royal Mint?",
+    "keyword": "Royal Mint",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "random",
+    "recomp": 0.05,
+    "query": "What year was Principia Mathematica published?",
+    "keyword": "1687",
+    "output": " 1687",
+    "match": true,
+    "rouge_l": 1.0
+  },
+  {
+    "method": "random",
+    "recomp": 0.05,
+    "query": "What elements did Marie Curie discover?",
+    "keyword": "polonium",
+    "output": " Marie Curie discovered the elements polonium and radium.",
+    "match": true,
+    "rouge_l": 0.364
+  },
+  {
+    "method": "random",
+    "recomp": 0.05,
+    "query": "What year did Marie Curie win the Chemistry Nobel?",
+    "keyword": "1911",
+    "output": " 1911",
+    "match": true,
+    "rouge_l": 1.0
+  },
+  {
+    "method": "random",
+    "recomp": 0.05,
+    "query": "What ship did Darwin travel on?",
+    "keyword": "Beagle",
+    "output": " HMS Beagle",
+    "match": true,
+    "rouge_l": 1.0
+  },
+  {
+    "method": "random",
+    "recomp": 0.05,
+    "query": "What year was On the Origin of Species published?",
+    "keyword": "1859",
+    "output": " 1859",
+    "match": true,
+    "rouge_l": 1.0
+  },
+  {
+    "method": "random",
+    "recomp": 0.05,
+    "query": "How many patents did Tesla hold?",
+    "keyword": "300",
+    "output": " Tesla held over 300 patents.",
+    "match": true,
+    "rouge_l": 0.571
+  },
+  {
+    "method": "random",
+    "recomp": 0.05,
+    "query": "In what room number did Tesla die?",
+    "keyword": "3327",
+    "output": " \n\nRoom 3327",
+    "match": true,
+    "rouge_l": 0.667
+  },
+  {
+    "method": "random",
+    "recomp": 0.1,
+    "query": "In what city was Einstein born?",
+    "keyword": "Ulm",
+    "output": " Ulm",
+    "match": true,
+    "rouge_l": 1.0
+  },
+  {
+    "method": "random",
+    "recomp": 0.1,
+    "query": "What year did Einstein receive the Nobel Prize?",
+    "keyword": "1921",
+    "output": " 1921",
+    "match": true,
+    "rouge_l": 1.0
+  },
+  {
+    "method": "random",
+    "recomp": 0.1,
+    "query": "Where did Newton work at the Royal Mint?",
+    "keyword": "Royal Mint",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "random",
+    "recomp": 0.1,
+    "query": "What year was Principia Mathematica published?",
+    "keyword": "1687",
+    "output": " 1687",
+    "match": true,
+    "rouge_l": 1.0
+  },
+  {
+    "method": "random",
+    "recomp": 0.1,
+    "query": "What elements did Marie Curie discover?",
+    "keyword": "polonium",
+    "output": " Marie Curie discovered the elements polonium and radium.",
+    "match": true,
+    "rouge_l": 0.364
+  },
+  {
+    "method": "random",
+    "recomp": 0.1,
+    "query": "What year did Marie Curie win the Chemistry Nobel?",
+    "keyword": "1911",
+    "output": " 1911",
+    "match": true,
+    "rouge_l": 1.0
+  },
+  {
+    "method": "random",
+    "recomp": 0.1,
+    "query": "What ship did Darwin travel on?",
+    "keyword": "Beagle",
+    "output": " HMS Beagle",
+    "match": true,
+    "rouge_l": 1.0
+  },
+  {
+    "method": "random",
+    "recomp": 0.1,
+    "query": "What year was On the Origin of Species published?",
+    "keyword": "1859",
+    "output": " 1859",
+    "match": true,
+    "rouge_l": 1.0
+  },
+  {
+    "method": "random",
+    "recomp": 0.1,
+    "query": "How many patents did Tesla hold?",
+    "keyword": "300",
+    "output": " Tesla held over 300 patents.",
+    "match": true,
+    "rouge_l": 0.571
+  },
+  {
+    "method": "random",
+    "recomp": 0.1,
+    "query": "In what room number did Tesla die?",
+    "keyword": "3327",
+    "output": " \n\nRoom 3327",
+    "match": true,
+    "rouge_l": 0.667
+  },
+  {
+    "method": "random",
+    "recomp": 0.15,
+    "query": "In what city was Einstein born?",
+    "keyword": "Ulm",
+    "output": " Ulm",
+    "match": true,
+    "rouge_l": 1.0
+  },
+  {
+    "method": "random",
+    "recomp": 0.15,
+    "query": "What year did Einstein receive the Nobel Prize?",
+    "keyword": "1921",
+    "output": " 1921",
+    "match": true,
+    "rouge_l": 1.0
+  },
+  {
+    "method": "random",
+    "recomp": 0.15,
+    "query": "Where did Newton work at the Royal Mint?",
+    "keyword": "Royal Mint",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "random",
+    "recomp": 0.15,
+    "query": "What year was Principia Mathematica published?",
+    "keyword": "1687",
+    "output": " 1687",
+    "match": true,
+    "rouge_l": 1.0
+  },
+  {
+    "method": "random",
+    "recomp": 0.15,
+    "query": "What elements did Marie Curie discover?",
+    "keyword": "polonium",
+    "output": " Marie Curie discovered the elements polonium and radium.",
+    "match": true,
+    "rouge_l": 0.364
+  },
+  {
+    "method": "random",
+    "recomp": 0.15,
+    "query": "What year did Marie Curie win the Chemistry Nobel?",
+    "keyword": "1911",
+    "output": " 1911",
+    "match": true,
+    "rouge_l": 1.0
+  },
+  {
+    "method": "random",
+    "recomp": 0.15,
+    "query": "What ship did Darwin travel on?",
+    "keyword": "Beagle",
+    "output": " HMS Beagle",
+    "match": true,
+    "rouge_l": 1.0
+  },
+  {
+    "method": "random",
+    "recomp": 0.15,
+    "query": "What year was On the Origin of Species published?",
+    "keyword": "1859",
+    "output": " 1859",
+    "match": true,
+    "rouge_l": 1.0
+  },
+  {
+    "method": "random",
+    "recomp": 0.15,
+    "query": "How many patents did Tesla hold?",
+    "keyword": "300",
+    "output": " Tesla held over 300 patents.",
+    "match": true,
+    "rouge_l": 0.571
+  },
+  {
+    "method": "random",
+    "recomp": 0.15,
+    "query": "In what room number did Tesla die?",
+    "keyword": "3327",
+    "output": " \n\nRoom 3327",
+    "match": true,
+    "rouge_l": 0.667
+  },
+  {
+    "method": "random",
+    "recomp": 0.3,
+    "query": "In what city was Einstein born?",
+    "keyword": "Ulm",
+    "output": " Ulm",
+    "match": true,
+    "rouge_l": 1.0
+  },
+  {
+    "method": "random",
+    "recomp": 0.3,
+    "query": "What year did Einstein receive the Nobel Prize?",
+    "keyword": "1921",
+    "output": " 1921",
+    "match": true,
+    "rouge_l": 1.0
+  },
+  {
+    "method": "random",
+    "recomp": 0.3,
+    "query": "Where did Newton work at the Royal Mint?",
+    "keyword": "Royal Mint",
+    "output": "",
+    "match": false,
+    "rouge_l": 0.0
+  },
+  {
+    "method": "random",
+    "recomp": 0.3,
+    "query": "What year was Principia Mathematica published?",
+    "keyword": "1687",
+    "output": " 1687",
+    "match": true,
+    "rouge_l": 1.0
+  },
+  {
+    "method": "random",
+    "recomp": 0.3,
+    "query": "What elements did Marie Curie discover?",
+    "keyword": "polonium",
+    "output": " Marie Curie discovered the elements polonium and radium.",
+    "match": true,
+    "rouge_l": 0.364
+  },
+  {
+    "method": "random",
+    "recomp": 0.3,
+    "query": "What year did Marie Curie win the Chemistry Nobel?",
+    "keyword": "1911",
+    "output": " 1911",
+    "match": true,
+    "rouge_l": 1.0
+  },
+  {
+    "method": "random",
+    "recomp": 0.3,
+    "query": "What ship did Darwin travel on?",
+    "keyword": "Beagle",
+    "output": " HMS Beagle",
+    "match": true,
+    "rouge_l": 1.0
+  },
+  {
+    "method": "random",
+    "recomp": 0.3,
+    "query": "What year was On the Origin of Species published?",
+    "keyword": "1859",
+    "output": " 1859",
+    "match": true,
+    "rouge_l": 1.0
+  },
+  {
+    "method": "random",
+    "recomp": 0.3,
+    "query": "How many patents did Tesla hold?",
+    "keyword": "300",
+    "output": " Tesla held over 300 patents.",
+    "match": true,
+    "rouge_l": 0.571
+  },
+  {
+    "method": "random",
+    "recomp": 0.3,
+    "query": "In what room number did Tesla die?",
+    "keyword": "3327",
+    "output": " \n\nRoom 3327",
+    "match": true,
+    "rouge_l": 0.667
+  }
+]
