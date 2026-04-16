@@ -1,0 +1,1454 @@
+[
+  {
+    "method": "full_prefill",
+    "docs": [
+      "tech"
+    ],
+    "query": "What did Google achieve in quantum computing?",
+    "keyword": "quantum supremacy",
+    "output": "Google achieved quantum supremacy in 2019 with their Sycamore processor.",
+    "match": true
+  },
+  {
+    "method": "full_prefill",
+    "docs": [
+      "tech"
+    ],
+    "query": "How many qubits does IBM's Condor have?",
+    "keyword": "1000",
+    "output": "IBM's Condor has 1000 qubits.",
+    "match": true
+  },
+  {
+    "method": "full_prefill",
+    "docs": [
+      "history"
+    ],
+    "query": "When did Caesar cross the Rubicon?",
+    "keyword": "49 BC",
+    "output": "49 BC",
+    "match": true
+  },
+  {
+    "method": "full_prefill",
+    "docs": [
+      "history"
+    ],
+    "query": "Who invented the printing press?",
+    "keyword": "Gutenberg",
+    "output": "Johannes Gutenberg invented the printing press around 1440 in Mainz, Germany.",
+    "match": true
+  },
+  {
+    "method": "full_prefill",
+    "docs": [
+      "science"
+    ],
+    "query": "What is the speed of light?",
+    "keyword": "299792458",
+    "output": "The speed of light in a vacuum is approximately 299792458 meters per second.",
+    "match": true
+  },
+  {
+    "method": "full_prefill",
+    "docs": [
+      "science"
+    ],
+    "query": "Who discovered penicillin?",
+    "keyword": "Fleming",
+    "output": "Alexander Fleming",
+    "match": true
+  },
+  {
+    "method": "full_prefill",
+    "docs": [
+      "tech",
+      "history"
+    ],
+    "query": "What year did Google achieve quantum supremacy and when was the Bastille stormed?",
+    "keyword": "2019",
+    "output": "Google achieved quantum supremacy in 2019, and the Bastille was stormed on July 14, 1789.",
+    "match": true
+  },
+  {
+    "method": "full_prefill",
+    "docs": [
+      "tech",
+      "history"
+    ],
+    "query": "Compare quantum computing and the printing press in terms of revolutionary impact.",
+    "keyword": "quantum",
+    "output": "Both quantum computing and the printing press have had revolutionary impacts, but in different ways. The printing press, invented by Johannes Gutenberg around 1440, dramatically increased access to information, leading to a cultural and intellectual renaissance that contributed to the Renaissance and the Reformation. It facilitated the spread of knowledge, challenged existing power structures, and laid the groundwork for modern communication.\n\nQuantum computing, on the other hand, promises to revolutionize computation by solving complex problems much faster than classical computers. This could lead to breakthroughs in fields like cryptography, drug discovery, materials science, and artificial intelligence. While its full potential is yet to be realized, quantum computing has the potential to fundamentally change how we process and understand data, much like the printing press transformed the dissemination and consumption of information.",
+    "match": true
+  },
+  {
+    "method": "full_prefill",
+    "docs": [
+      "history",
+      "science"
+    ],
+    "query": "When was DNA discovered and when did Caesar cross the Rubicon?",
+    "keyword": "1869",
+    "output": "DNA was first discovered by Friedrich Miescher in 1869, and Julius Caesar crossed the Rubicon in 49 BC.",
+    "match": true
+  },
+  {
+    "method": "full_prefill",
+    "docs": [
+      "history",
+      "science"
+    ],
+    "query": "What connects Mendeleev and Gutenberg?",
+    "keyword": "1869",
+    "output": "Both Mendeleev and Gutenberg lived in the 19th century.",
+    "match": false
+  },
+  {
+    "method": "full_prefill",
+    "docs": [
+      "tech",
+      "science"
+    ],
+    "query": "How do quantum computers relate to the Higgs boson discovery?",
+    "keyword": "quantum",
+    "output": "Quantum computers do not directly relate to the Higgs boson discovery. The Higgs boson confirmation in 2012 at CERN pertains to particle physics and the understanding of the Higgs mechanism, while quantum computers are related to quantum information processing and computation.",
+    "match": true
+  },
+  {
+    "method": "iw_hkvd",
+    "recomp": 0.05,
+    "docs": [
+      "tech"
+    ],
+    "query": "What did Google achieve in quantum computing?",
+    "keyword": "quantum supremacy",
+    "output": " Google achieved quantum supremacy in 2019 with their Sycamore processor.",
+    "match": true,
+    "rouge_l": 1.0
+  },
+  {
+    "method": "iw_hkvd",
+    "recomp": 0.05,
+    "docs": [
+      "tech"
+    ],
+    "query": "How many qubits does IBM's Condor have?",
+    "keyword": "1000",
+    "output": " IBM's Condor has 1000 qubits.",
+    "match": true,
+    "rouge_l": 1.0
+  },
+  {
+    "method": "iw_hkvd",
+    "recomp": 0.05,
+    "docs": [
+      "history"
+    ],
+    "query": "When did Caesar cross the Rubicon?",
+    "keyword": "49 BC",
+    "output": " Caesar crossed the Rubicon in 49 BC.",
+    "match": true,
+    "rouge_l": 0.222
+  },
+  {
+    "method": "iw_hkvd",
+    "recomp": 0.05,
+    "docs": [
+      "history"
+    ],
+    "query": "Who invented the printing press?",
+    "keyword": "Gutenberg",
+    "output": " Johannes Gutenberg invented the printing press.",
+    "match": true,
+    "rouge_l": 0.588
+  },
+  {
+    "method": "iw_hkvd",
+    "recomp": 0.05,
+    "docs": [
+      "science"
+    ],
+    "query": "What is the speed of light?",
+    "keyword": "299792458",
+    "output": " The speed of light in a vacuum is approximately 299792458 meters per second.",
+    "match": true,
+    "rouge_l": 1.0
+  },
+  {
+    "method": "iw_hkvd",
+    "recomp": 0.05,
+    "docs": [
+      "science"
+    ],
+    "query": "Who discovered penicillin?",
+    "keyword": "Fleming",
+    "output": " Alexander Fleming discovered penicillin.",
+    "match": true,
+    "rouge_l": 0.667
+  },
+  {
+    "method": "iw_hkvd",
+    "recomp": 0.05,
+    "docs": [
+      "tech",
+      "history"
+    ],
+    "query": "What year did Google achieve quantum supremacy and when was the Bastille stormed?",
+    "keyword": "2019",
+    "output": "[ERROR: indices should be either on cpu or on the same device as the indexed tensor (cpu)]",
+    "match": false,
+    "rouge_l": 0.062
+  },
+  {
+    "method": "iw_hkvd",
+    "recomp": 0.05,
+    "docs": [
+      "tech",
+      "history"
+    ],
+    "query": "Compare quantum computing and the printing press in terms of revolutionary impact.",
+    "keyword": "quantum",
+    "output": "[ERROR: indices should be either on cpu or on the same device as the indexed tensor (cpu)]",
+    "match": false,
+    "rouge_l": 0.041
+  },
+  {
+    "method": "iw_hkvd",
+    "recomp": 0.05,
+    "docs": [
+      "history",
+      "science"
+    ],
+    "query": "When was DNA discovered and when did Caesar cross the Rubicon?",
+    "keyword": "1869",
+    "output": "[ERROR: indices should be either on cpu or on the same device as the indexed tensor (cpu)]",
+    "match": false,
+    "rouge_l": 0.057
+  },
+  {
+    "method": "iw_hkvd",
+    "recomp": 0.05,
+    "docs": [
+      "history",
+      "science"
+    ],
+    "query": "What connects Mendeleev and Gutenberg?",
+    "keyword": "1869",
+    "output": "[ERROR: indices should be either on cpu or on the same device as the indexed tensor (cpu)]",
+    "match": false,
+    "rouge_l": 0.077
+  },
+  {
+    "method": "iw_hkvd",
+    "recomp": 0.05,
+    "docs": [
+      "tech",
+      "science"
+    ],
+    "query": "How do quantum computers relate to the Higgs boson discovery?",
+    "keyword": "quantum",
+    "output": "[ERROR: indices should be either on cpu or on the same device as the indexed tensor (cpu)]",
+    "match": false,
+    "rouge_l": 0.069
+  },
+  {
+    "method": "iw_hkvd",
+    "recomp": 0.15,
+    "docs": [
+      "tech"
+    ],
+    "query": "What did Google achieve in quantum computing?",
+    "keyword": "quantum supremacy",
+    "output": " Google achieved quantum supremacy in 2019 with their Sycamore processor.",
+    "match": true,
+    "rouge_l": 1.0
+  },
+  {
+    "method": "iw_hkvd",
+    "recomp": 0.15,
+    "docs": [
+      "tech"
+    ],
+    "query": "How many qubits does IBM's Condor have?",
+    "keyword": "1000",
+    "output": " IBM's Condor has 1000 qubits.",
+    "match": true,
+    "rouge_l": 1.0
+  },
+  {
+    "method": "iw_hkvd",
+    "recomp": 0.15,
+    "docs": [
+      "history"
+    ],
+    "query": "When did Caesar cross the Rubicon?",
+    "keyword": "49 BC",
+    "output": " Caesar crossed the Rubicon in 49 BC.",
+    "match": true,
+    "rouge_l": 0.222
+  },
+  {
+    "method": "iw_hkvd",
+    "recomp": 0.15,
+    "docs": [
+      "history"
+    ],
+    "query": "Who invented the printing press?",
+    "keyword": "Gutenberg",
+    "output": " Johannes Gutenberg invented the printing press.",
+    "match": true,
+    "rouge_l": 0.588
+  },
+  {
+    "method": "iw_hkvd",
+    "recomp": 0.15,
+    "docs": [
+      "science"
+    ],
+    "query": "What is the speed of light?",
+    "keyword": "299792458",
+    "output": " The speed of light in a vacuum is approximately 299792458 meters per second.",
+    "match": true,
+    "rouge_l": 1.0
+  },
+  {
+    "method": "iw_hkvd",
+    "recomp": 0.15,
+    "docs": [
+      "science"
+    ],
+    "query": "Who discovered penicillin?",
+    "keyword": "Fleming",
+    "output": " Alexander Fleming discovered penicillin.",
+    "match": true,
+    "rouge_l": 0.667
+  },
+  {
+    "method": "iw_hkvd",
+    "recomp": 0.15,
+    "docs": [
+      "tech",
+      "history"
+    ],
+    "query": "What year did Google achieve quantum supremacy and when was the Bastille stormed?",
+    "keyword": "2019",
+    "output": "[ERROR: indices should be either on cpu or on the same device as the indexed tensor (cpu)]",
+    "match": false,
+    "rouge_l": 0.062
+  },
+  {
+    "method": "iw_hkvd",
+    "recomp": 0.15,
+    "docs": [
+      "tech",
+      "history"
+    ],
+    "query": "Compare quantum computing and the printing press in terms of revolutionary impact.",
+    "keyword": "quantum",
+    "output": "[ERROR: indices should be either on cpu or on the same device as the indexed tensor (cpu)]",
+    "match": false,
+    "rouge_l": 0.041
+  },
+  {
+    "method": "iw_hkvd",
+    "recomp": 0.15,
+    "docs": [
+      "history",
+      "science"
+    ],
+    "query": "When was DNA discovered and when did Caesar cross the Rubicon?",
+    "keyword": "1869",
+    "output": "[ERROR: indices should be either on cpu or on the same device as the indexed tensor (cpu)]",
+    "match": false,
+    "rouge_l": 0.057
+  },
+  {
+    "method": "iw_hkvd",
+    "recomp": 0.15,
+    "docs": [
+      "history",
+      "science"
+    ],
+    "query": "What connects Mendeleev and Gutenberg?",
+    "keyword": "1869",
+    "output": "[ERROR: indices should be either on cpu or on the same device as the indexed tensor (cpu)]",
+    "match": false,
+    "rouge_l": 0.077
+  },
+  {
+    "method": "iw_hkvd",
+    "recomp": 0.15,
+    "docs": [
+      "tech",
+      "science"
+    ],
+    "query": "How do quantum computers relate to the Higgs boson discovery?",
+    "keyword": "quantum",
+    "output": "[ERROR: indices should be either on cpu or on the same device as the indexed tensor (cpu)]",
+    "match": false,
+    "rouge_l": 0.069
+  },
+  {
+    "method": "iw_hkvd",
+    "recomp": 0.3,
+    "docs": [
+      "tech"
+    ],
+    "query": "What did Google achieve in quantum computing?",
+    "keyword": "quantum supremacy",
+    "output": " Google achieved quantum supremacy in 2019 with their Sycamore processor.",
+    "match": true,
+    "rouge_l": 1.0
+  },
+  {
+    "method": "iw_hkvd",
+    "recomp": 0.3,
+    "docs": [
+      "tech"
+    ],
+    "query": "How many qubits does IBM's Condor have?",
+    "keyword": "1000",
+    "output": " IBM's Condor has 1000 qubits.",
+    "match": true,
+    "rouge_l": 1.0
+  },
+  {
+    "method": "iw_hkvd",
+    "recomp": 0.3,
+    "docs": [
+      "history"
+    ],
+    "query": "When did Caesar cross the Rubicon?",
+    "keyword": "49 BC",
+    "output": " Caesar crossed the Rubicon in 49 BC.",
+    "match": true,
+    "rouge_l": 0.222
+  },
+  {
+    "method": "iw_hkvd",
+    "recomp": 0.3,
+    "docs": [
+      "history"
+    ],
+    "query": "Who invented the printing press?",
+    "keyword": "Gutenberg",
+    "output": " Johannes Gutenberg invented the printing press.",
+    "match": true,
+    "rouge_l": 0.588
+  },
+  {
+    "method": "iw_hkvd",
+    "recomp": 0.3,
+    "docs": [
+      "science"
+    ],
+    "query": "What is the speed of light?",
+    "keyword": "299792458",
+    "output": " The speed of light in a vacuum is approximately 299792458 meters per second.",
+    "match": true,
+    "rouge_l": 1.0
+  },
+  {
+    "method": "iw_hkvd",
+    "recomp": 0.3,
+    "docs": [
+      "science"
+    ],
+    "query": "Who discovered penicillin?",
+    "keyword": "Fleming",
+    "output": " Alexander Fleming discovered penicillin.",
+    "match": true,
+    "rouge_l": 0.667
+  },
+  {
+    "method": "iw_hkvd",
+    "recomp": 0.3,
+    "docs": [
+      "tech",
+      "history"
+    ],
+    "query": "What year did Google achieve quantum supremacy and when was the Bastille stormed?",
+    "keyword": "2019",
+    "output": "[ERROR: indices should be either on cpu or on the same device as the indexed tensor (cpu)]",
+    "match": false,
+    "rouge_l": 0.062
+  },
+  {
+    "method": "iw_hkvd",
+    "recomp": 0.3,
+    "docs": [
+      "tech",
+      "history"
+    ],
+    "query": "Compare quantum computing and the printing press in terms of revolutionary impact.",
+    "keyword": "quantum",
+    "output": "[ERROR: indices should be either on cpu or on the same device as the indexed tensor (cpu)]",
+    "match": false,
+    "rouge_l": 0.041
+  },
+  {
+    "method": "iw_hkvd",
+    "recomp": 0.3,
+    "docs": [
+      "history",
+      "science"
+    ],
+    "query": "When was DNA discovered and when did Caesar cross the Rubicon?",
+    "keyword": "1869",
+    "output": "[ERROR: indices should be either on cpu or on the same device as the indexed tensor (cpu)]",
+    "match": false,
+    "rouge_l": 0.057
+  },
+  {
+    "method": "iw_hkvd",
+    "recomp": 0.3,
+    "docs": [
+      "history",
+      "science"
+    ],
+    "query": "What connects Mendeleev and Gutenberg?",
+    "keyword": "1869",
+    "output": "[ERROR: indices should be either on cpu or on the same device as the indexed tensor (cpu)]",
+    "match": false,
+    "rouge_l": 0.077
+  },
+  {
+    "method": "iw_hkvd",
+    "recomp": 0.3,
+    "docs": [
+      "tech",
+      "science"
+    ],
+    "query": "How do quantum computers relate to the Higgs boson discovery?",
+    "keyword": "quantum",
+    "output": "[ERROR: indices should be either on cpu or on the same device as the indexed tensor (cpu)]",
+    "match": false,
+    "rouge_l": 0.069
+  },
+  {
+    "method": "diff_only",
+    "recomp": 0.05,
+    "docs": [
+      "tech"
+    ],
+    "query": "What did Google achieve in quantum computing?",
+    "keyword": "quantum supremacy",
+    "output": " Google achieved quantum supremacy in 2019 with their Sycamore processor.",
+    "match": true,
+    "rouge_l": 1.0
+  },
+  {
+    "method": "diff_only",
+    "recomp": 0.05,
+    "docs": [
+      "tech"
+    ],
+    "query": "How many qubits does IBM's Condor have?",
+    "keyword": "1000",
+    "output": " IBM's Condor has 1000 qubits.",
+    "match": true,
+    "rouge_l": 1.0
+  },
+  {
+    "method": "diff_only",
+    "recomp": 0.05,
+    "docs": [
+      "history"
+    ],
+    "query": "When did Caesar cross the Rubicon?",
+    "keyword": "49 BC",
+    "output": " Caesar crossed the Rubicon in 49 BC.",
+    "match": true,
+    "rouge_l": 0.222
+  },
+  {
+    "method": "diff_only",
+    "recomp": 0.05,
+    "docs": [
+      "history"
+    ],
+    "query": "Who invented the printing press?",
+    "keyword": "Gutenberg",
+    "output": " Johannes Gutenberg invented the printing press.",
+    "match": true,
+    "rouge_l": 0.588
+  },
+  {
+    "method": "diff_only",
+    "recomp": 0.05,
+    "docs": [
+      "science"
+    ],
+    "query": "What is the speed of light?",
+    "keyword": "299792458",
+    "output": " The speed of light in a vacuum is approximately 299792458 meters per second.",
+    "match": true,
+    "rouge_l": 1.0
+  },
+  {
+    "method": "diff_only",
+    "recomp": 0.05,
+    "docs": [
+      "science"
+    ],
+    "query": "Who discovered penicillin?",
+    "keyword": "Fleming",
+    "output": " Alexander Fleming discovered penicillin.",
+    "match": true,
+    "rouge_l": 0.667
+  },
+  {
+    "method": "diff_only",
+    "recomp": 0.05,
+    "docs": [
+      "tech",
+      "history"
+    ],
+    "query": "What year did Google achieve quantum supremacy and when was the Bastille stormed?",
+    "keyword": "2019",
+    "output": "[ERROR: indices should be either on cpu or on the same device as the indexed tensor (cpu)]",
+    "match": false,
+    "rouge_l": 0.062
+  },
+  {
+    "method": "diff_only",
+    "recomp": 0.05,
+    "docs": [
+      "tech",
+      "history"
+    ],
+    "query": "Compare quantum computing and the printing press in terms of revolutionary impact.",
+    "keyword": "quantum",
+    "output": "[ERROR: indices should be either on cpu or on the same device as the indexed tensor (cpu)]",
+    "match": false,
+    "rouge_l": 0.041
+  },
+  {
+    "method": "diff_only",
+    "recomp": 0.05,
+    "docs": [
+      "history",
+      "science"
+    ],
+    "query": "When was DNA discovered and when did Caesar cross the Rubicon?",
+    "keyword": "1869",
+    "output": "[ERROR: indices should be either on cpu or on the same device as the indexed tensor (cpu)]",
+    "match": false,
+    "rouge_l": 0.057
+  },
+  {
+    "method": "diff_only",
+    "recomp": 0.05,
+    "docs": [
+      "history",
+      "science"
+    ],
+    "query": "What connects Mendeleev and Gutenberg?",
+    "keyword": "1869",
+    "output": "[ERROR: indices should be either on cpu or on the same device as the indexed tensor (cpu)]",
+    "match": false,
+    "rouge_l": 0.077
+  },
+  {
+    "method": "diff_only",
+    "recomp": 0.05,
+    "docs": [
+      "tech",
+      "science"
+    ],
+    "query": "How do quantum computers relate to the Higgs boson discovery?",
+    "keyword": "quantum",
+    "output": "[ERROR: indices should be either on cpu or on the same device as the indexed tensor (cpu)]",
+    "match": false,
+    "rouge_l": 0.069
+  },
+  {
+    "method": "diff_only",
+    "recomp": 0.15,
+    "docs": [
+      "tech"
+    ],
+    "query": "What did Google achieve in quantum computing?",
+    "keyword": "quantum supremacy",
+    "output": " Google achieved quantum supremacy in 2019 with their Sycamore processor.",
+    "match": true,
+    "rouge_l": 1.0
+  },
+  {
+    "method": "diff_only",
+    "recomp": 0.15,
+    "docs": [
+      "tech"
+    ],
+    "query": "How many qubits does IBM's Condor have?",
+    "keyword": "1000",
+    "output": " IBM's Condor has 1000 qubits.",
+    "match": true,
+    "rouge_l": 1.0
+  },
+  {
+    "method": "diff_only",
+    "recomp": 0.15,
+    "docs": [
+      "history"
+    ],
+    "query": "When did Caesar cross the Rubicon?",
+    "keyword": "49 BC",
+    "output": " Caesar crossed the Rubicon in 49 BC.",
+    "match": true,
+    "rouge_l": 0.222
+  },
+  {
+    "method": "diff_only",
+    "recomp": 0.15,
+    "docs": [
+      "history"
+    ],
+    "query": "Who invented the printing press?",
+    "keyword": "Gutenberg",
+    "output": " Johannes Gutenberg invented the printing press.",
+    "match": true,
+    "rouge_l": 0.588
+  },
+  {
+    "method": "diff_only",
+    "recomp": 0.15,
+    "docs": [
+      "science"
+    ],
+    "query": "What is the speed of light?",
+    "keyword": "299792458",
+    "output": " The speed of light in a vacuum is approximately 299792458 meters per second.",
+    "match": true,
+    "rouge_l": 1.0
+  },
+  {
+    "method": "diff_only",
+    "recomp": 0.15,
+    "docs": [
+      "science"
+    ],
+    "query": "Who discovered penicillin?",
+    "keyword": "Fleming",
+    "output": " Alexander Fleming discovered penicillin.",
+    "match": true,
+    "rouge_l": 0.667
+  },
+  {
+    "method": "diff_only",
+    "recomp": 0.15,
+    "docs": [
+      "tech",
+      "history"
+    ],
+    "query": "What year did Google achieve quantum supremacy and when was the Bastille stormed?",
+    "keyword": "2019",
+    "output": "[ERROR: indices should be either on cpu or on the same device as the indexed tensor (cpu)]",
+    "match": false,
+    "rouge_l": 0.062
+  },
+  {
+    "method": "diff_only",
+    "recomp": 0.15,
+    "docs": [
+      "tech",
+      "history"
+    ],
+    "query": "Compare quantum computing and the printing press in terms of revolutionary impact.",
+    "keyword": "quantum",
+    "output": "[ERROR: indices should be either on cpu or on the same device as the indexed tensor (cpu)]",
+    "match": false,
+    "rouge_l": 0.041
+  },
+  {
+    "method": "diff_only",
+    "recomp": 0.15,
+    "docs": [
+      "history",
+      "science"
+    ],
+    "query": "When was DNA discovered and when did Caesar cross the Rubicon?",
+    "keyword": "1869",
+    "output": "[ERROR: indices should be either on cpu or on the same device as the indexed tensor (cpu)]",
+    "match": false,
+    "rouge_l": 0.057
+  },
+  {
+    "method": "diff_only",
+    "recomp": 0.15,
+    "docs": [
+      "history",
+      "science"
+    ],
+    "query": "What connects Mendeleev and Gutenberg?",
+    "keyword": "1869",
+    "output": "[ERROR: indices should be either on cpu or on the same device as the indexed tensor (cpu)]",
+    "match": false,
+    "rouge_l": 0.077
+  },
+  {
+    "method": "diff_only",
+    "recomp": 0.15,
+    "docs": [
+      "tech",
+      "science"
+    ],
+    "query": "How do quantum computers relate to the Higgs boson discovery?",
+    "keyword": "quantum",
+    "output": "[ERROR: indices should be either on cpu or on the same device as the indexed tensor (cpu)]",
+    "match": false,
+    "rouge_l": 0.069
+  },
+  {
+    "method": "diff_only",
+    "recomp": 0.3,
+    "docs": [
+      "tech"
+    ],
+    "query": "What did Google achieve in quantum computing?",
+    "keyword": "quantum supremacy",
+    "output": " Google achieved quantum supremacy in 2019 with their Sycamore processor.",
+    "match": true,
+    "rouge_l": 1.0
+  },
+  {
+    "method": "diff_only",
+    "recomp": 0.3,
+    "docs": [
+      "tech"
+    ],
+    "query": "How many qubits does IBM's Condor have?",
+    "keyword": "1000",
+    "output": " IBM's Condor has 1000 qubits.",
+    "match": true,
+    "rouge_l": 1.0
+  },
+  {
+    "method": "diff_only",
+    "recomp": 0.3,
+    "docs": [
+      "history"
+    ],
+    "query": "When did Caesar cross the Rubicon?",
+    "keyword": "49 BC",
+    "output": " Caesar crossed the Rubicon in 49 BC.",
+    "match": true,
+    "rouge_l": 0.222
+  },
+  {
+    "method": "diff_only",
+    "recomp": 0.3,
+    "docs": [
+      "history"
+    ],
+    "query": "Who invented the printing press?",
+    "keyword": "Gutenberg",
+    "output": " Johannes Gutenberg invented the printing press.",
+    "match": true,
+    "rouge_l": 0.588
+  },
+  {
+    "method": "diff_only",
+    "recomp": 0.3,
+    "docs": [
+      "science"
+    ],
+    "query": "What is the speed of light?",
+    "keyword": "299792458",
+    "output": " The speed of light in a vacuum is approximately 299792458 meters per second.",
+    "match": true,
+    "rouge_l": 1.0
+  },
+  {
+    "method": "diff_only",
+    "recomp": 0.3,
+    "docs": [
+      "science"
+    ],
+    "query": "Who discovered penicillin?",
+    "keyword": "Fleming",
+    "output": " Alexander Fleming discovered penicillin.",
+    "match": true,
+    "rouge_l": 0.667
+  },
+  {
+    "method": "diff_only",
+    "recomp": 0.3,
+    "docs": [
+      "tech",
+      "history"
+    ],
+    "query": "What year did Google achieve quantum supremacy and when was the Bastille stormed?",
+    "keyword": "2019",
+    "output": "[ERROR: indices should be either on cpu or on the same device as the indexed tensor (cpu)]",
+    "match": false,
+    "rouge_l": 0.062
+  },
+  {
+    "method": "diff_only",
+    "recomp": 0.3,
+    "docs": [
+      "tech",
+      "history"
+    ],
+    "query": "Compare quantum computing and the printing press in terms of revolutionary impact.",
+    "keyword": "quantum",
+    "output": "[ERROR: indices should be either on cpu or on the same device as the indexed tensor (cpu)]",
+    "match": false,
+    "rouge_l": 0.041
+  },
+  {
+    "method": "diff_only",
+    "recomp": 0.3,
+    "docs": [
+      "history",
+      "science"
+    ],
+    "query": "When was DNA discovered and when did Caesar cross the Rubicon?",
+    "keyword": "1869",
+    "output": "[ERROR: indices should be either on cpu or on the same device as the indexed tensor (cpu)]",
+    "match": false,
+    "rouge_l": 0.057
+  },
+  {
+    "method": "diff_only",
+    "recomp": 0.3,
+    "docs": [
+      "history",
+      "science"
+    ],
+    "query": "What connects Mendeleev and Gutenberg?",
+    "keyword": "1869",
+    "output": "[ERROR: indices should be either on cpu or on the same device as the indexed tensor (cpu)]",
+    "match": false,
+    "rouge_l": 0.077
+  },
+  {
+    "method": "diff_only",
+    "recomp": 0.3,
+    "docs": [
+      "tech",
+      "science"
+    ],
+    "query": "How do quantum computers relate to the Higgs boson discovery?",
+    "keyword": "quantum",
+    "output": "[ERROR: indices should be either on cpu or on the same device as the indexed tensor (cpu)]",
+    "match": false,
+    "rouge_l": 0.069
+  },
+  {
+    "method": "random",
+    "recomp": 0.05,
+    "docs": [
+      "tech"
+    ],
+    "query": "What did Google achieve in quantum computing?",
+    "keyword": "quantum supremacy",
+    "output": " Google achieved quantum supremacy in 2019 with their Sycamore processor.",
+    "match": true,
+    "rouge_l": 1.0
+  },
+  {
+    "method": "random",
+    "recomp": 0.05,
+    "docs": [
+      "tech"
+    ],
+    "query": "How many qubits does IBM's Condor have?",
+    "keyword": "1000",
+    "output": " IBM's Condor has 1000 qubits.",
+    "match": true,
+    "rouge_l": 1.0
+  },
+  {
+    "method": "random",
+    "recomp": 0.05,
+    "docs": [
+      "history"
+    ],
+    "query": "When did Caesar cross the Rubicon?",
+    "keyword": "49 BC",
+    "output": " Caesar crossed the Rubicon in 49 BC.",
+    "match": true,
+    "rouge_l": 0.222
+  },
+  {
+    "method": "random",
+    "recomp": 0.05,
+    "docs": [
+      "history"
+    ],
+    "query": "Who invented the printing press?",
+    "keyword": "Gutenberg",
+    "output": " Johannes Gutenberg invented the printing press.",
+    "match": true,
+    "rouge_l": 0.588
+  },
+  {
+    "method": "random",
+    "recomp": 0.05,
+    "docs": [
+      "science"
+    ],
+    "query": "What is the speed of light?",
+    "keyword": "299792458",
+    "output": " The speed of light in a vacuum is approximately 299792458 meters per second.",
+    "match": true,
+    "rouge_l": 1.0
+  },
+  {
+    "method": "random",
+    "recomp": 0.05,
+    "docs": [
+      "science"
+    ],
+    "query": "Who discovered penicillin?",
+    "keyword": "Fleming",
+    "output": " Alexander Fleming discovered penicillin.",
+    "match": true,
+    "rouge_l": 0.667
+  },
+  {
+    "method": "random",
+    "recomp": 0.05,
+    "docs": [
+      "tech",
+      "history"
+    ],
+    "query": "What year did Google achieve quantum supremacy and when was the Bastille stormed?",
+    "keyword": "2019",
+    "output": "[ERROR: indices should be either on cpu or on the same device as the indexed tensor (cpu)]",
+    "match": false,
+    "rouge_l": 0.062
+  },
+  {
+    "method": "random",
+    "recomp": 0.05,
+    "docs": [
+      "tech",
+      "history"
+    ],
+    "query": "Compare quantum computing and the printing press in terms of revolutionary impact.",
+    "keyword": "quantum",
+    "output": "[ERROR: indices should be either on cpu or on the same device as the indexed tensor (cpu)]",
+    "match": false,
+    "rouge_l": 0.041
+  },
+  {
+    "method": "random",
+    "recomp": 0.05,
+    "docs": [
+      "history",
+      "science"
+    ],
+    "query": "When was DNA discovered and when did Caesar cross the Rubicon?",
+    "keyword": "1869",
+    "output": "[ERROR: indices should be either on cpu or on the same device as the indexed tensor (cpu)]",
+    "match": false,
+    "rouge_l": 0.057
+  },
+  {
+    "method": "random",
+    "recomp": 0.05,
+    "docs": [
+      "history",
+      "science"
+    ],
+    "query": "What connects Mendeleev and Gutenberg?",
+    "keyword": "1869",
+    "output": "[ERROR: indices should be either on cpu or on the same device as the indexed tensor (cpu)]",
+    "match": false,
+    "rouge_l": 0.077
+  },
+  {
+    "method": "random",
+    "recomp": 0.05,
+    "docs": [
+      "tech",
+      "science"
+    ],
+    "query": "How do quantum computers relate to the Higgs boson discovery?",
+    "keyword": "quantum",
+    "output": "[ERROR: indices should be either on cpu or on the same device as the indexed tensor (cpu)]",
+    "match": false,
+    "rouge_l": 0.069
+  },
+  {
+    "method": "random",
+    "recomp": 0.15,
+    "docs": [
+      "tech"
+    ],
+    "query": "What did Google achieve in quantum computing?",
+    "keyword": "quantum supremacy",
+    "output": " Google achieved quantum supremacy in 2019 with their Sycamore processor.",
+    "match": true,
+    "rouge_l": 1.0
+  },
+  {
+    "method": "random",
+    "recomp": 0.15,
+    "docs": [
+      "tech"
+    ],
+    "query": "How many qubits does IBM's Condor have?",
+    "keyword": "1000",
+    "output": " IBM's Condor has 1000 qubits.",
+    "match": true,
+    "rouge_l": 1.0
+  },
+  {
+    "method": "random",
+    "recomp": 0.15,
+    "docs": [
+      "history"
+    ],
+    "query": "When did Caesar cross the Rubicon?",
+    "keyword": "49 BC",
+    "output": " Caesar crossed the Rubicon in 49 BC.",
+    "match": true,
+    "rouge_l": 0.222
+  },
+  {
+    "method": "random",
+    "recomp": 0.15,
+    "docs": [
+      "history"
+    ],
+    "query": "Who invented the printing press?",
+    "keyword": "Gutenberg",
+    "output": " Johannes Gutenberg invented the printing press.",
+    "match": true,
+    "rouge_l": 0.588
+  },
+  {
+    "method": "random",
+    "recomp": 0.15,
+    "docs": [
+      "science"
+    ],
+    "query": "What is the speed of light?",
+    "keyword": "299792458",
+    "output": " The speed of light in a vacuum is approximately 299792458 meters per second.",
+    "match": true,
+    "rouge_l": 1.0
+  },
+  {
+    "method": "random",
+    "recomp": 0.15,
+    "docs": [
+      "science"
+    ],
+    "query": "Who discovered penicillin?",
+    "keyword": "Fleming",
+    "output": " Alexander Fleming discovered penicillin.",
+    "match": true,
+    "rouge_l": 0.667
+  },
+  {
+    "method": "random",
+    "recomp": 0.15,
+    "docs": [
+      "tech",
+      "history"
+    ],
+    "query": "What year did Google achieve quantum supremacy and when was the Bastille stormed?",
+    "keyword": "2019",
+    "output": "[ERROR: indices should be either on cpu or on the same device as the indexed tensor (cpu)]",
+    "match": false,
+    "rouge_l": 0.062
+  },
+  {
+    "method": "random",
+    "recomp": 0.15,
+    "docs": [
+      "tech",
+      "history"
+    ],
+    "query": "Compare quantum computing and the printing press in terms of revolutionary impact.",
+    "keyword": "quantum",
+    "output": "[ERROR: indices should be either on cpu or on the same device as the indexed tensor (cpu)]",
+    "match": false,
+    "rouge_l": 0.041
+  },
+  {
+    "method": "random",
+    "recomp": 0.15,
+    "docs": [
+      "history",
+      "science"
+    ],
+    "query": "When was DNA discovered and when did Caesar cross the Rubicon?",
+    "keyword": "1869",
+    "output": "[ERROR: indices should be either on cpu or on the same device as the indexed tensor (cpu)]",
+    "match": false,
+    "rouge_l": 0.057
+  },
+  {
+    "method": "random",
+    "recomp": 0.15,
+    "docs": [
+      "history",
+      "science"
+    ],
+    "query": "What connects Mendeleev and Gutenberg?",
+    "keyword": "1869",
+    "output": "[ERROR: indices should be either on cpu or on the same device as the indexed tensor (cpu)]",
+    "match": false,
+    "rouge_l": 0.077
+  },
+  {
+    "method": "random",
+    "recomp": 0.15,
+    "docs": [
+      "tech",
+      "science"
+    ],
+    "query": "How do quantum computers relate to the Higgs boson discovery?",
+    "keyword": "quantum",
+    "output": "[ERROR: indices should be either on cpu or on the same device as the indexed tensor (cpu)]",
+    "match": false,
+    "rouge_l": 0.069
+  },
+  {
+    "method": "random",
+    "recomp": 0.3,
+    "docs": [
+      "tech"
+    ],
+    "query": "What did Google achieve in quantum computing?",
+    "keyword": "quantum supremacy",
+    "output": " Google achieved quantum supremacy in 2019 with their Sycamore processor.",
+    "match": true,
+    "rouge_l": 1.0
+  },
+  {
+    "method": "random",
+    "recomp": 0.3,
+    "docs": [
+      "tech"
+    ],
+    "query": "How many qubits does IBM's Condor have?",
+    "keyword": "1000",
+    "output": " IBM's Condor has 1000 qubits.",
+    "match": true,
+    "rouge_l": 1.0
+  },
+  {
+    "method": "random",
+    "recomp": 0.3,
+    "docs": [
+      "history"
+    ],
+    "query": "When did Caesar cross the Rubicon?",
+    "keyword": "49 BC",
+    "output": " Caesar crossed the Rubicon in 49 BC.",
+    "match": true,
+    "rouge_l": 0.222
+  },
+  {
+    "method": "random",
+    "recomp": 0.3,
+    "docs": [
+      "history"
+    ],
+    "query": "Who invented the printing press?",
+    "keyword": "Gutenberg",
+    "output": " Johannes Gutenberg invented the printing press.",
+    "match": true,
+    "rouge_l": 0.588
+  },
+  {
+    "method": "random",
+    "recomp": 0.3,
+    "docs": [
+      "science"
+    ],
+    "query": "What is the speed of light?",
+    "keyword": "299792458",
+    "output": " The speed of light in a vacuum is approximately 299792458 meters per second.",
+    "match": true,
+    "rouge_l": 1.0
+  },
+  {
+    "method": "random",
+    "recomp": 0.3,
+    "docs": [
+      "science"
+    ],
+    "query": "Who discovered penicillin?",
+    "keyword": "Fleming",
+    "output": " Alexander Fleming discovered penicillin.",
+    "match": true,
+    "rouge_l": 0.667
+  },
+  {
+    "method": "random",
+    "recomp": 0.3,
+    "docs": [
+      "tech",
+      "history"
+    ],
+    "query": "What year did Google achieve quantum supremacy and when was the Bastille stormed?",
+    "keyword": "2019",
+    "output": "[ERROR: indices should be either on cpu or on the same device as the indexed tensor (cpu)]",
+    "match": false,
+    "rouge_l": 0.062
+  },
+  {
+    "method": "random",
+    "recomp": 0.3,
+    "docs": [
+      "tech",
+      "history"
+    ],
+    "query": "Compare quantum computing and the printing press in terms of revolutionary impact.",
+    "keyword": "quantum",
+    "output": "[ERROR: indices should be either on cpu or on the same device as the indexed tensor (cpu)]",
+    "match": false,
+    "rouge_l": 0.041
+  },
+  {
+    "method": "random",
+    "recomp": 0.3,
+    "docs": [
+      "history",
+      "science"
+    ],
+    "query": "When was DNA discovered and when did Caesar cross the Rubicon?",
+    "keyword": "1869",
+    "output": "[ERROR: indices should be either on cpu or on the same device as the indexed tensor (cpu)]",
+    "match": false,
+    "rouge_l": 0.057
+  },
+  {
+    "method": "random",
+    "recomp": 0.3,
+    "docs": [
+      "history",
+      "science"
+    ],
+    "query": "What connects Mendeleev and Gutenberg?",
+    "keyword": "1869",
+    "output": "[ERROR: indices should be either on cpu or on the same device as the indexed tensor (cpu)]",
+    "match": false,
+    "rouge_l": 0.077
+  },
+  {
+    "method": "random",
+    "recomp": 0.3,
+    "docs": [
+      "tech",
+      "science"
+    ],
+    "query": "How do quantum computers relate to the Higgs boson discovery?",
+    "keyword": "quantum",
+    "output": "[ERROR: indices should be either on cpu or on the same device as the indexed tensor (cpu)]",
+    "match": false,
+    "rouge_l": 0.069
+  },
+  {
+    "method": "iw_hkvd",
+    "recomp": 0.15,
+    "docs": [
+      "tech",
+      "history"
+    ],
+    "order": "original",
+    "query": "What year did Google achieve quantum supremacy and when was the Bastille stormed?",
+    "keyword": "2019",
+    "output": "[ERROR: indices should be either on cpu or on the same device as the indexed tensor (cpu)]",
+    "match": false
+  },
+  {
+    "method": "iw_hkvd",
+    "recomp": 0.15,
+    "docs": [
+      "history",
+      "tech"
+    ],
+    "order": "reordered",
+    "query": "What year did Google achieve quantum supremacy and when was the Bastille stormed?",
+    "keyword": "2019",
+    "output": "[ERROR: indices should be either on cpu or on the same device as the indexed tensor (cpu)]",
+    "match": false
+  },
+  {
+    "method": "iw_hkvd",
+    "recomp": 0.15,
+    "docs": [
+      "tech",
+      "history"
+    ],
+    "order": "original",
+    "query": "Compare quantum computing and the printing press in terms of revolutionary impact.",
+    "keyword": "quantum",
+    "output": "[ERROR: indices should be either on cpu or on the same device as the indexed tensor (cpu)]",
+    "match": false
+  },
+  {
+    "method": "iw_hkvd",
+    "recomp": 0.15,
+    "docs": [
+      "history",
+      "tech"
+    ],
+    "order": "reordered",
+    "query": "Compare quantum computing and the printing press in terms of revolutionary impact.",
+    "keyword": "quantum",
+    "output": "[ERROR: indices should be either on cpu or on the same device as the indexed tensor (cpu)]",
+    "match": false
+  },
+  {
+    "method": "iw_hkvd",
+    "recomp": 0.15,
+    "docs": [
+      "history",
+      "science"
+    ],
+    "order": "original",
+    "query": "When was DNA discovered and when did Caesar cross the Rubicon?",
+    "keyword": "1869",
+    "output": "[ERROR: indices should be either on cpu or on the same device as the indexed tensor (cpu)]",
+    "match": false
+  },
+  {
+    "method": "iw_hkvd",
+    "recomp": 0.15,
+    "docs": [
+      "science",
+      "history"
+    ],
+    "order": "reordered",
+    "query": "When was DNA discovered and when did Caesar cross the Rubicon?",
+    "keyword": "1869",
+    "output": "[ERROR: indices should be either on cpu or on the same device as the indexed tensor (cpu)]",
+    "match": false
+  },
+  {
+    "method": "iw_hkvd",
+    "recomp": 0.15,
+    "docs": [
+      "history",
+      "science"
+    ],
+    "order": "original",
+    "query": "What connects Mendeleev and Gutenberg?",
+    "keyword": "1869",
+    "output": "[ERROR: indices should be either on cpu or on the same device as the indexed tensor (cpu)]",
+    "match": false
+  },
+  {
+    "method": "iw_hkvd",
+    "recomp": 0.15,
+    "docs": [
+      "science",
+      "history"
+    ],
+    "order": "reordered",
+    "query": "What connects Mendeleev and Gutenberg?",
+    "keyword": "1869",
+    "output": "[ERROR: indices should be either on cpu or on the same device as the indexed tensor (cpu)]",
+    "match": false
+  }
+]
