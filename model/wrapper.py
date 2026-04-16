@@ -467,42 +467,51 @@ class ModelKVzip():
                         kv.key_cache[layer_idx][cu[h] + lt] = k_imp_ctx
                         kv.value_cache[layer_idx][cu[h] + lt] = v_imp_ctx
 
-            # ── Attention: cached KV로 수행! ──
-            # KVzip의 EvictCache.prepare()를 직접 사용
+            # ── Attention: KVzip의 prepare()를 직접 사용! ──
             if is_pruned:
                 from flash_attn import flash_attn_varlen_func
 
                 T_q = q.shape[0]
                 n_group = num_heads // num_kv_heads
 
-                # Q: [T_q, H*D] → [1, H, T_q, D] → [1, H_kv, group, T_q, D]
+                # Q를 [1, H, T_q, D] 형태로
                 q_4d = q.view(T_q, num_heads, head_dim).unsqueeze(0).transpose(1, 2)
+                # K/V는 이미 flatten: old_k, old_v
+
+                # 직접 Q reshape + info 구성 (prepare()의 side effect 없이)
+                n_group = num_heads // num_kv_heads
                 q_prep = q_4d.view(1, num_kv_heads, n_group, T_q, head_dim)
                 q_prep = q_prep.transpose(2, 3).contiguous().view(-1, n_group, head_dim)
-                # q_prep: [H_kv * T_q, group, D]
 
-                cu_len_q = T_q * torch.arange(num_kv_heads + 1, dtype=torch.int32, device=device)
+                cu_len_q = T_q * kv.info["cu_head"]
                 cu_len_k = kv.info["cu_len_k"][layer_idx]
                 max_len_k = kv.info["max_len_k"][layer_idx]
                 if isinstance(max_len_k, torch.Tensor):
-                    max_len_k = max_len_k.item()
+                    max_len_k = int(max_len_k.item())
+                offset = kv.info["offset"][layer_idx]
 
-                k_flat = old_k.view(-1, 1, head_dim)
-                v_flat = old_v.view(-1, 1, head_dim)
+                k_prep = old_k.view(-1, 1, head_dim)
+                v_prep = old_v.view(-1, 1, head_dim)
+
+                info = {
+                    "cu_len_q": cu_len_q,
+                    "cu_len_k": cu_len_k,
+                    "max_len_q": T_q,
+                    "max_len_k": max_len_k + offset,
+                }
 
                 attn_output = flash_attn_varlen_func(
-                    q_prep, k_flat, v_flat,
-                    cu_seqlens_q=cu_len_q,
-                    cu_seqlens_k=cu_len_k,
-                    max_seqlen_q=T_q,
-                    max_seqlen_k=max_len_k,
+                    q_prep, k_prep, v_prep,
+                    cu_seqlens_q=info["cu_len_q"],
+                    cu_seqlens_k=info["cu_len_k"],
+                    max_seqlen_q=info["max_len_q"],
+                    max_seqlen_k=info["max_len_k"],
                     dropout_p=0.0,
                     causal=True,
                 )
 
-                # attn_output: [H_kv * T_q, group, D] → [1, H_kv, T_q, group, D] → [T_q, H*D]
-                attn_output = attn_output.view(1, num_kv_heads, T_q, n_group, head_dim)
-                attn_output = attn_output.transpose(1, 2)  # [1, T_q, H_kv, group, D]
+                # reshape back: [H_kv * T_q, group, D] → [T_q, H*D]
+                attn_output = attn_output.view(1, num_kv_heads, T_q, n_group, head_dim).transpose(1, 2)
                 attn_output = attn_output.contiguous().view(T_q, -1)
 
             else:
@@ -512,6 +521,16 @@ class ModelKVzip():
                 v_4d = old_v.view(1, -1, num_kv_heads, head_dim)
                 attn_output = _flash_attention_forward(q_4d, k_4d, v_4d, None, T_cur, is_causal=True)
                 attn_output = attn_output.reshape(T_cur, -1)
+
+            # ── Query K/V를 kv에 append (decode 시 재사용) ──
+            if imp_indices is not None and is_pruned:
+                # imp_indices 중 query 부분 추출
+                query_local = [i for i, p in enumerate(imp_indices.tolist()) if p >= context_len]
+                if query_local:
+                    q_local_t = torch.tensor(query_local, device=device, dtype=torch.long)
+                    k_q = k_new[q_local_t].view(1, len(query_local), num_kv_heads, head_dim).transpose(1, 2)
+                    v_q = v_new[q_local_t].view(1, len(query_local), num_kv_heads, head_dim).transpose(1, 2)
+                    kv.update(k_q, v_q, layer_idx)
 
             # Output projection + residual + MLP (Qwen2 style)
             hidden_states = layer.self_attn.o_proj(attn_output)
@@ -523,11 +542,37 @@ class ModelKVzip():
         t_blend = time.perf_counter() - t_start
         print(f"[BlendV2] Layer-by-layer forward: {t_blend*1000:.0f}ms")
 
-        # ── Generate ──
-        t0 = time.perf_counter()
-        output = self.generate(query_ids, kv=kv, update_cache=False)
-        t_gen = time.perf_counter() - t0
-        print(f"[BlendV2] Generate: {t_gen*1000:.0f}ms, output: {output[:80]}...")
+        # ── Final norm + lm_head → 첫 토큰 ──
+        hidden_final = residual + hidden_states
+        hidden_final = self.model.model.norm(hidden_final)
+        last_hidden = hidden_final[-1:]  # 마지막 토큰 (query의 마지막)
+        logits = self.model.lm_head(last_hidden)
+        first_token = torch.argmax(logits, dim=-1)  # [1]
+
+        # ── Decode loop ──
+        kv._seen_tokens = context_len + query_ids.shape[1]
+        kv.prefill_ids = torch.cat([kv.prefill_ids, query_ids], dim=1)
+
+        generated = [first_token.item()]
+        max_new = self.gen_kwargs.get("max_new_tokens", 512)
+        eos_id = self.tokenizer.eos_token_id
+
+        for step in range(max_new - 1):
+            if generated[-1] == eos_id:
+                break
+            next_input = torch.tensor([[generated[-1]]], device=device)
+            outputs = self.model(next_input, past_key_values=kv, use_cache=True)
+            next_logits = outputs.logits[0, -1]
+            next_token = torch.argmax(next_logits).item()
+            generated.append(next_token)
+
+        # EOS 제거
+        if generated and generated[-1] == eos_id:
+            generated = generated[:-1]
+        output = self.tokenizer.decode(generated)
+
+        t_gen = time.perf_counter() - t_start - t_blend
+        print(f"[BlendV2] Generate: {len(generated)} tokens, output: {output[:80]}...")
 
         return output
 
