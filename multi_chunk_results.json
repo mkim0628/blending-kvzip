@@ -158,9 +158,9 @@
     ],
     "query": "Who invented the printing press?",
     "keyword": "Gutenberg",
-    "output": " Johannes Gutenberg invented the printing press.",
+    "output": " Johannes Gutenberg invented the printing press around 1440 in Mainz, Germany.",
     "match": true,
-    "rouge_l": 0.588
+    "rouge_l": 1.0
   },
   {
     "method": "iw_hkvd",
@@ -182,9 +182,9 @@
     ],
     "query": "Who discovered penicillin?",
     "keyword": "Fleming",
-    "output": " Alexander Fleming discovered penicillin.",
+    "output": " Alexander Fleming",
     "match": true,
-    "rouge_l": 0.667
+    "rouge_l": 1.0
   },
   {
     "method": "iw_hkvd",
@@ -195,9 +195,9 @@
     ],
     "query": "What year did Google achieve quantum supremacy and when was the Bastille stormed?",
     "keyword": "2019",
-    "output": "[ERROR: indices should be either on cpu or on the same device as the indexed tensor (cpu)]",
-    "match": false,
-    "rouge_l": 0.062
+    "output": " Google achieved quantum supremacy in 2019 and the Bastille was stormed on July 14, 1789.",
+    "match": true,
+    "rouge_l": 0.933
   },
   {
     "method": "iw_hkvd",
@@ -208,9 +208,9 @@
     ],
     "query": "Compare quantum computing and the printing press in terms of revolutionary impact.",
     "keyword": "quantum",
-    "output": "[ERROR: indices should be either on cpu or on the same device as the indexed tensor (cpu)]",
-    "match": false,
-    "rouge_l": 0.041
+    "output": " Both quantum computing and the printing press have had profound and transformative impacts on society. The printing press, invented by Johannes Gutenberg around 1440, revolutionized information dissemination, making knowledge more accessible and contributing to the Renaissance, Reformation, and Scientific Revolution. Quantum computing, emerging from the 20th century, promises similarly revolutionary changes by enabling the processing of complex calculations far beyond the capabilities of classical computers, potentially transforming fields like cryptography, medicine, and artificial intelligence.",
+    "match": true,
+    "rouge_l": 0.341
   },
   {
     "method": "iw_hkvd",
@@ -221,9 +221,9 @@
     ],
     "query": "When was DNA discovered and when did Caesar cross the Rubicon?",
     "keyword": "1869",
-    "output": "[ERROR: indices should be either on cpu or on the same device as the indexed tensor (cpu)]",
-    "match": false,
-    "rouge_l": 0.057
+    "output": " DNA was first discovered in 1869 by Friedrich Miescher. Caesar crossed the Rubicon in 49 BC.",
+    "match": true,
+    "rouge_l": 0.765
   },
   {
     "method": "iw_hkvd",
@@ -234,9 +234,9 @@
     ],
     "query": "What connects Mendeleev and Gutenberg?",
     "keyword": "1869",
-    "output": "[ERROR: indices should be either on cpu or on the same device as the indexed tensor (cpu)]",
+    "output": " Periodic Table and Printing Press.",
     "match": false,
-    "rouge_l": 0.077
+    "rouge_l": 0.143
   },
   {
     "method": "iw_hkvd",
@@ -247,9 +247,9 @@
     ],
     "query": "How do quantum computers relate to the Higgs boson discovery?",
     "keyword": "quantum",
-    "output": "[ERROR: indices should be either on cpu or on the same device as the indexed tensor (cpu)]",
+    "output": "",
     "match": false,
-    "rouge_l": 0.069
+    "rouge_l": 0.0
   },
   {
     "method": "iw_hkvd",
@@ -295,9 +295,9 @@
     ],
     "query": "Who invented the printing press?",
     "keyword": "Gutenberg",
-    "output": " Johannes Gutenberg invented the printing press.",
+    "output": " Johannes Gutenberg invented the printing press around 1440 in Mainz, Germany.",
     "match": true,
-    "rouge_l": 0.588
+    "rouge_l": 1.0
   },
   {
     "method": "iw_hkvd",
@@ -319,9 +319,9 @@
     ],
     "query": "Who discovered penicillin?",
     "keyword": "Fleming",
-    "output": " Alexander Fleming discovered penicillin.",
+    "output": " Alexander Fleming",
     "match": true,
-    "rouge_l": 0.667
+    "rouge_l": 1.0
   },
   {
     "method": "iw_hkvd",
@@ -332,9 +332,9 @@
     ],
     "query": "What year did Google achieve quantum supremacy and when was the Bastille stormed?",
     "keyword": "2019",
-    "output": "[ERROR: indices should be either on cpu or on the same device as the indexed tensor (cpu)]",
+    "output": "",
     "match": false,
-    "rouge_l": 0.062
+    "rouge_l": 0.0
   },
   {
     "method": "iw_hkvd",
@@ -345,9 +345,9 @@
     ],
     "query": "Compare quantum computing and the printing press in terms of revolutionary impact.",
     "keyword": "quantum",
-    "output": "[ERROR: indices should be either on cpu or on the same device as the indexed tensor (cpu)]",
-    "match": false,
-    "rouge_l": 0.041
+    "output": " Both quantum computing and the printing press have had revolutionary impacts, but in different ways. The printing press enabled widespread dissemination of information, leading to significant advancements in education, science, and culture. Quantum computing, on the other hand, promises transformative capabilities in computation, potentially solving complex problems much faster and enabling breakthroughs in fields like cryptography, medicine, and materials science.",
+    "match": true,
+    "rouge_l": 0.408
   },
   {
     "method": "iw_hkvd",
@@ -358,9 +358,9 @@
     ],
     "query": "When was DNA discovered and when did Caesar cross the Rubicon?",
     "keyword": "1869",
-    "output": "[ERROR: indices should be either on cpu or on the same device as the indexed tensor (cpu)]",
-    "match": false,
-    "rouge_l": 0.057
+    "output": " DNA was first discovered in 1869 by Friedrich Miescher. Caesar crossed the Rubicon in 49 BC.",
+    "match": true,
+    "rouge_l": 0.765
   },
   {
     "method": "iw_hkvd",
@@ -371,9 +371,9 @@
     ],
     "query": "What connects Mendeleev and Gutenberg?",
     "keyword": "1869",
-    "output": "[ERROR: indices should be either on cpu or on the same device as the indexed tensor (cpu)]",
+    "output": " Periodic table and printing press.",
     "match": false,
-    "rouge_l": 0.077
+    "rouge_l": 0.143
   },
   {
     "method": "iw_hkvd",
@@ -384,9 +384,9 @@
     ],
     "query": "How do quantum computers relate to the Higgs boson discovery?",
     "keyword": "quantum",
-    "output": "[ERROR: indices should be either on cpu or on the same device as the indexed tensor (cpu)]",
+    "output": " They are unrelated.",
     "match": false,
-    "rouge_l": 0.069
+    "rouge_l": 0.045
   },
   {
     "method": "iw_hkvd",
@@ -432,9 +432,9 @@
     ],
     "query": "Who invented the printing press?",
     "keyword": "Gutenberg",
-    "output": " Johannes Gutenberg invented the printing press.",
+    "output": " Johannes Gutenberg invented the printing press around 1440 in Mainz, Germany.",
     "match": true,
-    "rouge_l": 0.588
+    "rouge_l": 1.0
   },
   {
     "method": "iw_hkvd",
@@ -456,9 +456,9 @@
     ],
     "query": "Who discovered penicillin?",
     "keyword": "Fleming",
-    "output": " Alexander Fleming discovered penicillin.",
+    "output": " Alexander Fleming",
     "match": true,
-    "rouge_l": 0.667
+    "rouge_l": 1.0
   },
   {
     "method": "iw_hkvd",
@@ -469,9 +469,9 @@
     ],
     "query": "What year did Google achieve quantum supremacy and when was the Bastille stormed?",
     "keyword": "2019",
-    "output": "[ERROR: indices should be either on cpu or on the same device as the indexed tensor (cpu)]",
+    "output": "",
     "match": false,
-    "rouge_l": 0.062
+    "rouge_l": 0.0
   },
   {
     "method": "iw_hkvd",
@@ -482,9 +482,9 @@
     ],
     "query": "Compare quantum computing and the printing press in terms of revolutionary impact.",
     "keyword": "quantum",
-    "output": "[ERROR: indices should be either on cpu or on the same device as the indexed tensor (cpu)]",
-    "match": false,
-    "rouge_l": 0.041
+    "output": " Both quantum computing and the printing press have had revolutionary impacts, but in different ways. The printing press enabled widespread dissemination of information, leading to significant advancements in education, science, and culture. Quantum computing, on the other hand, promises transformative capabilities in computation, potentially solving complex problems much faster and enabling breakthroughs in fields like cryptography, medicine, and materials science.",
+    "match": true,
+    "rouge_l": 0.408
   },
   {
     "method": "iw_hkvd",
@@ -495,9 +495,9 @@
     ],
     "query": "When was DNA discovered and when did Caesar cross the Rubicon?",
     "keyword": "1869",
-    "output": "[ERROR: indices should be either on cpu or on the same device as the indexed tensor (cpu)]",
-    "match": false,
-    "rouge_l": 0.057
+    "output": " DNA was first discovered in 1869 by Friedrich Miescher. Caesar crossed the Rubicon in 49 BC.",
+    "match": true,
+    "rouge_l": 0.765
   },
   {
     "method": "iw_hkvd",
@@ -508,9 +508,9 @@
     ],
     "query": "What connects Mendeleev and Gutenberg?",
     "keyword": "1869",
-    "output": "[ERROR: indices should be either on cpu or on the same device as the indexed tensor (cpu)]",
+    "output": " Periodic table and printing press.",
     "match": false,
-    "rouge_l": 0.077
+    "rouge_l": 0.143
   },
   {
     "method": "iw_hkvd",
@@ -521,9 +521,9 @@
     ],
     "query": "How do quantum computers relate to the Higgs boson discovery?",
     "keyword": "quantum",
-    "output": "[ERROR: indices should be either on cpu or on the same device as the indexed tensor (cpu)]",
+    "output": " They are unrelated.",
     "match": false,
-    "rouge_l": 0.069
+    "rouge_l": 0.045
   },
   {
     "method": "diff_only",
@@ -569,9 +569,9 @@
     ],
     "query": "Who invented the printing press?",
     "keyword": "Gutenberg",
-    "output": " Johannes Gutenberg invented the printing press.",
+    "output": " Johannes Gutenberg invented the printing press around 1440 in Mainz, Germany.",
     "match": true,
-    "rouge_l": 0.588
+    "rouge_l": 1.0
   },
   {
     "method": "diff_only",
@@ -593,9 +593,9 @@
     ],
     "query": "Who discovered penicillin?",
     "keyword": "Fleming",
-    "output": " Alexander Fleming discovered penicillin.",
+    "output": " Alexander Fleming",
     "match": true,
-    "rouge_l": 0.667
+    "rouge_l": 1.0
   },
   {
     "method": "diff_only",
@@ -606,9 +606,9 @@
     ],
     "query": "What year did Google achieve quantum supremacy and when was the Bastille stormed?",
     "keyword": "2019",
-    "output": "[ERROR: indices should be either on cpu or on the same device as the indexed tensor (cpu)]",
+    "output": "",
     "match": false,
-    "rouge_l": 0.062
+    "rouge_l": 0.0
   },
   {
     "method": "diff_only",
@@ -619,9 +619,9 @@
     ],
     "query": "Compare quantum computing and the printing press in terms of revolutionary impact.",
     "keyword": "quantum",
-    "output": "[ERROR: indices should be either on cpu or on the same device as the indexed tensor (cpu)]",
-    "match": false,
-    "rouge_l": 0.041
+    "output": " Both quantum computing and the printing press have had profound and transformative impacts on society. The printing press revolutionized information dissemination and literacy, while quantum computing promises to revolutionize computation and cryptography.",
+    "match": true,
+    "rouge_l": 0.221
   },
   {
     "method": "diff_only",
@@ -632,9 +632,9 @@
     ],
     "query": "When was DNA discovered and when did Caesar cross the Rubicon?",
     "keyword": "1869",
-    "output": "[ERROR: indices should be either on cpu or on the same device as the indexed tensor (cpu)]",
-    "match": false,
-    "rouge_l": 0.057
+    "output": " DNA was first discovered in 1869 by Friedrich Miescher. Caesar crossed the Rubicon in 49 BC.",
+    "match": true,
+    "rouge_l": 0.765
   },
   {
     "method": "diff_only",
@@ -645,9 +645,9 @@
     ],
     "query": "What connects Mendeleev and Gutenberg?",
     "keyword": "1869",
-    "output": "[ERROR: indices should be either on cpu or on the same device as the indexed tensor (cpu)]",
+    "output": " Periodic table and printing press.",
     "match": false,
-    "rouge_l": 0.077
+    "rouge_l": 0.143
   },
   {
     "method": "diff_only",
@@ -658,9 +658,9 @@
     ],
     "query": "How do quantum computers relate to the Higgs boson discovery?",
     "keyword": "quantum",
-    "output": "[ERROR: indices should be either on cpu or on the same device as the indexed tensor (cpu)]",
+    "output": "",
     "match": false,
-    "rouge_l": 0.069
+    "rouge_l": 0.0
   },
   {
     "method": "diff_only",
@@ -706,9 +706,9 @@
     ],
     "query": "Who invented the printing press?",
     "keyword": "Gutenberg",
-    "output": " Johannes Gutenberg invented the printing press.",
+    "output": " Johannes Gutenberg invented the printing press around 1440 in Mainz, Germany.",
     "match": true,
-    "rouge_l": 0.588
+    "rouge_l": 1.0
   },
   {
     "method": "diff_only",
@@ -730,9 +730,9 @@
     ],
     "query": "Who discovered penicillin?",
     "keyword": "Fleming",
-    "output": " Alexander Fleming discovered penicillin.",
+    "output": " Alexander Fleming",
     "match": true,
-    "rouge_l": 0.667
+    "rouge_l": 1.0
   },
   {
     "method": "diff_only",
@@ -743,9 +743,9 @@
     ],
     "query": "What year did Google achieve quantum supremacy and when was the Bastille stormed?",
     "keyword": "2019",
-    "output": "[ERROR: indices should be either on cpu or on the same device as the indexed tensor (cpu)]",
+    "output": "",
     "match": false,
-    "rouge_l": 0.062
+    "rouge_l": 0.0
   },
   {
     "method": "diff_only",
@@ -756,9 +756,9 @@
     ],
     "query": "Compare quantum computing and the printing press in terms of revolutionary impact.",
     "keyword": "quantum",
-    "output": "[ERROR: indices should be either on cpu or on the same device as the indexed tensor (cpu)]",
-    "match": false,
-    "rouge_l": 0.041
+    "output": " Both quantum computing and the printing press have had revolutionary impacts, but in different ways. The printing press enabled widespread dissemination of knowledge, leading to the Renaissance and scientific revolution. Quantum computing promises transformative changes in computation, cryptography, and problem-solving capabilities.",
+    "match": true,
+    "rouge_l": 0.314
   },
   {
     "method": "diff_only",
@@ -769,9 +769,9 @@
     ],
     "query": "When was DNA discovered and when did Caesar cross the Rubicon?",
     "keyword": "1869",
-    "output": "[ERROR: indices should be either on cpu or on the same device as the indexed tensor (cpu)]",
-    "match": false,
-    "rouge_l": 0.057
+    "output": " DNA was first discovered in 1869 by Friedrich Miescher. Caesar crossed the Rubicon in 49 BC.",
+    "match": true,
+    "rouge_l": 0.765
   },
   {
     "method": "diff_only",
@@ -782,9 +782,9 @@
     ],
     "query": "What connects Mendeleev and Gutenberg?",
     "keyword": "1869",
-    "output": "[ERROR: indices should be either on cpu or on the same device as the indexed tensor (cpu)]",
+    "output": " Periodic table and printing press.",
     "match": false,
-    "rouge_l": 0.077
+    "rouge_l": 0.143
   },
   {
     "method": "diff_only",
@@ -795,9 +795,9 @@
     ],
     "query": "How do quantum computers relate to the Higgs boson discovery?",
     "keyword": "quantum",
-    "output": "[ERROR: indices should be either on cpu or on the same device as the indexed tensor (cpu)]",
+    "output": " They are unrelated.",
     "match": false,
-    "rouge_l": 0.069
+    "rouge_l": 0.045
   },
   {
     "method": "diff_only",
@@ -843,9 +843,9 @@
     ],
     "query": "Who invented the printing press?",
     "keyword": "Gutenberg",
-    "output": " Johannes Gutenberg invented the printing press.",
+    "output": " Johannes Gutenberg invented the printing press around 1440 in Mainz, Germany.",
     "match": true,
-    "rouge_l": 0.588
+    "rouge_l": 1.0
   },
   {
     "method": "diff_only",
@@ -867,9 +867,9 @@
     ],
     "query": "Who discovered penicillin?",
     "keyword": "Fleming",
-    "output": " Alexander Fleming discovered penicillin.",
+    "output": " Alexander Fleming",
     "match": true,
-    "rouge_l": 0.667
+    "rouge_l": 1.0
   },
   {
     "method": "diff_only",
@@ -880,9 +880,9 @@
     ],
     "query": "What year did Google achieve quantum supremacy and when was the Bastille stormed?",
     "keyword": "2019",
-    "output": "[ERROR: indices should be either on cpu or on the same device as the indexed tensor (cpu)]",
-    "match": false,
-    "rouge_l": 0.062
+    "output": " 2019 and 1789 respectively.",
+    "match": true,
+    "rouge_l": 0.105
   },
   {
     "method": "diff_only",
@@ -893,9 +893,9 @@
     ],
     "query": "Compare quantum computing and the printing press in terms of revolutionary impact.",
     "keyword": "quantum",
-    "output": "[ERROR: indices should be either on cpu or on the same device as the indexed tensor (cpu)]",
-    "match": false,
-    "rouge_l": 0.041
+    "output": " Both quantum computing and the printing press have had revolutionary impacts, but in different ways. The printing press enabled widespread dissemination of information, greatly advancing education, science, and culture. Quantum computing promises transformative capabilities in computation, cryptography, and simulation, potentially revolutionizing fields like medicine, finance, and materials science.",
+    "match": true,
+    "rouge_l": 0.291
   },
   {
     "method": "diff_only",
@@ -906,9 +906,9 @@
     ],
     "query": "When was DNA discovered and when did Caesar cross the Rubicon?",
     "keyword": "1869",
-    "output": "[ERROR: indices should be either on cpu or on the same device as the indexed tensor (cpu)]",
-    "match": false,
-    "rouge_l": 0.057
+    "output": " DNA was first discovered in 1869 by Friedrich Miescher. Caesar crossed the Rubicon in 49 BC.",
+    "match": true,
+    "rouge_l": 0.765
   },
   {
     "method": "diff_only",
@@ -919,9 +919,9 @@
     ],
     "query": "What connects Mendeleev and Gutenberg?",
     "keyword": "1869",
-    "output": "[ERROR: indices should be either on cpu or on the same device as the indexed tensor (cpu)]",
+    "output": " Periodic table and printing press.",
     "match": false,
-    "rouge_l": 0.077
+    "rouge_l": 0.143
   },
   {
     "method": "diff_only",
@@ -932,9 +932,9 @@
     ],
     "query": "How do quantum computers relate to the Higgs boson discovery?",
     "keyword": "quantum",
-    "output": "[ERROR: indices should be either on cpu or on the same device as the indexed tensor (cpu)]",
+    "output": " They are unrelated.",
     "match": false,
-    "rouge_l": 0.069
+    "rouge_l": 0.045
   },
   {
     "method": "random",
@@ -980,9 +980,9 @@
     ],
     "query": "Who invented the printing press?",
     "keyword": "Gutenberg",
-    "output": " Johannes Gutenberg invented the printing press.",
+    "output": " Johannes Gutenberg invented the printing press around 1440 in Mainz, Germany.",
     "match": true,
-    "rouge_l": 0.588
+    "rouge_l": 1.0
   },
   {
     "method": "random",
@@ -1004,9 +1004,9 @@
     ],
     "query": "Who discovered penicillin?",
     "keyword": "Fleming",
-    "output": " Alexander Fleming discovered penicillin.",
+    "output": " Alexander Fleming",
     "match": true,
-    "rouge_l": 0.667
+    "rouge_l": 1.0
   },
   {
     "method": "random",
@@ -1017,9 +1017,9 @@
     ],
     "query": "What year did Google achieve quantum supremacy and when was the Bastille stormed?",
     "keyword": "2019",
-    "output": "[ERROR: indices should be either on cpu or on the same device as the indexed tensor (cpu)]",
-    "match": false,
-    "rouge_l": 0.062
+    "output": " Google achieved quantum supremacy in 2019 and the Bastille was stormed on July 14, 1789.",
+    "match": true,
+    "rouge_l": 0.933
   },
   {
     "method": "random",
@@ -1030,9 +1030,9 @@
     ],
     "query": "Compare quantum computing and the printing press in terms of revolutionary impact.",
     "keyword": "quantum",
-    "output": "[ERROR: indices should be either on cpu or on the same device as the indexed tensor (cpu)]",
-    "match": false,
-    "rouge_l": 0.041
+    "output": " Both quantum computing and the printing press have had profound and transformative impacts on society. The printing press, invented by Johannes Gutenberg, revolutionized information dissemination, making knowledge more accessible and leading to a cultural and scientific renaissance. Quantum computing, through its ability to process complex calculations exponentially faster than classical computers, promises to revolutionize fields such as cryptography, drug discovery, and artificial intelligence, potentially transforming how we solve problems and interact with technology.",
+    "match": true,
+    "rouge_l": 0.363
   },
   {
     "method": "random",
@@ -1043,9 +1043,9 @@
     ],
     "query": "When was DNA discovered and when did Caesar cross the Rubicon?",
     "keyword": "1869",
-    "output": "[ERROR: indices should be either on cpu or on the same device as the indexed tensor (cpu)]",
-    "match": false,
-    "rouge_l": 0.057
+    "output": " DNA was first discovered in 1869 by Friedrich Miescher, and Julius Caesar crossed the Rubicon in 49 BC.",
+    "match": true,
+    "rouge_l": 0.833
   },
   {
     "method": "random",
@@ -1056,9 +1056,9 @@
     ],
     "query": "What connects Mendeleev and Gutenberg?",
     "keyword": "1869",
-    "output": "[ERROR: indices should be either on cpu or on the same device as the indexed tensor (cpu)]",
-    "match": false,
-    "rouge_l": 0.077
+    "output": " Both Mendeleev and Gutenberg made significant contributions to their respective fields in 1869.",
+    "match": true,
+    "rouge_l": 0.455
   },
   {
     "method": "random",
@@ -1069,9 +1069,9 @@
     ],
     "query": "How do quantum computers relate to the Higgs boson discovery?",
     "keyword": "quantum",
-    "output": "[ERROR: indices should be either on cpu or on the same device as the indexed tensor (cpu)]",
+    "output": "",
     "match": false,
-    "rouge_l": 0.069
+    "rouge_l": 0.0
   },
   {
     "method": "random",
@@ -1117,9 +1117,9 @@
     ],
     "query": "Who invented the printing press?",
     "keyword": "Gutenberg",
-    "output": " Johannes Gutenberg invented the printing press.",
+    "output": " Johannes Gutenberg invented the printing press around 1440 in Mainz, Germany.",
     "match": true,
-    "rouge_l": 0.588
+    "rouge_l": 1.0
   },
   {
     "method": "random",
@@ -1141,9 +1141,9 @@
     ],
     "query": "Who discovered penicillin?",
     "keyword": "Fleming",
-    "output": " Alexander Fleming discovered penicillin.",
+    "output": " Alexander Fleming",
     "match": true,
-    "rouge_l": 0.667
+    "rouge_l": 1.0
   },
   {
     "method": "random",
@@ -1154,9 +1154,9 @@
     ],
     "query": "What year did Google achieve quantum supremacy and when was the Bastille stormed?",
     "keyword": "2019",
-    "output": "[ERROR: indices should be either on cpu or on the same device as the indexed tensor (cpu)]",
-    "match": false,
-    "rouge_l": 0.062
+    "output": " Google achieved quantum supremacy in 2019 and the Bastille was stormed on July 14, 1789.",
+    "match": true,
+    "rouge_l": 0.933
   },
   {
     "method": "random",
@@ -1167,9 +1167,9 @@
     ],
     "query": "Compare quantum computing and the printing press in terms of revolutionary impact.",
     "keyword": "quantum",
-    "output": "[ERROR: indices should be either on cpu or on the same device as the indexed tensor (cpu)]",
-    "match": false,
-    "rouge_l": 0.041
+    "output": " Both quantum computing and the printing press have had profound and transformative impacts on society. The printing press, invented by Johannes Gutenberg, revolutionized information dissemination, making knowledge more accessible and leading to a cultural and intellectual renaissance. Quantum computing, through its ability to process complex calculations exponentially faster than classical computers, promises to revolutionize fields such as cryptography, drug discovery, and artificial intelligence, potentially transforming how we solve problems and interact with technology.",
+    "match": true,
+    "rouge_l": 0.373
   },
   {
     "method": "random",
@@ -1180,9 +1180,9 @@
     ],
     "query": "When was DNA discovered and when did Caesar cross the Rubicon?",
     "keyword": "1869",
-    "output": "[ERROR: indices should be either on cpu or on the same device as the indexed tensor (cpu)]",
-    "match": false,
-    "rouge_l": 0.057
+    "output": " DNA was first discovered in 1869 by Friedrich Miescher. Caesar crossed the Rubicon in 49 BC.",
+    "match": true,
+    "rouge_l": 0.765
   },
   {
     "method": "random",
@@ -1193,9 +1193,9 @@
     ],
     "query": "What connects Mendeleev and Gutenberg?",
     "keyword": "1869",
-    "output": "[ERROR: indices should be either on cpu or on the same device as the indexed tensor (cpu)]",
+    "output": " Periodic Table and Printing Press.",
     "match": false,
-    "rouge_l": 0.077
+    "rouge_l": 0.143
   },
   {
     "method": "random",
@@ -1206,9 +1206,9 @@
     ],
     "query": "How do quantum computers relate to the Higgs boson discovery?",
     "keyword": "quantum",
-    "output": "[ERROR: indices should be either on cpu or on the same device as the indexed tensor (cpu)]",
+    "output": "",
     "match": false,
-    "rouge_l": 0.069
+    "rouge_l": 0.0
   },
   {
     "method": "random",
@@ -1254,9 +1254,9 @@
     ],
     "query": "Who invented the printing press?",
     "keyword": "Gutenberg",
-    "output": " Johannes Gutenberg invented the printing press.",
+    "output": " Johannes Gutenberg invented the printing press around 1440 in Mainz, Germany.",
     "match": true,
-    "rouge_l": 0.588
+    "rouge_l": 1.0
   },
   {
     "method": "random",
@@ -1278,9 +1278,9 @@
     ],
     "query": "Who discovered penicillin?",
     "keyword": "Fleming",
-    "output": " Alexander Fleming discovered penicillin.",
+    "output": " Alexander Fleming",
     "match": true,
-    "rouge_l": 0.667
+    "rouge_l": 1.0
   },
   {
     "method": "random",
@@ -1291,9 +1291,9 @@
     ],
     "query": "What year did Google achieve quantum supremacy and when was the Bastille stormed?",
     "keyword": "2019",
-    "output": "[ERROR: indices should be either on cpu or on the same device as the indexed tensor (cpu)]",
-    "match": false,
-    "rouge_l": 0.062
+    "output": " Google achieved quantum supremacy in 2019 and the Bastille was stormed on July 14, 1789.",
+    "match": true,
+    "rouge_l": 0.933
   },
   {
     "method": "random",
@@ -1304,9 +1304,9 @@
     ],
     "query": "Compare quantum computing and the printing press in terms of revolutionary impact.",
     "keyword": "quantum",
-    "output": "[ERROR: indices should be either on cpu or on the same device as the indexed tensor (cpu)]",
-    "match": false,
-    "rouge_l": 0.041
+    "output": " Both quantum computing and the printing press have had revolutionary impacts, but in different ways. The printing press, invented by Johannes Gutenberg around 1440, dramatically transformed information dissemination and literacy, leading to significant advancements in education, science, and culture. Quantum computing, emerging much later, is poised to revolutionize computation by solving complex problems far more efficiently than classical computers, potentially transforming fields like cryptography, medicine, and materials science.",
+    "match": true,
+    "rouge_l": 0.432
   },
   {
     "method": "random",
@@ -1317,9 +1317,9 @@
     ],
     "query": "When was DNA discovered and when did Caesar cross the Rubicon?",
     "keyword": "1869",
-    "output": "[ERROR: indices should be either on cpu or on the same device as the indexed tensor (cpu)]",
-    "match": false,
-    "rouge_l": 0.057
+    "output": " DNA was first discovered in 1869 by Friedrich Miescher. Caesar crossed the Rubicon in 49 BC.",
+    "match": true,
+    "rouge_l": 0.765
   },
   {
     "method": "random",
@@ -1330,9 +1330,9 @@
     ],
     "query": "What connects Mendeleev and Gutenberg?",
     "keyword": "1869",
-    "output": "[ERROR: indices should be either on cpu or on the same device as the indexed tensor (cpu)]",
-    "match": false,
-    "rouge_l": 0.077
+    "output": " Both Mendeleev and Gutenberg made significant contributions to their respective fields in 1869.",
+    "match": true,
+    "rouge_l": 0.455
   },
   {
     "method": "random",
@@ -1343,9 +1343,9 @@
     ],
     "query": "How do quantum computers relate to the Higgs boson discovery?",
     "keyword": "quantum",
-    "output": "[ERROR: indices should be either on cpu or on the same device as the indexed tensor (cpu)]",
-    "match": false,
-    "rouge_l": 0.069
+    "output": " Quantum computers are not directly related to the discovery of the Higgs boson.",
+    "match": true,
+    "rouge_l": 0.333
   },
   {
     "method": "iw_hkvd",
@@ -1357,7 +1357,7 @@
     "order": "original",
     "query": "What year did Google achieve quantum supremacy and when was the Bastille stormed?",
     "keyword": "2019",
-    "output": "[ERROR: indices should be either on cpu or on the same device as the indexed tensor (cpu)]",
+    "output": "",
     "match": false
   },
   {
@@ -1370,8 +1370,8 @@
     "order": "reordered",
     "query": "What year did Google achieve quantum supremacy and when was the Bastille stormed?",
     "keyword": "2019",
-    "output": "[ERROR: indices should be either on cpu or on the same device as the indexed tensor (cpu)]",
-    "match": false
+    "output": " Google achieved quantum supremacy in 2019, and the Bastille was stormed on July 14, 1789.",
+    "match": true
   },
   {
     "method": "iw_hkvd",
@@ -1383,8 +1383,8 @@
     "order": "original",
     "query": "Compare quantum computing and the printing press in terms of revolutionary impact.",
     "keyword": "quantum",
-    "output": "[ERROR: indices should be either on cpu or on the same device as the indexed tensor (cpu)]",
-    "match": false
+    "output": " Both quantum computing and the printing press have had revolutionary impacts, but in different ways. The printing press enabled widespread dissemination of information, leading to significant advancements in education, science, and culture. Quantum computing, on the other hand, promises transformative capabilities in computation, potentially solving complex problems much faster and enabling breakthroughs in fields like cryptography, medicine, and materials science.",
+    "match": true
   },
   {
     "method": "iw_hkvd",
@@ -1396,8 +1396,8 @@
     "order": "reordered",
     "query": "Compare quantum computing and the printing press in terms of revolutionary impact.",
     "keyword": "quantum",
-    "output": "[ERROR: indices should be either on cpu or on the same device as the indexed tensor (cpu)]",
-    "match": false
+    "output": " Both quantum computing and the printing press have had revolutionary impacts, but in different ways. The printing press enabled widespread dissemination of knowledge, leading to the Renaissance and Reformation. Quantum computing promises transformative changes in computation, cryptography, and problem-solving capabilities.",
+    "match": true
   },
   {
     "method": "iw_hkvd",
@@ -1409,8 +1409,8 @@
     "order": "original",
     "query": "When was DNA discovered and when did Caesar cross the Rubicon?",
     "keyword": "1869",
-    "output": "[ERROR: indices should be either on cpu or on the same device as the indexed tensor (cpu)]",
-    "match": false
+    "output": " DNA was first discovered in 1869 by Friedrich Miescher. Caesar crossed the Rubicon in 49 BC.",
+    "match": true
   },
   {
     "method": "iw_hkvd",
@@ -1422,8 +1422,8 @@
     "order": "reordered",
     "query": "When was DNA discovered and when did Caesar cross the Rubicon?",
     "keyword": "1869",
-    "output": "[ERROR: indices should be either on cpu or on the same device as the indexed tensor (cpu)]",
-    "match": false
+    "output": " DNA was not discovered but first studied by Friedrich Miescher in 1869. Caesar crossed the Rubicon in 49 BC.",
+    "match": true
   },
   {
     "method": "iw_hkvd",
@@ -1435,7 +1435,7 @@
     "order": "original",
     "query": "What connects Mendeleev and Gutenberg?",
     "keyword": "1869",
-    "output": "[ERROR: indices should be either on cpu or on the same device as the indexed tensor (cpu)]",
+    "output": " Periodic table and printing press.",
     "match": false
   },
   {
@@ -1448,7 +1448,7 @@
     "order": "reordered",
     "query": "What connects Mendeleev and Gutenberg?",
     "keyword": "1869",
-    "output": "[ERROR: indices should be either on cpu or on the same device as the indexed tensor (cpu)]",
+    "output": " Periodic Table and Printing Press",
     "match": false
   }
 ]

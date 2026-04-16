@@ -542,6 +542,19 @@ class ModelKVzip():
               f"(context: {context_len}, query: {query_ids.shape[1]})")
         for ci, kv_c in enumerate(chunk_kvs):
             print(f"  chunk {ci}: {kv_c._seen_tokens} tokens, offset={chunk_offsets[ci]}")
+            # info의 tensor들을 GPU로 이동
+            for l in range(n_layers):
+                if isinstance(kv_c.info["cu_len_k"][l], torch.Tensor):
+                    kv_c.info["cu_len_k"][l] = kv_c.info["cu_len_k"][l].to(device)
+                if isinstance(kv_c.info["len_k"][l], torch.Tensor):
+                    kv_c.info["len_k"][l] = kv_c.info["len_k"][l].to(device)
+            if isinstance(kv_c.info.get("cu_head"), torch.Tensor):
+                kv_c.info["cu_head"] = kv_c.info["cu_head"].to(device)
+            # valid도 GPU로
+            if hasattr(kv_c, 'valid') and kv_c.valid is not None:
+                kv_c.valid = kv_c.valid.to(device)
+            if hasattr(kv_c, 'valid_pad') and kv_c.valid_pad is not None:
+                kv_c.valid_pad = kv_c.valid_pad.to(device)
 
         # ── 2. 각 chunk의 RoPE 보정 ──
         rotary_emb = self.model.model.rotary_emb
@@ -554,8 +567,8 @@ class ModelKVzip():
 
             for l in range(n_layers):
                 cu_len_k = kv_c.info["cu_len_k"][l]
-                valid_pad = torch.ones(1, n_heads_kv, kv_c.start_idx, dtype=torch.bool)
-                full_valid = torch.cat([valid_pad, kv_c.valid[l].cpu()], dim=-1)
+                valid_pad = torch.ones(1, n_heads_kv, kv_c.start_idx, dtype=torch.bool, device=device)
+                full_valid = torch.cat([valid_pad, kv_c.valid[l]], dim=-1)
 
                 for h in range(n_heads_kv):
                     kept_pos = full_valid[0, h].nonzero(as_tuple=True)[0]
@@ -584,8 +597,8 @@ class ModelKVzip():
 
             for cl in check_layers:
                 cu_len_k = kv_c.info["cu_len_k"][cl]
-                valid_pad = torch.ones(1, n_heads_kv, kv_c.start_idx, dtype=torch.bool)
-                full_valid = torch.cat([valid_pad, kv_c.valid[cl].cpu()], dim=-1)
+                valid_pad = torch.ones(1, n_heads_kv, kv_c.start_idx, dtype=torch.bool, device=device)
+                full_valid = torch.cat([valid_pad, kv_c.valid[cl]], dim=-1)
 
                 imp_per_head = {}
                 for h in range(n_heads_kv):
@@ -617,16 +630,16 @@ class ModelKVzip():
 
                 # Overwrite all layers for this chunk
                 imp_abs_per_head = {}
-                valid_pad_cl = torch.ones(1, n_heads_kv, kv_c.start_idx, dtype=torch.bool)
-                full_valid_cl = torch.cat([valid_pad_cl, kv_c.valid[cl].cpu()], dim=-1)
+                valid_pad_cl = torch.ones(1, n_heads_kv, kv_c.start_idx, dtype=torch.bool, device=device)
+                full_valid_cl = torch.cat([valid_pad_cl, kv_c.valid[cl]], dim=-1)
                 for h in range(n_heads_kv):
                     kept_pos_cl = full_valid_cl[0, h].nonzero(as_tuple=True)[0]
                     imp_abs_per_head[h] = set(kept_pos_cl[imp_per_head[h].cpu()].tolist())
 
                 for l in range(n_layers):
                     cu_len_k_l = kv_c.info["cu_len_k"][l]
-                    valid_pad_l = torch.ones(1, n_heads_kv, kv_c.start_idx, dtype=torch.bool)
-                    full_valid_l = torch.cat([valid_pad_l, kv_c.valid[l].cpu()], dim=-1)
+                    valid_pad_l = torch.ones(1, n_heads_kv, kv_c.start_idx, dtype=torch.bool, device=device)
+                    full_valid_l = torch.cat([valid_pad_l, kv_c.valid[l]], dim=-1)
 
                     for h in range(n_heads_kv):
                         if h not in imp_abs_per_head:
@@ -647,26 +660,51 @@ class ModelKVzip():
         print(f"[MultiBlend] HKVD+Overwrite: {t_blend*1000:.0f}ms ({total_selected} positions, method={method})")
 
         # ── 5. Merge chunks into one EvictCache for decode ──
-        # 첫 chunk를 base로 사용, 나머지 chunk의 flatten을 append
+        # head별로 두 chunk의 토큰을 합침
+        # 올바른 순서: [c1_h0 + c2_h0, c1_h1 + c2_h1, ...] (head별 interleave)
         kv_merged = chunk_kvs[0]
+
         for ci in range(1, n_chunks):
             kv_next = chunk_kvs[ci]
             for l in range(n_layers):
-                kv_merged.key_cache[l] = torch.cat([kv_merged.key_cache[l], kv_next.key_cache[l]], dim=0)
-                kv_merged.value_cache[l] = torch.cat([kv_merged.value_cache[l], kv_next.value_cache[l]], dim=0)
-                # cu_len_k 합치기
-                offset_cu = kv_merged.info["cu_len_k"][l][-1]
-                new_cu = kv_next.info["cu_len_k"][l][1:] + offset_cu
-                kv_merged.info["cu_len_k"][l] = torch.cat([kv_merged.info["cu_len_k"][l], new_cu])
-                # len_k 합치기
-                kv_merged.info["len_k"][l] = kv_merged.info["len_k"][l] + kv_next.info["len_k"][l]
-                kv_merged.info["max_len_k"][l] = max(kv_merged.info["max_len_k"][l], kv_next.info["max_len_k"][l])
+                # head별로 interleave merge
+                merged_k_parts = []
+                merged_v_parts = []
+                new_cu = [torch.tensor([0], dtype=torch.int32, device=device)]
+                new_lens = []
+                running_offset = 0
+
+                cu_m = kv_merged.info["cu_len_k"][l]
+                cu_n = kv_next.info["cu_len_k"][l]
+
+                for h in range(n_heads_kv):
+                    # 기존 merged의 head h
+                    k_m_h = kv_merged.key_cache[l][cu_m[h]:cu_m[h+1]]
+                    v_m_h = kv_merged.value_cache[l][cu_m[h]:cu_m[h+1]]
+                    # 새 chunk의 head h
+                    k_n_h = kv_next.key_cache[l][cu_n[h]:cu_n[h+1]]
+                    v_n_h = kv_next.value_cache[l][cu_n[h]:cu_n[h+1]]
+                    # 합치기
+                    merged_k_parts.append(torch.cat([k_m_h, k_n_h], dim=0))
+                    merged_v_parts.append(torch.cat([v_m_h, v_n_h], dim=0))
+
+                    head_len = k_m_h.shape[0] + k_n_h.shape[0]
+                    running_offset += head_len
+                    new_cu.append(torch.tensor([running_offset], dtype=torch.int32, device=device))
+                    new_lens.append(head_len)
+
+                kv_merged.key_cache[l] = torch.cat(merged_k_parts, dim=0)
+                kv_merged.value_cache[l] = torch.cat(merged_v_parts, dim=0)
+                kv_merged.info["cu_len_k"][l] = torch.cat(new_cu)
+                kv_merged.info["len_k"][l] = torch.tensor(new_lens, dtype=torch.int32, device=device)
+                kv_merged.info["max_len_k"][l] = max(new_lens)
 
         kv_merged.prefill_ids = prefill_ids
         kv_merged._seen_tokens = context_len
-        kv_merged.info["cu_head"] = torch.arange(n_heads_kv * n_chunks + 1, dtype=torch.int32, device=device)
+        kv_merged.info["cu_head"] = torch.arange(n_heads_kv + 1, dtype=torch.int32, device=device)
 
-        print(f"[MultiBlend] Merged: {kv_merged.key_cache[0].shape[0]} total flatten tokens")
+        print(f"[MultiBlend] Merged: {kv_merged.key_cache[0].shape[0]} flatten tokens, "
+              f"cu_head={kv_merged.info['cu_head'].tolist()}")
 
         # ── 6. Generate ──
         t0 = time.perf_counter()
