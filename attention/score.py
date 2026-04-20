@@ -31,7 +31,7 @@ class KVScore():
         ]
 
     def _update_score(self, layer_idx: int, score: torch.Tensor):
-        self.score[layer_idx] = torch.cat([self.score[layer_idx], score], dim=-1)
+        self.score[layer_idx] = torch.cat([self.score[layer_idx], score.to(self.score[layer_idx].device)], dim=-1)
 
     def _get_score(self, query_states: torch.Tensor, key_states: torch.Tensor, layer_idx: int):
         """ Compute KV importance scores.
@@ -82,7 +82,7 @@ class KVScore():
         elif self.causal_mask_score.size(-1) != window_size:
             self._make_mask(attn_weights, window_size)
 
-        attn_weights[..., -window_size:, -window_size:] += self.causal_mask_score
+        attn_weights[..., -window_size:, -window_size:] += self.causal_mask_score.to(attn_weights.device)
 
     ##################################################################################################
     def _threshold(self, score: Union[torch.Tensor, List[torch.Tensor]], ratio: float):
