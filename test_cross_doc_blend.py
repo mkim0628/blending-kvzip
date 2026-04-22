@@ -1,16 +1,19 @@
-"""Cross-document blend test using blend_generate_multi.
+"""Cross-document multi-hop blend test using blend_generate_multi.
 
 Scenario
 --------
-  Offline : doc_A, doc_B 각각 KVzip prefill + prune → ChunkStore 저장
-  Online  : context = [doc_B + doc_A] (역순),
-            KV     = [pruned_KV_B, pruned_KV_A]
+  Offline : doc_A, doc_B 각각 KVzip prefill + prune(0.3) → ChunkStore 저장
+  Online  : context = [doc_B + doc_A] (역순)
+            KV      = [pruned_KV_B, pruned_KV_A] concat
             → blend_generate_multi 로 쿼리 응답
 
 Queries
 -------
-  두 문서를 모두 읽어야(cross-document attention) 답할 수 있는 7개 질문.
-  각 쿼리마다 정답 키워드를 포함하는지 O/X 로 평가.
+  두 문서를 모두 거쳐야 답할 수 있는 멀티홈 추론 7개.
+  단순히 "A 문서에서 찾기 + B 문서에서 찾기"가 아니라,
+  한 문서의 사실을 브릿지로 삼아 다른 문서의 답을 끝어내는 구조.
+
+Fixed params: prune_ratio=0.3, recomp_ratio=0.15, method="iw_hkvd"
 """
 import torch
 from model import ModelKVzip
@@ -39,129 +42,148 @@ doc_B = (
     "accident in 1906. She founded the Curie Institute in Paris in 1920."
 )
 
-# ── Cross-document queries (both docs required) ────────────────────────────────
+# ── Multi-hop queries ────────────────────────────────────────────────────
+# 각 쿼리는 두 문서를 브릿지즈럼 연결해야만 답할 수 있는 멀티홈 구조.
 # (question, answer_keyword)
 queries = [
     (
-        "Who was born earlier, Einstein or Curie?",
-        "curie",          # Curie: 1867 / Einstein: 1879
+        # doc_A: Bern → Einstein → Nobel Physics 1921
+        # doc_B: radium → Curie → Nobel Physics 1903
+        # bridge: same field (Physics) → year difference
+        "The scientist who worked at the patent office in Bern won the Nobel Prize "
+        "in Physics. The scientist who discovered radium also won the Nobel Prize in "
+        "Physics. How many years separated their two Nobel Prize awards?",
+        "18",           # 1921 - 1903 = 18
     ),
     (
-        "How many years apart were Einstein and Curie born?",
-        "12",             # 1879 - 1867 = 12
+        # doc_B: radium → Curie → born 1867
+        # doc_A: theory of relativity → Einstein → born 1879
+        # bridge: birth years
+        "The scientist who discovered radium was born in 1867. "
+        "How many years later was the scientist born who developed "
+        "the theory of relativity?",
+        "12",           # 1879 - 1867 = 12
     ),
     (
-        "Who won the Nobel Prize in Physics first, Einstein or Curie?",
-        "curie",          # Curie: 1903 / Einstein: 1921
+        # doc_A: Einstein died at 76
+        # doc_B: scientist who died at 66 → Curie → discovered polonium
+        # bridge: age at death
+        "Einstein died at the age of 76 in Princeton. "
+        "What element was discovered by the scientist who died at the age of 66?",
+        "polonium",     # Curie died at 66, discovered polonium
     ),
     (
-        "How many Nobel Prizes did Curie win in total compared to Einstein's one?",
-        "two",            # Curie: 2 (Physics + Chemistry) / Einstein: 1
+        # doc_B: Curie founded institute 1920
+        # doc_A: theory of relativity → Einstein → emigrated to US 1933
+        # bridge: years between events
+        "Curie founded an institute in Paris in 1920. "
+        "How many years after that did the scientist who developed "
+        "the theory of relativity emigrate to the United States?",
+        "13",           # 1933 - 1920 = 13
     ),
     (
-        "Who lived longer, Einstein or Curie?",
-        "einstein",       # Einstein: 76 years / Curie: 66 years
+        # doc_A: Einstein emigrated to US in 1933
+        # doc_B: polonium → Curie → died 1934
+        # bridge: was Curie alive when Einstein emigrated?
+        "Einstein emigrated to the United States in 1933. "
+        "Was the scientist who discovered polonium still alive at that time?",
+        "yes",          # Curie died 1934, so yes
     ),
     (
-        "Who died first, Einstein or Curie?",
-        "curie",          # Curie: 1934 / Einstein: 1955
+        # doc_B: two sciences Nobel → Curie, born Warsaw 1867
+        # bridge: born 12 years after Curie (1867+12=1879) → Einstein
+        # doc_A: Einstein worked in Bern before famous
+        "The scientist who won Nobel Prizes in two different sciences was born "
+        "in Warsaw in 1867. In which city did the scientist born exactly "
+        "12 years after her work before becoming famous?",
+        "bern",         # Einstein (born 1879 = 1867+12) worked in Bern
     ),
     (
-        "How many years before Einstein won the Nobel Prize did Curie win her first Nobel?",
-        "18",             # 1921 - 1903 = 18
+        # doc_B: Physics+Chemistry Nobel → Curie → died 1934
+        # doc_A: Bern patent office → Einstein → died 1955
+        # bridge: who died first
+        "The scientist who won Nobel Prizes in both Physics and Chemistry died "
+        "in France. The scientist who worked at the patent office in Bern died "
+        "in Princeton. Who died first?",
+        "curie",        # Curie 1934 < Einstein 1955
     ),
 ]
 
-
-def evaluate(model, kv, queries, tag):
-    """Run all queries against kv and print results."""
-    matches = 0
-    print(f"\n{'─'*60}")
-    print(f"[{tag}]")
-    for q, kw in queries:
-        qi = model.apply_template(q + "\nAnswer in one sentence.")
-        out = model.generate(qi, kv=kv, update_cache=False)
-        hit = kw.lower() in out.lower()
-        matches += hit
-        mark = "O" if hit else "X"
-        print(f"  {mark}  Q: {q}")
-        print(f"       A: {out.strip()}")
-        print(f"       expected keyword: '{kw}'")
-    print(f"  → {matches}/{len(queries)} correct")
-    return matches
-
+PRUNE_RATIO  = 0.3
+RECOMP_RATIO = 0.15
+METHOD       = "iw_hkvd"
+CHECK_LAYERS = [1]
 
 # ── Init ──────────────────────────────────────────────────────────────────────
 model = ModelKVzip("Qwen/Qwen2.5-7B-Instruct", kv_type="evict")
-store = ChunkStore("./chunk_store_cross_doc")
+store = ChunkStore("./chunk_store_cross_multihop")
 
 # ── Step 1: Prefill + prune + save each doc separately ────────────────────────
 print("=" * 60)
-print("Step 1: Building pruned KV per document")
+print("Step 1: Building pruned KV per document (prune_ratio=0.3)")
 print("=" * 60)
 
-for prune_ratio in [0.3, 0.5]:
-    print(f"\n-- prune_ratio = {prune_ratio} --")
+kv_a = model.prefill(doc_A, do_score=True)
+kv_a.prune(ratio=PRUNE_RATIO)
+store.save_chunk("doc_a", kv_a)
+kept_a = sum(kv_a.info["len_k"][0]).item()
+print(f"  doc_A: {kv_a._seen_tokens} tokens total, {kept_a} kept")
 
-    kv_a = model.prefill(doc_A, do_score=True)
-    kv_a.prune(ratio=prune_ratio)
-    store.save_chunk(f"doc_a_r{prune_ratio}", kv_a)
-    kept_a = sum(kv_a.info["len_k"][0]).item()
-    print(f"  doc_A: {kv_a._seen_tokens} tokens total, {kept_a} kept after pruning")
+kv_b = model.prefill(doc_B, do_score=True)
+kv_b.prune(ratio=PRUNE_RATIO)
+store.save_chunk("doc_b", kv_b)
+kept_b = sum(kv_b.info["len_k"][0]).item()
+print(f"  doc_B: {kv_b._seen_tokens} tokens total, {kept_b} kept")
 
-    kv_b = model.prefill(doc_B, do_score=True)
-    kv_b.prune(ratio=prune_ratio)
-    store.save_chunk(f"doc_b_r{prune_ratio}", kv_b)
-    kept_b = sum(kv_b.info["len_k"][0]).item()
-    print(f"  doc_B: {kv_b._seen_tokens} tokens total, {kept_b} kept after pruning")
-
-# ── Step 2: Baseline — full prefill of [B+A] ──────────────────────────────────
+# ── Step 2: Baseline — full prefill [B+A] ──────────────────────────────────
 print("\n" + "=" * 60)
 print("Step 2: Baseline — full prefill [doc_B + doc_A]")
 print("=" * 60)
 
 kv_full = model.prefill(doc_B + " " + doc_A, do_score=False)
-bl_score = evaluate(model, kv_full, queries, tag="Baseline: full prefill [B+A]")
+
+bl_matches = 0
+for q, kw in queries:
+    qi = model.apply_template(q + "\nAnswer in one sentence.")
+    out = model.generate(qi, kv=kv_full, update_cache=False)
+    hit = kw.lower() in out.lower()
+    bl_matches += hit
+    print(f"  {'O' if hit else 'X'}  Q: {q[:80]}...")
+    print(f"       A: {out.strip()[:100]}")
+    print(f"       expected: '{kw}'")
+print(f"\n  Baseline: {bl_matches}/{len(queries)}")
 
 # ── Step 3: blend_generate_multi — KV=[B,A], context=[B+A] ───────────────────
 print("\n" + "=" * 60)
-print("Step 3: blend_generate_multi  chunk_kvs=[kv_B, kv_A]  context=[B+A]")
+print(f"Step 3: blend_generate_multi  chunk_kvs=[kv_B, kv_A]")
+print(f"        method={METHOD}  recomp_ratio={RECOMP_RATIO}  check_layers={CHECK_LAYERS}")
 print("=" * 60)
 
-for prune_ratio in [0.3, 0.5]:
-    for method in ["iw_hkvd", "diff_only", "random"]:
-        for recomp_ratio in [0.15, 0.30, 0.50]:
+blend_matches = 0
+for q, kw in queries:
+    # 매 쿼리마다 새로 로드 (상태 오염 방지)
+    kv_b_l = store.load_chunk("doc_b", device=model.device)
+    kv_a_l = store.load_chunk("doc_a", device=model.device)
 
-            tag = f"prune={prune_ratio} | method={method} | recomp={recomp_ratio}"
-            print(f"\n{'─'*60}")
-            print(f"[Blend] {tag}")
+    qi = model.apply_template(q + "\nAnswer in one sentence.")
 
-            matches = 0
-            for q, kw in queries:
-                # 매 쿼리마다 새로 로드 (상태 오염 방지)
-                kv_b_l = store.load_chunk(f"doc_b_r{prune_ratio}", device=model.device)
-                kv_a_l = store.load_chunk(f"doc_a_r{prune_ratio}", device=model.device)
+    # chunk_kvs = [kv_B, kv_A] → context 순서 = B + A
+    out = model.blend_generate_multi(
+        qi,
+        chunk_kvs=[kv_b_l, kv_a_l],
+        recomp_ratio=RECOMP_RATIO,
+        check_layers=CHECK_LAYERS,
+        method=METHOD,
+    )
 
-                qi = model.apply_template(q + "\nAnswer in one sentence.")
+    hit = kw.lower() in out.lower()
+    blend_matches += hit
+    print(f"  {'O' if hit else 'X'}  Q: {q[:80]}...")
+    print(f"       A: {out.strip()[:100]}")
+    print(f"       expected: '{kw}'")
 
-                # chunk_kvs = [kv_B, kv_A]  →  context 순서 = B + A
-                out = model.blend_generate_multi(
-                    qi,
-                    chunk_kvs=[kv_b_l, kv_a_l],
-                    recomp_ratio=recomp_ratio,
-                    check_layers=[1],
-                    method=method,
-                )
-
-                hit = kw.lower() in out.lower()
-                matches += hit
-                mark = "O" if hit else "X"
-                print(f"  {mark}  Q: {q}")
-                print(f"       A: {out.strip()}")
-                print(f"       expected keyword: '{kw}'")
-
-            print(f"  → {matches}/{len(queries)} correct")
-
+print(f"\n  Blend:    {blend_matches}/{len(queries)}")
+print(f"  Baseline: {bl_matches}/{len(queries)}")
 print("\n" + "=" * 60)
 print("Done!")
 print("=" * 60)
