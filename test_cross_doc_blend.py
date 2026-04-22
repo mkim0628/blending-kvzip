@@ -16,7 +16,7 @@ Sweep
 -----
   prune_ratio:  [0.3, 0.5]
   recomp_ratio: [0.15, 0.30, 0.50]
-  method: iw_hkvd (fixed)
+  method:       [iw_hkvd, diff_only, random]
 """
 import torch
 from model import ModelKVzip
@@ -105,7 +105,7 @@ queries = [
 
 PRUNE_RATIOS  = [0.3, 0.5]
 RECOMP_RATIOS = [0.15, 0.30, 0.50]
-METHOD        = "iw_hkvd"
+METHODS       = ["iw_hkvd", "diff_only", "random"]
 CHECK_LAYERS  = [1]
 
 # ── Init ──────────────────────────────────────────────────────────────────────
@@ -169,40 +169,41 @@ bl_ba = run_queries(model, kv_ba, queries, tag="Baseline B+A")
 # ── Step 4: blend_generate_multi sweep ──────────────────────────────────────
 print("\n" + "=" * 60)
 print(f"Step 4: blend_generate_multi  chunk_kvs=[kv_B, kv_A]")
-print(f"        method={METHOD}  check_layers={CHECK_LAYERS}")
+print(f"        check_layers={CHECK_LAYERS}")
 print("=" * 60)
 
 results = {}
 
 for pr in PRUNE_RATIOS:
-    for rr in RECOMP_RATIOS:
-        tag = f"prune={pr} | recomp={rr} | method={METHOD}"
-        print(f"\n{'─'*60}")
-        print(f"[Blend] {tag}")
+    for method in METHODS:
+        for rr in RECOMP_RATIOS:
+            tag = f"prune={pr} | method={method} | recomp={rr}"
+            print(f"\n{'─'*60}")
+            print(f"[Blend] {tag}")
 
-        blend_matches = 0
-        for q, kw in queries:
-            kv_b_l = store.load_chunk(f"doc_b_r{pr}", device=model.device)
-            kv_a_l = store.load_chunk(f"doc_a_r{pr}", device=model.device)
+            blend_matches = 0
+            for q, kw in queries:
+                kv_b_l = store.load_chunk(f"doc_b_r{pr}", device=model.device)
+                kv_a_l = store.load_chunk(f"doc_a_r{pr}", device=model.device)
 
-            qi = model.apply_template(q + "\nAnswer in one sentence.")
+                qi = model.apply_template(q + "\nAnswer in one sentence.")
 
-            out = model.blend_generate_multi(
-                qi,
-                chunk_kvs=[kv_b_l, kv_a_l],
-                recomp_ratio=rr,
-                check_layers=CHECK_LAYERS,
-                method=METHOD,
-            )
+                out = model.blend_generate_multi(
+                    qi,
+                    chunk_kvs=[kv_b_l, kv_a_l],
+                    recomp_ratio=rr,
+                    check_layers=CHECK_LAYERS,
+                    method=method,
+                )
 
-            hit = kw.lower() in out.lower()
-            blend_matches += hit
-            print(f"  {'O' if hit else 'X'}  Q: {q[:80]}...")
-            print(f"       A: {out.strip()[:100]}")
-            print(f"       expected: '{kw}'")
+                hit = kw.lower() in out.lower()
+                blend_matches += hit
+                print(f"  {'O' if hit else 'X'}  Q: {q[:80]}...")
+                print(f"       A: {out.strip()[:100]}")
+                print(f"       expected: '{kw}'")
 
-        results[(pr, rr)] = blend_matches
-        print(f"  → {blend_matches}/{len(queries)} correct")
+            results[(pr, method, rr)] = blend_matches
+            print(f"  → {blend_matches}/{len(queries)} correct")
 
 # ── Summary ────────────────────────────────────────────────────────────────────
 print("\n" + "=" * 60)
@@ -211,11 +212,12 @@ print("=" * 60)
 print(f"  Baseline A+B (full prefill): {bl_ab}/{len(queries)}")
 print(f"  Baseline B+A (full prefill): {bl_ba}/{len(queries)}")
 print()
-print(f"  {'prune':>8} | {'recomp':>8} | {'score':>8}")
-print(f"  {'-'*8}-+-{'-'*8}-+-{'-'*8}")
+print(f"  {'prune':>6} | {'method':>10} | {'recomp':>6} | {'score':>7}")
+print(f"  {'-'*6}-+-{'-'*10}-+-{'-'*6}-+-{'-'*7}")
 for pr in PRUNE_RATIOS:
-    for rr in RECOMP_RATIOS:
-        score = results[(pr, rr)]
-        print(f"  {pr:>8} | {rr:>8} | {score:>4}/{len(queries)}")
+    for method in METHODS:
+        for rr in RECOMP_RATIOS:
+            score = results[(pr, method, rr)]
+            print(f"  {pr:>6} | {method:>10} | {rr:>6} | {score:>4}/{len(queries)}")
 
 print("\nDone!")
